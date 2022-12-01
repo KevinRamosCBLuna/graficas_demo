@@ -24,3 +24,6 @@ export 'package:graficas_demo/screens/configurator_weekly_leads_by_opCop.dart';
 export 'package:graficas_demo/screens/configurator_weekly_leads_by_opCop2.dart';
 export 'package:graficas_demo/screens/configurator_tracking.dart';
 export 'package:graficas_demo/screens/rta_new_customer_lead_by_week.dart';
+export 'package:graficas_demo/screens/referrals_overall.dart';
+export 'package:graficas_demo/screens/last_week.dart';
+export 'package:graficas_demo/screens/referrals_tracking_by_week.dart';

@@ -1,7 +1,7 @@
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/models/models.dart';
 import 'package:flutter/material.dart';
-import 'package:graficas_demo/screens/tabla_v2.dart';
+//import 'package:graficas_demo/screens/tabla_v2.dart';
 
 class AppRoutes {
   static const initialRoute = 'home';
@@ -17,6 +17,9 @@ class AppRoutes {
     MenuOptions(route: 'configurator_weekly_leads_by_opCop_2', name: 'Configurator Weekly Leads By OpCop 2', screen: const ConfiguratorWeeklyLeadsOpCop2(), icon: Icons.list),
     MenuOptions(route: 'configurator_tracking', name: 'Configurator Tracking', screen: const ConfiguratorTracking(), icon: Icons.list),
     MenuOptions(route: 'rta_new_customer_lead_by_week', name: 'RTA New Customer Lead By Week', screen: const RTANewCustomerLead(), icon: Icons.list),
+    MenuOptions(route: 'referrals_overall', name: 'Referrals Overall', screen: const ReferralsOverall(), icon: Icons.list),
+    MenuOptions(route: 'last_week', name: 'Last Week', screen: const LastWeek(), icon: Icons.list),
+    MenuOptions(route: 'referrals_tracking_by_week', name: 'Referrals Tracking By Week', screen: const ReferralsTrackingByWeek(), icon: Icons.list),
 
     /* MenuOptions(
         route: 'perdidas_ahorro_beneficioV2',

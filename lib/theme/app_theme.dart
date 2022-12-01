@@ -7,37 +7,22 @@ class AppTheme {
       //color primario
       primaryColor: Colors.cyan,
       //App bar
-      appBarTheme:
-          const AppBarTheme(color: primary, elevation: 0, centerTitle: true),
+      appBarTheme: const AppBarTheme(color: primary, elevation: 0, centerTitle: true),
       //Color botones
-      textButtonTheme:
-          TextButtonThemeData(style: TextButton.styleFrom(primary: primary)),
+      textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(backgroundColor: primary)),
 
       //floating action button
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: primary, elevation: 5),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(backgroundColor: primary, elevation: 5),
 
       //elevatebutton
       elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-            primary: primary, shape: const StadiumBorder(), elevation: 0),
+        style: ElevatedButton.styleFrom(backgroundColor: primary, shape: const StadiumBorder(), elevation: 0),
       ),
       //Imput decoration
       inputDecorationTheme: const InputDecorationTheme(
         floatingLabelStyle: TextStyle(color: primary),
-        enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: primary),
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                topRight: Radius.circular(10))),
-        focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: primary),
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                topRight: Radius.circular(10))),
-        border: OutlineInputBorder(
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                topRight: Radius.circular(10))),
+        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: primary), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
+        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: primary), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
+        border: OutlineInputBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
       ));
 }

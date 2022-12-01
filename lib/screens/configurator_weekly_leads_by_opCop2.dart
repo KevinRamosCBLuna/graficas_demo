@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/samples/indicator.dart';
@@ -141,7 +143,7 @@ class _ConfiguratorWeeklyLeadsOpCop2State extends State<ConfiguratorWeeklyLeadsO
                       barTouchData: BarTouchData(
                         enabled: true,
                         touchTooltipData: BarTouchTooltipData(
-                            tooltipBgColor: Color.fromARGB(255, 222, 222, 222),
+                            tooltipBgColor: const Color.fromARGB(255, 222, 222, 222),
                             getTooltipItem: (group, groupIndex, rod, rodIndex) {
                               String n1, n2, n3, n4, n5, n6, n7, n8;
                               switch (group.x.toInt()) {

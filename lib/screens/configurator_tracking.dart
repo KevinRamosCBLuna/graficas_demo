@@ -155,7 +155,7 @@ class _ConfiguratorTrackingState extends State<ConfiguratorTracking> {
               padding: const EdgeInsets.only(top: 10),
               child: Text(
                 'Total: ${n1 + n2 + n3 + n4}',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             Expanded(
