@@ -28,6 +28,13 @@ class _LastWeekState extends State<LastWeek> {
             const SizedBox(
               height: 28,
             ),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: Text(
+                'Last Week',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
             Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

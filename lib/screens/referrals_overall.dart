@@ -28,6 +28,13 @@ class _ReferralsOverallState extends State<ReferralsOverall> {
             const SizedBox(
               height: 28,
             ),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: Text(
+                'Referrals Overall',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
             Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
