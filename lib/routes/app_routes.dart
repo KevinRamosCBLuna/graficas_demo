@@ -12,6 +12,11 @@ class AppRoutes {
         name: 'Home Screen',
         screen: const HomeScreen(),
         icon: Icons.home),*/
+    MenuOptions(route: 'grand_total_opcp', name: 'Grand Total OpCo', screen: const GrandTotalOpCo(), icon: Icons.list),
+    MenuOptions(route: 'last_week_jobs_type_tracking', name: 'Last Week Jobs Type Tracking', screen: const LastWeekJobsTypeTracking(), icon: Icons.list),
+    MenuOptions(route: 'average_jobs_time_tracking_by_opco', name: 'Average Jobs Time Tracking by OpCo', screen: const AverageJobsTimeTracking(), icon: Icons.list),
+    MenuOptions(route: 'sm_promo_by_opco', name: 'SM Promo by OpCo', screen: const SmPromo(), icon: Icons.list),
+    MenuOptions(route: 'sm_promo_by_opco_2', name: 'SM Promo by OpCo 2', screen: const SmPromo2(), icon: Icons.list),
     MenuOptions(route: 'weekly_leads_by_channel', name: 'Weekly Leads by Channel', screen: const WeeklyLeadsChannel(), icon: Icons.list),
     MenuOptions(route: 'configurator_weekly_leads_by_opCop', name: 'Configurator Weekly Leads By OpCop', screen: const ConfiguratorWeeklyLeadsOpCop(), icon: Icons.list),
     MenuOptions(route: 'configurator_weekly_leads_by_opCop_2', name: 'Configurator Weekly Leads By OpCop 2', screen: const ConfiguratorWeeklyLeadsOpCop2(), icon: Icons.list),
