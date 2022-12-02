@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:graficas_demo/models/qt/Get_tablero_ahorro_beneficio_qt.dart';
 import 'package:supabase/supabase.dart';
 //import 'package:graficas_demo/screens/perdidas_ahorro_beneficio.dart';
-import 'package:graficas_demo/screens/ahorro_beneficio.dart';
+import 'package:graficas_demo/screens/demo/ahorro_beneficio.dart';
 //import 'package:graficas_demo/screens/tabla.dart';
-import 'package:graficas_demo/screens/perdidas_ahorro_beneficio_v2.dart';
+import 'package:graficas_demo/screens/demo/perdidas_ahorro_beneficio_v2.dart';
 import 'package:graficas_demo/screens/tabla_v2.dart';
 
 class Dashboards extends StatefulWidget {
@@ -50,8 +50,7 @@ class _DashboardsState extends State<Dashboards> {
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UiLAogICAgImlhdCI6IDE2NTc2OTU2MDAsCiAgICAiZXhwIjogMTgxNTQ2MjAwMAp9.8h6s6K2rRn20SOc7robvygAWNhZsSWD4xFRdIZMyYVI";
 
     final client = SupabaseClient(url, key);
-    dynamic response = await client.rpc('get_tablero_ahorro_beneficio',
-        params: {'fechaini': '2022-07-01', 'fechafin': '2022-08-12'}).execute();
+    dynamic response = await client.rpc('get_tablero_ahorro_beneficio', params: {'fechaini': '2022-07-01', 'fechafin': '2022-08-12'}).execute();
 
     //print("-----Error: ${response.error}");
 
@@ -60,8 +59,7 @@ class _DashboardsState extends State<Dashboards> {
     //print("-----Response: ");
     //print(response.toString());
 
-    GetTableroAhorroBeneficioQt objecto =
-        getTableroAhorroBeneficioQtFromMap(response);
+    GetTableroAhorroBeneficioQt objecto = getTableroAhorroBeneficioQtFromMap(response);
     print(objecto.data[0].proveedor);
   }
 
@@ -78,12 +76,7 @@ class _DashboardsState extends State<Dashboards> {
               color: Colors.black,
               size: 40,
             ),
-            Text('Tablero',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30)),
+            Text('Tablero', textAlign: TextAlign.center, style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 30)),
           ],
         ),
         centerTitle: true,
@@ -102,8 +95,7 @@ class _DashboardsState extends State<Dashboards> {
                     Align(
                       alignment: const AlignmentDirectional(0, 0),
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -112,11 +104,7 @@ class _DashboardsState extends State<Dashboards> {
                               padding: EdgeInsetsDirectional.zero,
                               height: 80,
                               width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color:
-                                      const Color.fromARGB(255, 232, 232, 232),
-                                  shape: BoxShape.rectangle),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 232, 232, 232), shape: BoxShape.rectangle),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -148,11 +136,7 @@ class _DashboardsState extends State<Dashboards> {
                               padding: EdgeInsetsDirectional.zero,
                               height: 80,
                               width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color:
-                                      const Color.fromARGB(255, 232, 232, 232),
-                                  shape: BoxShape.rectangle),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 232, 232, 232), shape: BoxShape.rectangle),
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -163,8 +147,7 @@ class _DashboardsState extends State<Dashboards> {
                                       style: estilo(),
                                     ),
                                     Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
                                           '0',
@@ -187,11 +170,7 @@ class _DashboardsState extends State<Dashboards> {
                               padding: EdgeInsetsDirectional.zero,
                               height: 80,
                               width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color:
-                                      const Color.fromARGB(255, 232, 232, 232),
-                                  shape: BoxShape.rectangle),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 232, 232, 232), shape: BoxShape.rectangle),
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -202,8 +181,7 @@ class _DashboardsState extends State<Dashboards> {
                                       style: estilo(),
                                     ),
                                     Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
                                           '900 K',
@@ -226,11 +204,7 @@ class _DashboardsState extends State<Dashboards> {
                               padding: EdgeInsetsDirectional.zero,
                               height: 80,
                               width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color:
-                                      const Color.fromARGB(255, 232, 232, 232),
-                                  shape: BoxShape.rectangle),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 232, 232, 232), shape: BoxShape.rectangle),
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -241,8 +215,7 @@ class _DashboardsState extends State<Dashboards> {
                                       style: estilo(),
                                     ),
                                     Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
                                           '80 K',
@@ -265,11 +238,7 @@ class _DashboardsState extends State<Dashboards> {
                               padding: EdgeInsetsDirectional.zero,
                               height: 80,
                               width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color:
-                                      const Color.fromARGB(255, 232, 232, 232),
-                                  shape: BoxShape.rectangle),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 232, 232, 232), shape: BoxShape.rectangle),
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -280,8 +249,7 @@ class _DashboardsState extends State<Dashboards> {
                                       style: estilo(),
                                     ),
                                     Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
                                           '30 %',
