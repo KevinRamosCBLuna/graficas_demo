@@ -32,3 +32,4 @@ export 'package:graficas_demo/screens/sm_promo_2.dart';
 export 'package:graficas_demo/screens/average_jobs_time_tracking_by_opco.dart';
 export 'package:graficas_demo/screens/grand_total_opco.dart';
 export 'package:graficas_demo/screens/last_week_jobs_type_tracking​.dart';
+export 'package:graficas_demo/screens/tablas pluto/tabla_last_week_jobs.dart';

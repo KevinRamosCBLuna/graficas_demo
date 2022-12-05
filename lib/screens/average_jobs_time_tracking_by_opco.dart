@@ -3,6 +3,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/samples/indicator.dart';
+import 'package:graficas_demo/screens/tablas%20pluto/tabla_average_jobs_tracking.dart';
 
 class AverageJobsTimeTracking extends StatefulWidget {
   const AverageJobsTimeTracking({Key? key}) : super(key: key);
@@ -144,105 +145,133 @@ class _AverageJobsTimeTrackingState extends State<AverageJobsTimeTracking> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 850,
-      height: 313,
-      child: Column(children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10),
-          child: Center(
-              child: Text(
-            'Average Jobs Time Tracking by OpCo',
-            textAlign: TextAlign.center,
-            style: estilo(),
-          )),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Indicator(color: Colors.blue, text: 'CRY Job Time Hrs (Average)', isSquare: false, size: 18, textColor: Colors.black),
-            Indicator(color: Colors.green, text: 'ODE Job Time Hrs (Average)', isSquare: false, size: 18, textColor: Colors.black),
-            Indicator(color: Colors.orange, text: 'SMI Job Time Hrs (Average)', isSquare: false, size: 18, textColor: Colors.black),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Average jobs Time Tracking'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Expanded(
+              child: Column(children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Center(
+                      child: Text(
+                    'Average Jobs Time Tracking by OpCo',
+                    textAlign: TextAlign.center,
+                    style: estilo(),
+                  )),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: const [
+                    Indicator(color: Colors.blue, text: 'CRY Job Time Hrs (Average)', isSquare: false, size: 18, textColor: Colors.black),
+                    Indicator(color: Colors.green, text: 'ODE Job Time Hrs (Average)', isSquare: false, size: 18, textColor: Colors.black),
+                    Indicator(color: Colors.orange, text: 'SMI Job Time Hrs (Average)', isSquare: false, size: 18, textColor: Colors.black),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: SizedBox(
+                    width: 850,
+                    height: 226,
+                    child: AspectRatio(
+                      aspectRatio: 1.66,
+                      child: LineChart(
+                        LineChartData(
+                            lineTouchData: LineTouchData(
+                                enabled: true,
+                                touchTooltipData: LineTouchTooltipData(
+                                  tooltipBgColor: const Color.fromARGB(255, 204, 204, 204),
+                                  /*getTooltipItems:
+                                        (List<LineBarSpot> touchedBarSpots) {
+                                      return touchedBarSpots.map((barSpot) {
+                                        final flSpot = barSpot;
+                                        return LineTooltipItem(
+                                          '\$ ${flSpot.y.toString()} \n',
+                                          const TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        );
+                                      }).toList();
+                                    }*/
+                                ),
+                                touchCallback: (FlTouchEvent event, lineTouch) {
+                                  if (!event.isInterestedForInteractions || lineTouch == null || lineTouch.lineBarSpots == null) {
+                                    setState(() {
+                                      touchedValue = -1;
+                                    });
+                                    return;
+                                  }
+                                  final value = lineTouch.lineBarSpots![0].x;
+                                  setState(() {
+                                    touchedValue = value;
+                                  });
+                                }),
+                            lineBarsData: [CRY(), ODE(), SMI()],
+                            minY: 0,
+                            titlesData: FlTitlesData(
+                              bottomTitles: AxisTitles(
+                                sideTitles: SideTitles(
+                                  showTitles: true,
+                                  interval: 1,
+                                  getTitlesWidget: bottomTitleWidget,
+                                ),
+                              ),
+                              leftTitles: AxisTitles(
+                                sideTitles: SideTitles(
+                                  showTitles: true,
+                                  getTitlesWidget: leftTitleWidgets,
+                                  interval: 1,
+                                  reservedSize: 120,
+                                ),
+                              ),
+                              topTitles: AxisTitles(
+                                sideTitles: SideTitles(showTitles: false),
+                              ),
+                              rightTitles: AxisTitles(
+                                sideTitles: SideTitles(showTitles: false),
+                              ),
+                            ),
+                            gridData: FlGridData(
+                              show: true,
+                              drawVerticalLine: false,
+                              getDrawingHorizontalLine: (value) => FlLine(
+                                color: const Color(0xffe7e8ec),
+                                strokeWidth: 1,
+                              ),
+                            ),
+                            maxY: 5.0),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Center(
+                      child: Text(
+                    'Jobs Time Trend by Hours',
+                    textAlign: TextAlign.center,
+                    style: estilo(),
+                  )),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: SizedBox(
+                    width: 1005,
+                    height: 350,
+                    child: TablaAverageJobsTracking(),
+                  ),
+                )
+              ]),
+            ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: SizedBox(
-            width: 850,
-            height: 226,
-            child: AspectRatio(
-              aspectRatio: 1.66,
-              child: LineChart(
-                LineChartData(
-                    lineTouchData: LineTouchData(
-                        enabled: true,
-                        touchTooltipData: LineTouchTooltipData(
-                          tooltipBgColor: const Color.fromARGB(255, 204, 204, 204),
-                          /*getTooltipItems:
-                                  (List<LineBarSpot> touchedBarSpots) {
-                                return touchedBarSpots.map((barSpot) {
-                                  final flSpot = barSpot;
-                                  return LineTooltipItem(
-                                    '\$ ${flSpot.y.toString()} \n',
-                                    const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  );
-                                }).toList();
-                              }*/
-                        ),
-                        touchCallback: (FlTouchEvent event, lineTouch) {
-                          if (!event.isInterestedForInteractions || lineTouch == null || lineTouch.lineBarSpots == null) {
-                            setState(() {
-                              touchedValue = -1;
-                            });
-                            return;
-                          }
-                          final value = lineTouch.lineBarSpots![0].x;
-                          setState(() {
-                            touchedValue = value;
-                          });
-                        }),
-                    lineBarsData: [CRY(), ODE(), SMI()],
-                    minY: 0,
-                    titlesData: FlTitlesData(
-                      bottomTitles: AxisTitles(
-                        sideTitles: SideTitles(
-                          showTitles: true,
-                          interval: 1,
-                          getTitlesWidget: bottomTitleWidget,
-                        ),
-                      ),
-                      leftTitles: AxisTitles(
-                        sideTitles: SideTitles(
-                          showTitles: true,
-                          getTitlesWidget: leftTitleWidgets,
-                          interval: 1,
-                          reservedSize: 120,
-                        ),
-                      ),
-                      topTitles: AxisTitles(
-                        sideTitles: SideTitles(showTitles: false),
-                      ),
-                      rightTitles: AxisTitles(
-                        sideTitles: SideTitles(showTitles: false),
-                      ),
-                    ),
-                    gridData: FlGridData(
-                      show: true,
-                      drawVerticalLine: false,
-                      getDrawingHorizontalLine: (value) => FlLine(
-                        color: const Color(0xffe7e8ec),
-                        strokeWidth: 1,
-                      ),
-                    ),
-                    maxY: 5.0),
-              ),
-            ),
-          ),
-        )
-      ]),
+      ),
     );
   }
 }

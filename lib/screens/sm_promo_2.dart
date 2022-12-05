@@ -3,6 +3,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/samples/indicator.dart';
+import 'package:graficas_demo/screens/tablas%20pluto/tabla_sm_promo2.dart';
 
 class SmPromo2 extends StatefulWidget {
   const SmPromo2({Key? key}) : super(key: key);
@@ -73,60 +74,61 @@ class _SmPromo2State extends State<SmPromo2> {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          children: <Widget>[
-            const SizedBox(
-              height: 28,
-            ),
-            const Padding(
-              padding: EdgeInsets.all(10),
-              child: Text(
-                'SM Promo by OpCo & Promo',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        child: Expanded(
+          child: Column(
+            children: <Widget>[
+              const SizedBox(
+                height: 28,
               ),
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
-                Indicator(color: Colors.blue, text: 'SM380722 CustomerID(Count (All))', isSquare: false, size: 16, textColor: Colors.black),
-                Indicator(color: Colors.green, text: 'SM680722 CustomerID(Count (All))', isSquare: false, size: 16, textColor: Colors.black),
-                Indicator(color: Colors.orange, text: 'SM980722 CustomerID(Count (All))', isSquare: false, size: 16, textColor: Colors.black),
-              ],
-            ),
-            Expanded(
-              child: AspectRatio(
-                aspectRatio: 1.66,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 80, 30, 20),
+              const Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'SM Promo by OpCo & Promo',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const <Widget>[
+                  Indicator(color: Colors.blue, text: 'SM380722 CustomerID(Count (All))', isSquare: false, size: 16, textColor: Colors.black),
+                  Indicator(color: Colors.green, text: 'SM680722 CustomerID(Count (All))', isSquare: false, size: 16, textColor: Colors.black),
+                  Indicator(color: Colors.orange, text: 'SM980722 CustomerID(Count (All))', isSquare: false, size: 16, textColor: Colors.black),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: SizedBox(
+                  width: 800,
+                  height: 330,
                   child: BarChart(
                     BarChartData(
                       alignment: BarChartAlignment.center,
                       barTouchData: BarTouchData(
                         enabled: true,
                         touchTooltipData: BarTouchTooltipData(
-                          tooltipBgColor: const Color.fromARGB(255, 204, 204, 204),
-                          /* getTooltipItem: (group, groupIndex, rod, rodIndex) {
+                            tooltipBgColor: const Color.fromARGB(255, 204, 204, 204),
+                            getTooltipItem: (group, groupIndex, rod, rodIndex) {
                               String ace;
                               String rec;
                               String smi;
                               switch (group.x.toInt()) {
                                 case 0:
-                                  ace = '13';
-                                  rec = '9';
-                                  smi = '8';
+                                  ace = '3';
+                                  rec = '2';
+                                  smi = '9';
                                   break;
                                 case 1:
-                                  ace = '12';
-                                  rec = '9';
-                                  smi = '25';
+                                  ace = '2';
+                                  rec = '19';
+                                  smi = '31';
                                   break;
                                 case 2:
-                                  ace = '11';
-                                  rec = '7';
-                                  smi = '18';
+                                  ace = '0';
+                                  rec = '4';
+                                  smi = '0';
                                   break;
-                        
+
                                 default:
                                   throw Error();
                               }
@@ -141,7 +143,7 @@ class _SmPromo2State extends State<SmPromo2> {
                                   TextSpan(
                                     text: '$rec \n',
                                     style: const TextStyle(
-                                      color: Colors.cyan,
+                                      color: Colors.green,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -149,15 +151,14 @@ class _SmPromo2State extends State<SmPromo2> {
                                   TextSpan(
                                     text: '$smi ',
                                     style: const TextStyle(
-                                      color: Colors.green,
+                                      color: Colors.orange,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ],
                               );
-                            }*/
-                        ),
+                            }),
                         touchCallback: (FlTouchEvent event, barTouchResponse) {
                           setState(() {
                             if (!event.isInterestedForInteractions || barTouchResponse == null || barTouchResponse.spot == null) {
@@ -171,7 +172,7 @@ class _SmPromo2State extends State<SmPromo2> {
                       titlesData: FlTitlesData(
                         show: true,
                         bottomTitles: AxisTitles(
-                          sideTitles: SideTitles(showTitles: true, reservedSize: 100, interval: 1, getTitlesWidget: bottomTitles),
+                          sideTitles: SideTitles(showTitles: true, reservedSize: 30, interval: 1, getTitlesWidget: bottomTitles),
                         ),
                         leftTitles: AxisTitles(
                           sideTitles: SideTitles(showTitles: true, reservedSize: 50, interval: 15, getTitlesWidget: leftTitleWidgets),
@@ -206,8 +207,12 @@ class _SmPromo2State extends State<SmPromo2> {
                   ),
                 ),
               ),
-            ),
-          ],
+              const Padding(
+                padding: EdgeInsets.only(top: 5),
+                child: SizedBox(width: 1005, height: 280, child: TablaSmPromo2()),
+              ),
+            ],
+          ),
         ),
       ),
     );

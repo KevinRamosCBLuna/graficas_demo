@@ -39,6 +39,7 @@ dependencies:
   supabase: ^0.3.6
   intl: ^0.17.0-nullsafety.2
   data_table_2: ^2.3.6
+  pluto_grid: ^5.4.7
 
 
 
