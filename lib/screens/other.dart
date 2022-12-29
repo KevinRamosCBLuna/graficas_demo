@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:graficas_demo/samples/indicator.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 
-class Services extends StatefulWidget {
-  const Services({Key? key}) : super(key: key);
+class Other extends StatefulWidget {
+  const Other({Key? key}) : super(key: key);
 
   @override
-  State<Services> createState() => _ServicesState();
+  State<Other> createState() => _OtherState();
 }
 
-class _ServicesState extends State<Services> {
-  double dis = 3, inst = 33, othe = 4, ser = 60, week = 50;
-  Color disco = Colors.red, ins = Colors.green, oth = Colors.grey, serv = Colors.orange;
+class _OtherState extends State<Other> {
+  double ev0 = 73, ev1 = 21, ev2 = 20, ev3 = 11, ev4 = 17, ev5 = 58, week = 50;
+  Color e0 = Colors.red, e1 = Colors.green, e2 = Colors.grey, e3 = Colors.orange, e4 = Colors.yellow, e5 = Colors.cyan;
+  String en0 = 'Fiber Team\nConstrution', en1 = 'Jeff Simmons\nSecurity', en2 = 'Joseph Aycock\nMgr', en3 = 'Tim McClaine\nOther Project', en4 = 'Kamrin Lilley\nFiber Const', en5 = 'Team 4\nOther';
   int touchedIndex = -1;
   BarChartGroupData grafica(int x, double y, Color colores) {
     return BarChartGroupData(
@@ -29,16 +30,22 @@ class _ServicesState extends State<Services> {
     String text;
     switch (value.toInt()) {
       case 0:
-        text = 'Disconnect';
+        text = en0;
         break;
       case 1:
-        text = 'Install';
+        text = en1;
         break;
       case 2:
-        text = 'Other';
+        text = en2;
         break;
       case 3:
-        text = 'Service';
+        text = en3;
+        break;
+      case 4:
+        text = en4;
+        break;
+      case 5:
+        text = en5;
         break;
       default:
         text = '';
@@ -46,7 +53,7 @@ class _ServicesState extends State<Services> {
     }
     return SideTitleWidget(
       axisSide: meta.axisSide,
-      child: Text(text, style: AppTheme.primarStyle),
+      child: Text(text, textAlign: TextAlign.center, style: AppTheme.primarStyle),
     );
   }
 
@@ -64,7 +71,7 @@ class _ServicesState extends State<Services> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Services'),
+        title: const Text('Other'),
         centerTitle: true,
       ),
       body: Center(
@@ -85,10 +92,18 @@ class _ServicesState extends State<Services> {
                           onPressed: () {
                             setState(
                               () {
-                                dis = 3;
-                                inst = 33;
-                                othe = 4;
-                                ser = 60;
+                                ev0 = 73;
+                                ev1 = 21;
+                                ev2 = 20;
+                                ev3 = 11;
+                                ev4 = 17;
+                                ev5 = 58;
+                                en0 = 'Fiber Team\nConstrution';
+                                en1 = 'Jeff Simmons\nSecurity';
+                                en2 = 'Joseph Aycock\nMgr';
+                                en3 = 'Tim McClaine\nOther Project';
+                                en4 = 'Kamrin Lilley\nFiber Const';
+                                en5 = 'Team 4\nOther';
                                 week = 50;
                               },
                             );
@@ -103,10 +118,18 @@ class _ServicesState extends State<Services> {
                           onPressed: () {
                             setState(
                               () {
-                                dis = 3.17;
-                                inst = 30.51;
-                                othe = 1.11;
-                                ser = 65.21;
+                                ev0 = 86;
+                                ev1 = 9;
+                                ev2 = 52.8;
+                                ev3 = 2;
+                                ev4 = 26;
+                                ev5 = 16.17;
+                                en0 = 'Fiber Team';
+                                en1 = 'Kamrin Lilley';
+                                en2 = 'Larry Philips';
+                                en3 = 'Team 3';
+                                en4 = 'Tower Team';
+                                en5 = 'Joseph Thomsom';
                                 week = 51;
                               },
                             );
@@ -121,11 +144,19 @@ class _ServicesState extends State<Services> {
                           onPressed: () => {
                             setState(
                               () {
-                                dis = 4.72;
-                                inst = 43.03;
-                                othe = 0;
-                                ser = 52.25;
+                                ev0 = 29;
+                                ev1 = 0;
+                                ev2 = 3;
+                                ev3 = 6;
+                                ev4 = 10;
+                                ev5 = 30;
                                 week = 52;
+                                en0 = 'Fiber Team';
+                                en1 = 'Kamrin Lilley';
+                                en2 = 'Larry Philips';
+                                en3 = 'Team 3';
+                                en4 = 'Tower Team';
+                                en5 = 'Joseph Thomsom';
                               },
                             ),
                           },
@@ -141,20 +172,22 @@ class _ServicesState extends State<Services> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      'Services Week $week',
+                      'Other Week $week',
                       style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Row(
+                  /* Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Indicator(color: disco, text: 'Disconnect', isSquare: false, size: 16, textColor: Colors.black),
-                      Indicator(color: ins, text: 'Install', isSquare: false, size: 16, textColor: Colors.black),
-                      Indicator(color: oth, text: 'Other', isSquare: false, size: 16, textColor: Colors.black),
-                      Indicator(color: serv, text: 'Service', isSquare: false, size: 16, textColor: Colors.black),
+                      Indicator(color: e0, text: 'Fiber Team\nConstrution', isSquare: false, size: 16, textColor: Colors.black),
+                      Indicator(color: e1, text: 'Jeff Simmons\nSecurity', isSquare: false, size: 16, textColor: Colors.black),
+                      Indicator(color: e2, text: 'Joseph Aycock\nMgr', isSquare: false, size: 16, textColor: Colors.black),
+                      Indicator(color: e3, text: 'Tim McClaine\nOther Project', isSquare: false, size: 16, textColor: Colors.black),
+                      Indicator(color: e4, text: 'Kamrin Lilley\nFiber Const', isSquare: false, size: 16, textColor: Colors.black),
+                      Indicator(color: e5, text: 'Team 4\nOther', isSquare: false, size: 16, textColor: Colors.black),
                     ],
-                  ),
+                  ),*/
                   Padding(
                     padding: const EdgeInsets.only(top: 30),
                     child: SizedBox(
@@ -171,19 +204,27 @@ class _ServicesState extends State<Services> {
                                 String n1;
                                 switch (group.x.toInt()) {
                                   case 0:
-                                    n1 = '$dis%';
+                                    n1 = '$ev0%';
 
                                     break;
                                   case 1:
-                                    n1 = '$inst%';
+                                    n1 = '$ev1%';
 
                                     break;
                                   case 2:
-                                    n1 = '$othe%';
+                                    n1 = '$ev2%';
 
                                     break;
                                   case 3:
-                                    n1 = '$ser%';
+                                    n1 = '$ev3%';
+
+                                    break;
+                                  case 4:
+                                    n1 = '$ev4%';
+
+                                    break;
+                                  case 5:
+                                    n1 = '$ev5%';
 
                                     break;
 
@@ -208,7 +249,7 @@ class _ServicesState extends State<Services> {
                           titlesData: FlTitlesData(
                             show: true,
                             bottomTitles: AxisTitles(
-                              sideTitles: SideTitles(showTitles: true, reservedSize: 30, interval: 1, getTitlesWidget: bottomTitles),
+                              sideTitles: SideTitles(showTitles: true, reservedSize: 50, interval: 1, getTitlesWidget: bottomTitles),
                             ),
                             leftTitles: AxisTitles(
                               sideTitles: SideTitles(showTitles: true, reservedSize: 50, interval: 50, getTitlesWidget: leftTitleWidgets),
@@ -234,10 +275,12 @@ class _ServicesState extends State<Services> {
                           maxY: 100,
                           groupsSpace: 25,
                           barGroups: [
-                            grafica(0, dis, disco),
-                            grafica(1, inst, ins),
-                            grafica(2, othe, oth),
-                            grafica(3, ser, serv),
+                            grafica(0, ev0, e0),
+                            grafica(1, ev1, e1),
+                            grafica(2, ev2, e2),
+                            grafica(3, ev3, e3),
+                            grafica(4, ev4, e4),
+                            grafica(5, ev5, e5),
                           ],
                           //barGroups: getData(),
                         ),
