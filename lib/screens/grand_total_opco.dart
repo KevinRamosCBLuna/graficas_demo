@@ -20,7 +20,7 @@ class _GrandTotalOpCoState extends State<GrandTotalOpCo> {
     super.initState();
   }
 
-  LineChartBarData TotalGrandOpco() {
+  LineChartBarData totalGrandOpco() {
     return LineChartBarData(
       spots: const [
         FlSpot(0, 179),
@@ -164,7 +164,7 @@ class _GrandTotalOpCoState extends State<GrandTotalOpCo> {
                             touchedValue = value;
                           });
                         }),
-                    lineBarsData: [TotalGrandOpco()],
+                    lineBarsData: [totalGrandOpco()],
                     minY: 0,
                     titlesData: FlTitlesData(
                       bottomTitles: AxisTitles(

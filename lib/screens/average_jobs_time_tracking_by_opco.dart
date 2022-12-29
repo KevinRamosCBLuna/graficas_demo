@@ -21,7 +21,7 @@ class _AverageJobsTimeTrackingState extends State<AverageJobsTimeTracking> {
     super.initState();
   }
 
-  LineChartBarData CRY() {
+  LineChartBarData cRY() {
     return LineChartBarData(
       spots: const [
         FlSpot(0, 1.2),
@@ -40,7 +40,7 @@ class _AverageJobsTimeTrackingState extends State<AverageJobsTimeTracking> {
     );
   }
 
-  LineChartBarData ODE() {
+  LineChartBarData oDE() {
     return LineChartBarData(
       spots: const [
         FlSpot(0, 1.3),
@@ -59,7 +59,7 @@ class _AverageJobsTimeTrackingState extends State<AverageJobsTimeTracking> {
     );
   }
 
-  LineChartBarData SMI() {
+  LineChartBarData sMI() {
     return LineChartBarData(
       spots: const [
         FlSpot(0, 2.0),
@@ -212,7 +212,7 @@ class _AverageJobsTimeTrackingState extends State<AverageJobsTimeTracking> {
                                     touchedValue = value;
                                   });
                                 }),
-                            lineBarsData: [CRY(), ODE(), SMI()],
+                            lineBarsData: [cRY(), oDE(), sMI()],
                             minY: 0,
                             titlesData: FlTitlesData(
                               bottomTitles: AxisTitles(

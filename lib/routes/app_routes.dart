@@ -12,6 +12,7 @@ class AppRoutes {
         name: 'Home Screen',
         screen: const HomeScreen(),
         icon: Icons.home),*/
+    MenuOptions(route: 'services', name: 'Services', screen: const Services(), icon: Icons.list),
     MenuOptions(route: 'grand_total_opcp', name: 'Grand Total OpCo', screen: const GrandTotalOpCo(), icon: Icons.list),
     MenuOptions(route: 'last_week_jobs_type_tracking', name: 'Last Week Jobs Type Tracking', screen: const LastWeekJobsTypeTracking(), icon: Icons.list),
     MenuOptions(route: 'average_jobs_time_tracking_by_opco', name: 'Average Jobs Time Tracking by OpCo', screen: const AverageJobsTimeTracking(), icon: Icons.list),

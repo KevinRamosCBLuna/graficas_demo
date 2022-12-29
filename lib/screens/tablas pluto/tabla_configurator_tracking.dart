@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graficas_demo/theme/app_theme.dart';
+
 import 'package:pluto_grid/pluto_grid.dart';
 
 class TablaConfiguratorTracking extends StatefulWidget {

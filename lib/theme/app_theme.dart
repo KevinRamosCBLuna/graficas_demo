@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const Color primary = Colors.cyan;
+  static const Color primary = Colors.cyan, primarytext = Colors.black, secundarytext = Colors.white;
+  static const TextStyle primarStyle = TextStyle(
+        fontSize: 16,
+        color: primarytext,
+        fontWeight: FontWeight.bold,
+      ),
+      secundaryStyle = TextStyle(
+        fontSize: 16,
+        color: secundarytext,
+      ),
+      secundaryStylev2 = TextStyle(
+        fontSize: 16,
+        color: secundarytext,
+        fontWeight: FontWeight.bold,
+      );
 
   static final ThemeData darkTheme = ThemeData.light().copyWith(
       //color primario
