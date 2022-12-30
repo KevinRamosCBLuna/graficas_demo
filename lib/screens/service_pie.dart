@@ -6,6 +6,8 @@ import 'package:graficas_demo/screens/tablas%20pluto/tabla_service.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
+import 'graficas tendencia/trend_service.dart';
+
 class ServicesPie extends StatefulWidget {
   const ServicesPie({Key? key}) : super(key: key);
 
@@ -78,6 +80,29 @@ class _ServicesState extends State<ServicesPie> {
             Expanded(
               child: Column(
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton.icon(
+                          onPressed: () async {
+                            await showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const TrendService();
+                              },
+                            );
+                          },
+                          icon: const Icon(Icons.ssid_chart),
+                          label: const Text(
+                            'Trend',
+                            style: AppTheme.secundaryStyle,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Row(
