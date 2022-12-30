@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/samples/indicator.dart';
+import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 
 class Other extends StatefulWidget {
@@ -120,10 +121,10 @@ class _OtherState extends State<Other> {
                               () {
                                 ev0 = 86;
                                 ev1 = 9;
-                                ev2 = 52.8;
+                                ev2 = 528;
                                 ev3 = 2;
                                 ev4 = 26;
-                                ev5 = 16.17;
+                                ev5 = 1617;
                                 en0 = 'Fiber Team';
                                 en1 = 'Kamrin Lilley';
                                 en2 = 'Larry Philips';
@@ -275,22 +276,19 @@ class _OtherState extends State<Other> {
                           maxY: 100,
                           groupsSpace: 25,
                           barGroups: [
-                            grafica(0, ev0, e0),
-                            grafica(1, ev1, e1),
-                            grafica(2, ev2, e2),
-                            grafica(3, ev3, e3),
-                            grafica(4, ev4, e4),
-                            grafica(5, ev5, e5),
+                            grafica(0, ev0 >= 100 ? 100 : ev0, e0),
+                            grafica(1, ev1 >= 100 ? 100 : ev1, e1),
+                            grafica(2, ev2 >= 100 ? 100 : ev2, e2),
+                            grafica(3, ev3 >= 100 ? 100 : ev3, e3),
+                            grafica(4, ev4 >= 100 ? 100 : ev4, e4),
+                            grafica(5, ev5 >= 100 ? 100 : ev5, e5),
                           ],
                           //barGroups: getData(),
                         ),
                       ),
                     ),
                   ),
-                  /* const Padding(
-                    padding: EdgeInsets.only(top: 5),
-                    child: SizedBox(width: 1204, height: 280, child: TablaLastWeekJobs()),
-                  )*/
+                  Flexible(child: TablaOther())
                 ],
               ),
             )
