@@ -12,6 +12,7 @@ class _TablaOtherState extends State<TablaOther> {
   @override
   Widget build(BuildContext context) {
     late PlutoGridStateManager stateManager;
+double screenWidth = MediaQuery.of(context).size.width;
 
     return Material(
       color: Colors.white,
@@ -36,7 +37,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'Name',
               field: 'Name',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -70,7 +71,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'JobTimeDis',
               field: 'JobTimeDis',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -104,7 +105,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'DriveTimeDis',
               field: 'DriveTimeDis',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -138,7 +139,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'JobTimeIns',
               field: 'JobTimeIns',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -172,7 +173,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'DriveTimeIns',
               field: 'DriveTimeIns',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -206,7 +207,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'JobTimeOth',
               field: 'JobTimeOth',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -240,7 +241,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'DriveTimeOth',
               field: 'DriveTimeOth',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -274,7 +275,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'JobTimeSer',
               field: 'JobTimeSer',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -308,7 +309,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'DriveTimeSer',
               field: 'DriveTimeSer',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -342,7 +343,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'TotalJobTime',
               field: 'TotalJobTime',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -376,7 +377,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'TotalDriveTime',
               field: 'TotalDriveTime',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -410,7 +411,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'TotalTime',
               field: 'TotalTime',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -444,7 +445,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'TargetUtilization',
               field: 'TargetUtilization',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -478,7 +479,7 @@ class _TablaOtherState extends State<TablaOther> {
             PlutoColumn(
               title: 'Utilization',
               field: 'Utilization',
-              width: 120,
+              width: screenWidth /14,
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
@@ -609,7 +610,7 @@ class _TablaOtherState extends State<TablaOther> {
                 'Name': PlutoCell(value: 'Adam Biliot'),
                 'JobTimeDis': PlutoCell(value: 180),
                 'DriveTimeDis': PlutoCell(value: 55),
-                'JobTimeIns': PlutoCell(value: 120),
+                'JobTimeIns': PlutoCell(value: 120 ),
                 'DriveTimeIns': PlutoCell(value: 5),
                 'JobTimeOth': PlutoCell(value: 0),
                 'DriveTimeOth': PlutoCell(value: 0),
