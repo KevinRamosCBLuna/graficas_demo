@@ -247,7 +247,7 @@ class _OtherTrendState extends State<OtherTrend> {
                                 }
                               }
 
-                               else if (group.x == 1) {
+                               else if (group.x == 2) {
                                 switch (rodIndex) {
                                   case 0:
                                     n1 = '${week3[0]}%';
