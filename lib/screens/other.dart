@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/samples/indicator.dart';
+import 'package:graficas_demo/screens/graficas%20tendencia/other_trend.dart';
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:provider/provider.dart';
@@ -16,8 +17,18 @@ class Other extends StatefulWidget {
 
 class _OtherState extends State<Other> {
   double ev0 = 73, ev1 = 21, ev2 = 20, ev3 = 11, ev4 = 17, ev5 = 58, week = 50;
-  Color e0 = Colors.red, e1 = Colors.green, e2 = Colors.grey, e3 = Colors.orange, e4 = Colors.yellow, e5 = Colors.cyan;
-  String en0 = 'Fiber Team\nConstrution', en1 = 'Jeff Simmons\nSecurity', en2 = 'Joseph Aycock\nMgr', en3 = 'Tim McClaine\nOther Project', en4 = 'Kamrin Lilley\nFiber Const', en5 = 'Team 4\nOther';
+  Color e0 = Colors.red,
+      e1 = Colors.green,
+      e2 = Colors.grey,
+      e3 = Colors.orange,
+      e4 = Colors.yellow,
+      e5 = Colors.cyan;
+  String en0 = 'Fiber Team\nConstrution',
+      en1 = 'Jeff Simmons\nSecurity',
+      en2 = 'Joseph Aycock\nMgr',
+      en3 = 'Tim McClaine\nOther Project',
+      en4 = 'Kamrin Lilley\nFiber Const',
+      en5 = 'Team 4\nOther';
   int touchedIndex = -1;
   BarChartGroupData grafica(int x, double y, Color colores) {
     return BarChartGroupData(
@@ -25,7 +36,12 @@ class _OtherState extends State<Other> {
       groupVertically: true,
       barsSpace: 20,
       barRods: [
-        BarChartRodData(fromY: 0, toY: y, color: colores, width: 60, borderRadius: BorderRadius.zero),
+        BarChartRodData(
+            fromY: 0,
+            toY: y,
+            color: colores,
+            width: 60,
+            borderRadius: BorderRadius.zero),
       ],
     );
   }
@@ -57,7 +73,8 @@ class _OtherState extends State<Other> {
     }
     return SideTitleWidget(
       axisSide: meta.axisSide,
-      child: Text(text, textAlign: TextAlign.center, style: AppTheme.primarStyle),
+      child:
+          Text(text, textAlign: TextAlign.center, style: AppTheme.primarStyle),
     );
   }
 
@@ -73,7 +90,7 @@ class _OtherState extends State<Other> {
 
   @override
   Widget build(BuildContext context) {
-            SendWeek week_provider = Provider.of<SendWeek>(context);
+    SendWeek week_provider = Provider.of<SendWeek>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Other'),
@@ -171,6 +188,21 @@ class _OtherState extends State<Other> {
                             style: AppTheme.secundaryStyle,
                           ),
                         ),
+                        ElevatedButton.icon(
+                          onPressed: () async => {
+                            await showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const OtherTrend();
+                              },
+                            ),
+                          },
+                          icon: const Icon(Icons.bar_chart),
+                          label: const Text(
+                            'Trend',
+                            style: AppTheme.secundaryStyle,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -178,7 +210,8 @@ class _OtherState extends State<Other> {
                     padding: const EdgeInsets.all(10),
                     child: Text(
                       'Other week ${week_provider.weekOther}',
-                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                   /* Row(
@@ -204,8 +237,10 @@ class _OtherState extends State<Other> {
                           barTouchData: BarTouchData(
                             enabled: true,
                             touchTooltipData: BarTouchTooltipData(
-                              tooltipBgColor: const Color.fromARGB(255, 204, 204, 204),
-                              getTooltipItem: (group, groupIndex, rod, rodIndex) {
+                              tooltipBgColor:
+                                  const Color.fromARGB(255, 204, 204, 204),
+                              getTooltipItem:
+                                  (group, groupIndex, rod, rodIndex) {
                                 String n1;
                                 switch (group.x.toInt()) {
                                   case 0:
@@ -239,14 +274,18 @@ class _OtherState extends State<Other> {
                                 return BarTooltipItem(n1, AppTheme.primarStyle);
                               },
                             ),
-                            touchCallback: (FlTouchEvent event, barTouchResponse) {
+                            touchCallback:
+                                (FlTouchEvent event, barTouchResponse) {
                               setState(
                                 () {
-                                  if (!event.isInterestedForInteractions || barTouchResponse == null || barTouchResponse.spot == null) {
+                                  if (!event.isInterestedForInteractions ||
+                                      barTouchResponse == null ||
+                                      barTouchResponse.spot == null) {
                                     touchedIndex = -1;
                                     return;
                                   }
-                                  touchedIndex = barTouchResponse.spot!.touchedBarGroupIndex;
+                                  touchedIndex = barTouchResponse
+                                      .spot!.touchedBarGroupIndex;
                                 },
                               );
                             },
@@ -254,10 +293,18 @@ class _OtherState extends State<Other> {
                           titlesData: FlTitlesData(
                             show: true,
                             bottomTitles: AxisTitles(
-                              sideTitles: SideTitles(showTitles: true, reservedSize: 50, interval: 1, getTitlesWidget: bottomTitles),
+                              sideTitles: SideTitles(
+                                  showTitles: true,
+                                  reservedSize: 50,
+                                  interval: 1,
+                                  getTitlesWidget: bottomTitles),
                             ),
                             leftTitles: AxisTitles(
-                              sideTitles: SideTitles(showTitles: true, reservedSize: 50, interval: 50, getTitlesWidget: leftTitleWidgets),
+                              sideTitles: SideTitles(
+                                  showTitles: true,
+                                  reservedSize: 50,
+                                  interval: 50,
+                                  getTitlesWidget: leftTitleWidgets),
                             ),
                             topTitles: AxisTitles(
                               sideTitles: SideTitles(showTitles: false),
@@ -292,8 +339,7 @@ class _OtherState extends State<Other> {
                       ),
                     ),
                   ),
-                  const Flexible( 
-                    child: TablaOther())
+                  const Flexible(child: TablaOther())
                 ],
               ),
             )
