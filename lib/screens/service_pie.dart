@@ -1,24 +1,22 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/samples/indicator.dart';
 import 'package:graficas_demo/screens/tablas%20pluto/tabla_service.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
-import 'package:pluto_grid/pluto_grid.dart';
 import 'package:provider/provider.dart';
-import 'package:graficas_demo/providers/week_provider.dart';
 
-class Services extends StatefulWidget {
-  const Services({Key? key}) : super(key: key);
+class ServicesPie extends StatefulWidget {
+  const ServicesPie({Key? key}) : super(key: key);
 
   @override
-  State<Services> createState() => _ServicesState();
+  State<ServicesPie> createState() => _ServicesState();
 }
 
-class _ServicesState extends State<Services> {
-  double dis = 3, inst = 33, othe = 4, ser = 60, week = 50;
+class _ServicesState extends State<ServicesPie> {
+  double dis = 3, inst = 33, othe = 4, ser = 60;
   Color disco = Colors.red, ins = Colors.green, oth = Colors.grey, serv = Colors.orange;
   int touchedIndex = -1;
-  late PlutoGridStateManager stateManager;
   BarChartGroupData grafica(int x, double y, Color colores) {
     return BarChartGroupData(
       x: x,
@@ -70,7 +68,7 @@ class _ServicesState extends State<Services> {
     SendWeek week_provider = Provider.of<SendWeek>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Services'),
+        title: const Text('ServicesPie'),
         centerTitle: true,
       ),
       body: Center(
@@ -91,11 +89,11 @@ class _ServicesState extends State<Services> {
                           onPressed: () {
                             setState(
                               () {
+                                week_provider.setWeek(50);
                                 dis = 3;
                                 inst = 33;
                                 othe = 4;
                                 ser = 60;
-                                week_provider.setWeek(50);
                               },
                             );
                           },
@@ -109,11 +107,11 @@ class _ServicesState extends State<Services> {
                           onPressed: () {
                             setState(
                               () {
+                                week_provider.setWeek(51);
                                 dis = 3.17;
                                 inst = 30.51;
                                 othe = 1.11;
                                 ser = 65.21;
-                                week_provider.setWeek(51);
                               },
                             );
                           },
@@ -153,12 +151,36 @@ class _ServicesState extends State<Services> {
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      Indicator(color: disco, text: 'Disconnect', isSquare: false, size: 16, textColor: Colors.black),
-                      Indicator(color: ins, text: 'Install', isSquare: false, size: 16, textColor: Colors.black),
-                      Indicator(color: oth, text: 'Other', isSquare: false, size: 16, textColor: Colors.black),
-                      Indicator(color: serv, text: 'Service', isSquare: false, size: 16, textColor: Colors.black),
+                      Indicator(
+                        color: disco,
+                        text: 'Disconnect   ',
+                        isSquare: false,
+                        size: touchedIndex == 0 ? 18 : 16,
+                        textColor: touchedIndex == 0 ? Colors.black : Colors.grey,
+                      ),
+                      Indicator(
+                        color: ins,
+                        text: 'Install   ',
+                        isSquare: false,
+                        size: touchedIndex == 1 ? 18 : 16,
+                        textColor: touchedIndex == 1 ? Colors.black : Colors.grey,
+                      ),
+                      Indicator(
+                        color: oth,
+                        text: 'Other   ',
+                        isSquare: false,
+                        size: touchedIndex == 2 ? 18 : 16,
+                        textColor: touchedIndex == 2 ? Colors.black : Colors.grey,
+                      ),
+                      Indicator(
+                        color: serv,
+                        text: 'Service',
+                        isSquare: false,
+                        size: touchedIndex == 3 ? 18 : 16,
+                        textColor: touchedIndex == 3 ? Colors.black : Colors.grey,
+                      ),
                     ],
                   ),
                   Padding(
@@ -166,94 +188,30 @@ class _ServicesState extends State<Services> {
                     child: SizedBox(
                       width: 800,
                       height: 350,
-                      child: BarChart(
-                        BarChartData(
-                          alignment: BarChartAlignment.spaceAround,
-                          barTouchData: BarTouchData(
-                            enabled: true,
-                            touchTooltipData: BarTouchTooltipData(
-                              tooltipBgColor: const Color.fromARGB(255, 204, 204, 204),
-                              getTooltipItem: (group, groupIndex, rod, rodIndex) {
-                                String n1;
-                                switch (group.x.toInt()) {
-                                  case 0:
-                                    n1 = '$dis%';
-
-                                    break;
-                                  case 1:
-                                    n1 = '$inst%';
-
-                                    break;
-                                  case 2:
-                                    n1 = '$othe%';
-
-                                    break;
-                                  case 3:
-                                    n1 = '$ser%';
-
-                                    break;
-
-                                  default:
-                                    throw Error();
+                      child: PieChart(
+                        PieChartData(
+                            pieTouchData: PieTouchData(touchCallback: (FlTouchEvent event, pieTouchResponse) {
+                              setState(() {
+                                if (!event.isInterestedForInteractions || pieTouchResponse == null || pieTouchResponse.touchedSection == null) {
+                                  touchedIndex = -1;
+                                  return;
                                 }
-                                return BarTooltipItem(n1, AppTheme.primarStyle);
-                              },
+                                touchedIndex = pieTouchResponse.touchedSection!.touchedSectionIndex;
+                              });
+                            }),
+                            borderData: FlBorderData(
+                              show: false,
                             ),
-                            touchCallback: (FlTouchEvent event, barTouchResponse) {
-                              setState(
-                                () {
-                                  if (!event.isInterestedForInteractions || barTouchResponse == null || barTouchResponse.spot == null) {
-                                    touchedIndex = -1;
-                                    return;
-                                  }
-                                  touchedIndex = barTouchResponse.spot!.touchedBarGroupIndex;
-                                },
-                              );
-                            },
-                          ),
-                          titlesData: FlTitlesData(
-                            show: true,
-                            bottomTitles: AxisTitles(
-                              sideTitles: SideTitles(showTitles: true, reservedSize: 30, interval: 1, getTitlesWidget: bottomTitles),
-                            ),
-                            leftTitles: AxisTitles(
-                              sideTitles: SideTitles(showTitles: true, reservedSize: 50, interval: 50, getTitlesWidget: leftTitleWidgets),
-                            ),
-                            topTitles: AxisTitles(
-                              sideTitles: SideTitles(showTitles: false),
-                            ),
-                            rightTitles: AxisTitles(
-                              sideTitles: SideTitles(showTitles: false),
-                            ),
-                          ),
-                          gridData: FlGridData(
-                              show: true,
-                              getDrawingHorizontalLine: (value) => FlLine(
-                                    color: const Color(0xffe7e8ec),
-                                    strokeWidth: 1,
-                                  ),
-                              drawHorizontalLine: true,
-                              drawVerticalLine: false),
-                          borderData: FlBorderData(
-                            show: true,
-                          ),
-                          maxY: 100,
-                          groupsSpace: 25,
-                          barGroups: [
-                            grafica(0, dis, disco),
-                            grafica(1, inst, ins),
-                            grafica(2, othe, oth),
-                            grafica(3, ser, serv),
-                          ],
-                          //barGroups: getData(),
-                        ),
+                            sectionsSpace: 0,
+                            centerSpaceRadius: 100,
+                            sections: showingSections()),
                       ),
                     ),
                   ),
                   const Padding(
                     padding: EdgeInsets.only(top: 20),
                     child: SizedBox(width: 1005, height: 96, child: TablaService()),
-                  )
+                  ),
                 ],
               ),
             )
@@ -261,5 +219,49 @@ class _ServicesState extends State<Services> {
         ),
       ),
     );
+  }
+
+  List<PieChartSectionData> showingSections() {
+    return List.generate(4, (i) {
+      final isTouched = i == touchedIndex;
+      final fontSize = isTouched ? 25.0 : 15.0;
+      final radius = isTouched ? 100.0 : 75.0;
+      switch (i) {
+        case 0:
+          return PieChartSectionData(
+            color: disco,
+            value: dis,
+            title: '$dis% ',
+            radius: radius,
+            titleStyle: TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
+          );
+        case 1:
+          return PieChartSectionData(
+            color: ins,
+            value: inst,
+            title: '$inst%',
+            radius: radius,
+            titleStyle: TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
+          );
+        case 2:
+          return PieChartSectionData(
+            color: oth,
+            value: othe == 0 ? othe = .1 : othe,
+            title: othe == .1 ? '' : '$othe%',
+            radius: radius,
+            titleStyle: TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
+          );
+        case 3:
+          return PieChartSectionData(
+            color: serv,
+            value: ser,
+            title: '$ser%',
+            radius: radius,
+            titleStyle: TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold, color: const Color(0xffffffff)),
+          );
+        default:
+          throw Error();
+      }
+    });
   }
 }

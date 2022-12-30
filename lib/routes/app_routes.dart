@@ -14,6 +14,7 @@ class AppRoutes {
         screen: const HomeScreen(),
         icon: Icons.home),*/
     MenuOptions(route: 'services', name: 'Services', screen: const Services(), icon: Icons.list),
+    MenuOptions(route: 'services_pie', name: 'Services_Pie', screen: const ServicesPie(), icon: Icons.list),
     MenuOptions(route: 'tech_utilization', name: 'Tech Utilization', screen: const TechUtilization(), icon: Icons.list),
     MenuOptions(route: 'other', name: 'Other', screen: const Other(), icon: Icons.list),
     MenuOptions(route: 'grand_total_opcp', name: 'Grand Total OpCo', screen: const GrandTotalOpCo(), icon: Icons.list),

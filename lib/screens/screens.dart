@@ -34,5 +34,6 @@ export 'package:graficas_demo/screens/grand_total_opco.dart';
 export 'package:graficas_demo/screens/last_week_jobs_type_tracking​.dart';
 export 'package:graficas_demo/screens/tablas pluto/tabla_last_week_jobs.dart';
 export 'package:graficas_demo/screens/service.dart';
+export 'package:graficas_demo/screens/service_pie.dart';
 export 'package:graficas_demo/screens/other.dart';
 export 'package:graficas_demo/screens/tablas pluto/tabla_other.dart';
