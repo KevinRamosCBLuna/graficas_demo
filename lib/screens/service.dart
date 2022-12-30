@@ -83,6 +83,22 @@ class _ServicesState extends State<Services> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: const Icon(Icons.ssid_chart),
+                          label: const Text(
+                            'Trend',
+                            style: AppTheme.secundaryStyle,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       mainAxisSize: MainAxisSize.max,
