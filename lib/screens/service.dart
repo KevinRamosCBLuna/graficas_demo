@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/samples/indicator.dart';
+import 'package:graficas_demo/screens/graficas%20tendencia/trend_service.dart';
 import 'package:graficas_demo/screens/tablas%20pluto/tabla_service.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:pluto_grid/pluto_grid.dart';
@@ -86,7 +87,14 @@ class _ServicesState extends State<Services> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         ElevatedButton.icon(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const TrendService();
+                              },
+                            );
+                          },
                           icon: const Icon(Icons.ssid_chart),
                           label: const Text(
                             'Trend',
