@@ -171,8 +171,8 @@ class _OtherTrendState extends State<OtherTrend> {
                     height: 55,
                   ),
                   SizedBox(
-                    width: 800,
-                    height: 450,
+                          height: MediaQuery.of(context).size.height * 0.45,
+          width: MediaQuery.of(context).size.width * 0.45,
                     child: BarChart(
                       BarChartData(
                         alignment: BarChartAlignment.spaceAround,
