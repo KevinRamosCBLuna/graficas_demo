@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:graficas_demo/samples/indicator.dart';
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/week_provider.dart';
 
 class Other extends StatefulWidget {
   const Other({Key? key}) : super(key: key);
@@ -70,6 +73,7 @@ class _OtherState extends State<Other> {
 
   @override
   Widget build(BuildContext context) {
+            SendWeek week_provider = Provider.of<SendWeek>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Other'),
@@ -105,7 +109,7 @@ class _OtherState extends State<Other> {
                                 en3 = 'Tim McClaine\nOther Project';
                                 en4 = 'Kamrin Lilley\nFiber Const';
                                 en5 = 'Team 4\nOther';
-                                week = 50;
+                                week_provider.setWeek(50);
                               },
                             );
                           },
@@ -131,7 +135,7 @@ class _OtherState extends State<Other> {
                                 en3 = 'Team 3';
                                 en4 = 'Tower Team';
                                 en5 = 'Joseph Thomsom';
-                                week = 51;
+                                week_provider.setWeek(51);
                               },
                             );
                           },
@@ -151,7 +155,7 @@ class _OtherState extends State<Other> {
                                 ev3 = 6;
                                 ev4 = 10;
                                 ev5 = 30;
-                                week = 52;
+                                week_provider.setWeek(52);
                                 en0 = 'Fiber Team';
                                 en1 = 'Kamrin Lilley';
                                 en2 = 'Larry Philips';
@@ -173,7 +177,7 @@ class _OtherState extends State<Other> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      'Other Week $week',
+                      'Other week ${week_provider.weekOther}',
                       style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -288,7 +292,7 @@ class _OtherState extends State<Other> {
                       ),
                     ),
                   ),
-                  Flexible( 
+                  const Flexible( 
                     child: TablaOther())
                 ],
               ),
