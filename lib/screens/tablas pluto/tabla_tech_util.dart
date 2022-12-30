@@ -3,58 +3,70 @@ import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 import 'package:provider/provider.dart';
 
-class TablaOther extends StatefulWidget {
-  const TablaOther({Key? key}) : super(key: key);
+class TablaTechUtil extends StatefulWidget {
+  const TablaTechUtil({Key? key}) : super(key: key);
 
   @override
-  State<TablaOther> createState() => _TablaOtherState();
+  State<TablaTechUtil> createState() => _TablaTechUtilState();
 }
 
-class _TablaOtherState extends State<TablaOther> {
+class _TablaTechUtilState extends State<TablaTechUtil> {
   @override
   Widget build(BuildContext context) {
         SendWeek week_provider = Provider.of<SendWeek>(context, listen: true);
     late PlutoGridStateManager stateManager;
 double screenWidth = MediaQuery.of(context).size.width;
     double target = 2400; 
-    double dj1 = 2, dd1 = 55, ij1 = 122, id1 = 55, oj1 = 2, od1= 2, sj1 = 912, sd1 = 285;
-       double dj2 = 2, dd2 = 2, ij2 = 2, id2 = 2, oj2 = 2, od2 = 2, sj2 = 1212, sd2 = 322;
-       double dj3 = 2, dd3 = 2, ij3 = 122, id3 = 55, oj3 = 2, od3 = 2, sj3 = 912, sd3 = 285;
-       double dj4 =2, dd4 = 55, ij4 = 122, id4 = 55, oj4 = 2, od4 = 2, sj4 = 912, sd4 = 285;
-       double dj5 =2, dd5 = 55, ij5 = 122, id5 = 55, oj5 = 2, od5 = 2, sj5 = 912, sd5 = 285;
-       double dj6 =2, dd6 = 55, ij6 = 122, id6 = 55, oj6 = 2, od6 = 2, sj6 = 912, sd6 = 285;
-    
+    double dj1 = 0, dd1 = 55, ij1 = 120, id1 = 55, oj1 = 0, od1= 0, sj1 = 910, sd1 = 285;
+       double dj2 = 0, dd2 = 0, ij2 = 0, id2 = 0, oj2 = 0, od2 = 0, sj2 = 1210, sd2 = 300;
+       double dj3 = 0, dd3 = 0, ij3 = 120, id3 = 55, oj3 = 0, od3 = 0, sj3 = 910, sd3 = 285;
+       double dj4 =0, dd4 = 55, ij4 = 120, id4 = 55, oj4 = 0, od4 = 0, sj4 = 910, sd4 = 285;
+       double dj5 =0, dd5 = 55, ij5 = 120, id5 = 55, oj5 = 0, od5 = 0, sj5 = 910, sd5 = 285;
+       double dj6 =0, dd6 = 55, ij6 = 120, id6 = 55, oj6 = 0, od6 = 0, sj6 = 910, sd6 = 285;
+       double dj7 =0, dd7 = 55, ij7 = 120, id7 = 55, oj7 = 0, od7 = 0, sj7 = 910, sd7 = 285;
+       double dj8 =0, dd8 = 55, ij8 = 120, id8 = 55, oj8 = 0, od8 = 0, sj8 = 910, sd8 = 285;
+       double dj9 =0, dd9 = 55, ij9 = 120, id9 = 55, oj9 = 0, od9 = 0, sj9 = 910, sd9 = 285;
+       double dj10 = 0, dd10 = 55, ij10 = 120, id10 = 55, oj10 = 0, od10 = 0, sj10 = 910, sd10 = 285;
 
 
-    if (week_provider.weekOther == 50) {
-    dj1 = 182; dd1 = 55; ij1 = 122; id1 = 55; oj1 = 2; od1= 0; sj1 = 910; sd1 = 285;
-     dj2 = 8; dd2 = 0; ij2 = 0; id2 = 0; oj2 = 0; od2 = 0; sj2 = 1210; sd2 = 300;
+    if (week_provider.weekTechUtil == 50) {
+    dj1 = 180; dd1 = 55; ij1 = 120; id1 = 55; oj1 = 0; od1= 0; sj1 = 910; sd1 = 285;
+     dj2 = 0; dd2 = 0; ij2 = 0; id2 = 0; oj2 = 0; od2 = 0; sj2 = 1210; sd2 = 300;
      dj3 = 0; dd3 = 0; ij3 = 120; id3 = 55; oj3 = 0; od3 = 0; sj3 = 910; sd3 = 285;
      dj4 = 180; dd4 = 55; ij4 = 120; id4 = 55; oj4 = 0; od4 = 0; sj4 = 910; sd4 = 285;
      dj5 = 180; dd5 = 55; ij5 = 120; id5 = 55; oj5 = 0; od5 = 0; sj5 = 910; sd5 = 285;
      dj6 = 180; dd6 = 55; ij6 = 120; id6 = 55; oj6 = 0; od6 = 0; sj6 = 910; sd6 = 285;
-  
+     dj7 = 180; dd7 = 55; ij7 = 120; id7 = 55; oj7 = 0; od7 = 0; sj7 = 910; sd7 = 285;
+     dj8 = 180; dd8 = 55; ij8 = 120; id8 = 55; oj8 = 0; od8 = 0; sj8 = 910; sd8 = 285;
+     dj9 = 180; dd9 = 55; ij9 = 120; id9 = 55; oj9 = 0; od9 = 0; sj9 = 910; sd9 = 285;
+     dj10 = 180; dd10 = 55; ij10 = 120; id10 = 55; oj10 = 0; od10 = 0; sj10 = 910; sd10 = 285;
     }
 
-      if (week_provider.weekOther == 51) {
-      dj1 = 12; dd1 = 55; ij1 = 120; id1 = 55; oj1 = 0; od1= 0; sj1 = 910; sd1 = 285;
+      if (week_provider.weekTechUtil == 51) {
+      dj1 = 341; dd1 = 55; ij1 = 120; id1 = 55; oj1 = 0; od1= 0; sj1 = 910; sd1 = 285;
        dj2 = 123; dd2 = 0; ij2 = 0; id2 = 0; oj2 = 0; od2 = 0; sj2 = 1210; sd2 = 300;
        dj3 = 0; dd3 = 0; ij3 = 120; id3 = 55; oj3 = 0; od3 = 0; sj3 = 910; sd3 = 285;
        dj4 = 5; dd4 = 55; ij4 = 120; id4 = 55; oj4 = 0; od4 = 0; sj4 = 910; sd4 = 285;
        dj5 = 43; dd5 = 55; ij5 = 120; id5 = 55; oj5 = 0; od5 = 0; sj5 = 910; sd5 = 285;
        dj6 = 123; dd6 = 55; ij6 = 120; id6 = 55; oj6 = 0; od6 = 0; sj6 = 910; sd6 = 285;
-     
+       dj7 = 12; dd7 = 55; ij7 = 120; id7 = 55; oj7 = 0; od7 = 0; sj7 = 910; sd7 = 285;
+       dj8 = 43; dd8 = 55; ij8 = 120; id8 = 55; oj8 = 0; od8 = 0; sj8 = 910; sd8 = 285;
+       dj9 = 53; dd9 = 55; ij9 = 120; id9 = 55; oj9 = 0; od9 = 0; sj9 = 910; sd9 = 285;
+       dj10 = 123; dd10 = 55; ij10 = 120; id10 = 55; oj10 = 0; od10 = 0; sj10 = 910; sd10 = 285;
     }
     
-     if (week_provider.weekOther == 52) {
+     if (week_provider.weekTechUtil == 52) {
       setState(() {
-         dj1 = 41; dd1 = 55; ij1 = 120; id1 = 55; oj1 = 0; od1= 0; sj1 = 910; sd1 = 285;
+         dj1 = 12; dd1 = 55; ij1 = 120; id1 = 55; oj1 = 0; od1= 0; sj1 = 910; sd1 = 285;
      dj2 = 43; dd2 = 0; ij2 = 0; id2 = 0; oj2 = 0; od2 = 0; sj2 = 1210; sd2 = 300;
      dj3 = 23; dd3 = 0; ij3 = 120; id3 = 55; oj3 = 0; od3 = 0; sj3 = 910; sd3 = 285;
      dj4 = 23; dd4 = 55; ij4 = 120; id4 = 55; oj4 = 0; od4 = 0; sj4 = 910; sd4 = 285;
      dj5 = 12; dd5 = 55; ij5 = 120; id5 = 55; oj5 = 0; od5 = 0; sj5 = 910; sd5 = 285;
      dj6 = 1; dd6 = 55; ij6 = 120; id6 = 55; oj6 = 0; od6 = 0; sj6 = 910; sd6 = 285;
-  
+     dj7 = 12; dd7 = 55; ij7 = 120; id7 = 55; oj7 = 0; od7 = 0; sj7 = 910; sd7 = 285;
+     dj8 = 121; dd8 = 55; ij8 = 120; id8 = 55; oj8 = 0; od8 = 0; sj8 = 910; sd8 = 285;
+     dj9 = 42; dd9 = 55; ij9 = 120; id9 = 55; oj9 = 0; od9 = 0; sj9 = 910; sd9 = 285;
+     dj10 = 13; dd10 = 55; ij10 = 120; id10 = 55; oj10 = 0; od10 = 0; sj10 = 910; sd10 = 285;
       });
      
     }
@@ -653,7 +665,7 @@ double screenWidth = MediaQuery.of(context).size.width;
           rows: [
             PlutoRow(
               cells: {
-                'Name': PlutoCell(value: 'Fiber Team - Construction'),
+                'Name': PlutoCell(value: 'Adam Biliot'),
                 'JobTimeDis': PlutoCell(value: dj1),
                 'DriveTimeDis': PlutoCell(value: dd1),
                 'JobTimeIns': PlutoCell(value: ij1 ),
@@ -671,7 +683,7 @@ double screenWidth = MediaQuery.of(context).size.width;
             ),
             PlutoRow(
               cells: {
-                'Name': PlutoCell(value: 'Jeff Simmons - Security'),
+                'Name': PlutoCell(value: 'Alex Ogle'),
             'JobTimeDis': PlutoCell(value: dj2),
                 'DriveTimeDis': PlutoCell(value: dd2),
                 'JobTimeIns': PlutoCell(value: ij2 ),
@@ -689,7 +701,7 @@ double screenWidth = MediaQuery.of(context).size.width;
             ),
                  PlutoRow(
               cells: {
-                'Name': PlutoCell(value: 'Joseph Aycock - Mgr'),
+                'Name': PlutoCell(value: 'Ben Cartlidge'),
                'JobTimeDis': PlutoCell(value: dj3),
                 'DriveTimeDis': PlutoCell(value: dd3),
                 'JobTimeIns': PlutoCell(value: ij3 ),
@@ -707,7 +719,7 @@ double screenWidth = MediaQuery.of(context).size.width;
             ),
                  PlutoRow(
               cells: {
-                'Name': PlutoCell(value: 'Tim McClaine - other project'),
+                'Name': PlutoCell(value: 'Brandon Murdock'),
         'JobTimeDis': PlutoCell(value: dj4),
                 'DriveTimeDis': PlutoCell(value: dd4),
                 'JobTimeIns': PlutoCell(value: ij4 ),
@@ -725,7 +737,7 @@ double screenWidth = MediaQuery.of(context).size.width;
             ),
                  PlutoRow(
               cells: {
-                'Name': PlutoCell(value: 'Kamrin Lilley - fiber const'),
+                'Name': PlutoCell(value: 'Dylan Hamil'),
               'JobTimeDis': PlutoCell(value: dj5),
                 'DriveTimeDis': PlutoCell(value: dd5),
                 'JobTimeIns': PlutoCell(value: ij5 ),
@@ -743,7 +755,7 @@ double screenWidth = MediaQuery.of(context).size.width;
             ),
                  PlutoRow(
               cells: {
-                'Name': PlutoCell(value: 'Team 4 - other'),
+                'Name': PlutoCell(value: 'Joseph Thomson'),
                 'JobTimeDis': PlutoCell(value: dj6),
                 'DriveTimeDis': PlutoCell(value: dd6),
                 'JobTimeIns': PlutoCell(value: ij6 ),
@@ -759,7 +771,78 @@ double screenWidth = MediaQuery.of(context).size.width;
                 'Utilization': PlutoCell(value: (((dj6 + ij6 + oj6 + sj6 + dd6 + id6 + od6 + sd6) / target) * 100).round()),
               },
             ),
-           
+                 PlutoRow(
+              cells: {
+                'Name': PlutoCell(value: 'Larry Phillips'),
+               'JobTimeDis': PlutoCell(value: dj7),
+                'DriveTimeDis': PlutoCell(value: dd7),
+                'JobTimeIns': PlutoCell(value: ij7 ),
+                'DriveTimeIns': PlutoCell(value: id7),
+                'JobTimeOth': PlutoCell(value: oj7),
+                'DriveTimeOth': PlutoCell(value: od7),
+                'JobTimeSer': PlutoCell(value: sj7),
+                'DriveTimeSer': PlutoCell(value: sd7),
+                'TotalJobTime': PlutoCell(value: dj7 + ij7 + oj7 + sj7),
+                'TotalDriveTime': PlutoCell(value: dd7 + id7 + od7 + sd7),
+                'TotalTime': PlutoCell(value: dj7 + ij7 + oj7 + sj7 + dd7 + id7 + od7 + sd7 ),
+                'TargetUtilization': PlutoCell(value: target),
+                'Utilization': PlutoCell(value: (((dj7 + ij7 + oj7 + sj7 + dd7 + id7 + od7 + sd7) / target) * 100).round()),
+              },
+            ),
+                 PlutoRow(
+              cells: {
+                'Name': PlutoCell(value: 'Team 1'),
+              'JobTimeDis': PlutoCell(value: dj8),
+                'DriveTimeDis': PlutoCell(value: dd8),
+                'JobTimeIns': PlutoCell(value: ij8 ),
+                'DriveTimeIns': PlutoCell(value: id8),
+                'JobTimeOth': PlutoCell(value: oj8),
+                'DriveTimeOth': PlutoCell(value: od8),
+                'JobTimeSer': PlutoCell(value: sj8),
+                'DriveTimeSer': PlutoCell(value: sd8),
+                'TotalJobTime': PlutoCell(value: dj8 + ij8 + oj8 + sj8),
+                'TotalDriveTime': PlutoCell(value: dd8 + id8 + od8 + sd8),
+                'TotalTime': PlutoCell(value: dj8 + ij8 + oj8 + sj8 + dd8 + id8 + od8 + sd8 ),
+                'TargetUtilization': PlutoCell(value: target),
+                'Utilization': PlutoCell(value: (((dj8 + ij8 + oj8 + sj8 + dd8 + id8 + od8 + sd8) / target) * 100).round()),
+              },
+            ),
+                 PlutoRow(
+              cells: {
+                'Name': PlutoCell(value: 'Team 2'),
+                'JobTimeDis': PlutoCell(value: dj9),
+                'DriveTimeDis': PlutoCell(value: dd9),
+                'JobTimeIns': PlutoCell(value: ij9 ),
+                'DriveTimeIns': PlutoCell(value: id9),
+                'JobTimeOth': PlutoCell(value: oj9),
+                'DriveTimeOth': PlutoCell(value: od9),
+                'JobTimeSer': PlutoCell(value: sj9),
+                'DriveTimeSer': PlutoCell(value: sd9),
+                'TotalJobTime': PlutoCell(value: dj9 + ij9 + oj9 + sj9),
+                'TotalDriveTime': PlutoCell(value: dd9 + id9 + od9 + sd9),
+                'TotalTime': PlutoCell(value: dj9 + ij9 + oj9 + sj9 + dd9 + id9 + od9 + sd9 ),
+                'TargetUtilization': PlutoCell(value: target),
+                'Utilization': PlutoCell(value: (((dj9 + ij9 + oj9 + sj9 + dd9 + id9 + od9 + sd9) / target) * 100).round()),
+              },
+            ),
+                 PlutoRow(
+              cells: {
+                'Name': PlutoCell(value: 'Terry Isreal'),
+               'JobTimeDis': PlutoCell(value: dj10),
+                'DriveTimeDis': PlutoCell(value: dd10),
+                'JobTimeIns': PlutoCell(value: ij10 ),
+                'DriveTimeIns': PlutoCell(value: id10),
+                'JobTimeOth': PlutoCell(value: oj10),
+                'DriveTimeOth': PlutoCell(value: od10),
+                'JobTimeSer': PlutoCell(value: sj10),
+                'DriveTimeSer': PlutoCell(value: sd10),
+                'TotalJobTime': PlutoCell(value: dj10 + ij10 + oj10 + sj10),
+                'TotalDriveTime': PlutoCell(value: dd10 + id10 + od10 + sd10),
+                'TotalTime': PlutoCell(value: dj10 + ij10 + oj10 + sj10 + dd10 + id10 + od10 + sd10 ),
+                'TargetUtilization': PlutoCell(value: target),
+                'Utilization': PlutoCell(value: (((dj10 + ij10 + oj10 + sj10 + dd10 + id10 + od10 + sd10) / target) * 100).round()),
+              },
+            ),
           ],
           /* createFooter: (stateManager) {
                   stateManager.setPageSize(

@@ -1,7 +1,10 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/samples/indicator.dart';
+import 'package:graficas_demo/screens/tablas%20pluto/tabla_tech_util.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
+import 'package:provider/provider.dart';
 
 class TechUtilization extends StatefulWidget {
   const TechUtilization({Key? key}) : super(key: key);
@@ -11,17 +14,16 @@ class TechUtilization extends StatefulWidget {
 }
 
 class _TechUtilizationState extends State<TechUtilization> {
-  double uti = 4,
-      uti1 = 11,
-      uti2 = 2,
-      uti3 = 7,
-      uti4 = 3,
-      uti5 = 14,
-      uti6 = 3,
-      uti7 = 7,
-      uti8 = 8,
-      uti9 = 19,
-      week = 52;
+  double uti = 67,
+      uti1 = 63,
+      uti2 = 89,
+      uti3 = 115,
+      uti4 = 37,
+      uti5 = 112,
+      uti6 = 12,
+      uti7 = 82,
+      uti8 = 78,
+      uti9 = 73;
   Color col1 = Colors.red,
       col2 = Colors.green,
       col3 = Colors.grey,
@@ -105,6 +107,8 @@ class _TechUtilizationState extends State<TechUtilization> {
 
   @override
   Widget build(BuildContext context) {
+    SendWeek week_provider = Provider.of<SendWeek>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tech Utilization'),
@@ -139,7 +143,7 @@ class _TechUtilizationState extends State<TechUtilization> {
                                 uti8 = 78;
                                 uti9 = 73;
 
-                                week = 50;
+                                week_provider.setWeekTechUtil(50);
                               },
                             );
                           },
@@ -164,7 +168,7 @@ class _TechUtilizationState extends State<TechUtilization> {
                                 uti8 = 4;
                                 uti9 = 43;
 
-                                week = 51;
+                                week_provider.setWeekTechUtil(51);
                               },
                             );
                           },
@@ -189,7 +193,7 @@ class _TechUtilizationState extends State<TechUtilization> {
                                 uti8 = 8;
                                 uti9 = 7;
 
-                                week = 52;
+                                week_provider.setWeekTechUtil(52);
                               },
                             ),
                           },
@@ -205,7 +209,7 @@ class _TechUtilizationState extends State<TechUtilization> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      'Tech Utilization Week $week',
+                      'Tech Utilization Week ${week_provider.weekTechUtil}',
                       style: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),
@@ -356,6 +360,7 @@ class _TechUtilizationState extends State<TechUtilization> {
                     padding: EdgeInsets.only(top: 5),
                     child: SizedBox(width: 1204, height: 280, child: TablaLastWeekJobs()),
                   )*/
+                  const Flexible(child: TablaTechUtil()),
                 ],
               ),
             )
