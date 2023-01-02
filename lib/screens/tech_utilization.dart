@@ -2,9 +2,12 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/samples/indicator.dart';
+import 'package:graficas_demo/screens/graficas%20tendencia/tech_util_trend.dart';
 import 'package:graficas_demo/screens/tablas%20pluto/tabla_tech_util.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:provider/provider.dart';
+
+import 'graficas tendencia/other_trend.dart';
 
 class TechUtilization extends StatefulWidget {
   const TechUtilization({Key? key}) : super(key: key);
@@ -200,6 +203,21 @@ class _TechUtilizationState extends State<TechUtilization> {
                           icon: const Icon(Icons.bar_chart),
                           label: const Text(
                             'Week 52',
+                            style: AppTheme.secundaryStyle,
+                          ),
+                        ),
+                         ElevatedButton.icon(
+                          onPressed: () async => {
+                            await showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const TechUtilTrend();
+                              },
+                            ),
+                          },
+                          icon: const Icon(Icons.bar_chart),
+                          label: const Text(
+                            'Trend',
                             style: AppTheme.secundaryStyle,
                           ),
                         ),
