@@ -231,38 +231,76 @@ class _TrendServiceState extends State<TrendService> {
                         touchTooltipData: BarTouchTooltipData(
                           tooltipBgColor: const Color.fromARGB(255, 204, 204, 204),
                           getTooltipItem: (group, groupIndex, rod, rodIndex) {
-                            String n1, n2, n3;
-                            switch (group.x.toInt()) {
-                              case 0:
-                                n1 = '$dis%';
-                                n2 = '$dis2%';
-                                n3 = '$dis3%';
+                            String? n1;
+                            if (group.x == 0) {
+                              switch (rodIndex) {
+                                case 0:
+                                  n1 = '$dis%';
 
-                                break;
-                              case 1:
-                                n1 = '$inst%';
-                                n2 = '$inst2%';
-                                n3 = '$inst3%';
+                                  break;
+                                case 1:
+                                  n1 = '$inst%';
 
-                                break;
-                              case 2:
-                                n1 = '$othe%';
-                                n2 = '$othe2%';
-                                n3 = '$othe3%';
-                                break;
-                              case 3:
-                                n1 = '$ser%';
-                                n2 = '$ser2%';
-                                n3 = '$ser3%';
-                                break;
+                                  break;
+                                case 2:
+                                  n1 = '$othe%';
 
-                              default:
-                                throw Error();
+                                  break;
+                                case 3:
+                                  n1 = '$ser%';
+
+                                  break;
+
+                                default:
+                                  throw Error();
+                              }
+                            } else if (group.x == 1) {
+                              switch (rodIndex) {
+                                case 0:
+                                  n1 = '$dis2%';
+
+                                  break;
+                                case 1:
+                                  n1 = '$inst2%';
+
+                                  break;
+                                case 2:
+                                  n1 = '$othe2%';
+
+                                  break;
+                                case 3:
+                                  n1 = '$ser2%';
+
+                                  break;
+
+                                default:
+                                  throw Error();
+                              }
+                            } else if (group.x == 2) {
+                              switch (rodIndex) {
+                                case 0:
+                                  n1 = '$dis3%';
+
+                                  break;
+                                case 1:
+                                  n1 = '$inst3%';
+
+                                  break;
+                                case 2:
+                                  n1 = '$othe3%';
+
+                                  break;
+                                case 3:
+                                  n1 = '$ser3%';
+
+                                  break;
+
+                                default:
+                                  throw Error();
+                              }
                             }
-                            return BarTooltipItem(
-                              n1,
-                              AppTheme.primarStyle,
-                            );
+
+                            return BarTooltipItem(n1 ?? '', AppTheme.primarStyle);
                           },
                         ),
                         touchCallback: (FlTouchEvent event, barTouchResponse) {
