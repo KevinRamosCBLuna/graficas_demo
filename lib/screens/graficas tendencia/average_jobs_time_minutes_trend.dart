@@ -4,17 +4,68 @@ import 'package:flutter/material.dart';
 import '../../samples/indicator.dart';
 import '../../theme/App_theme.dart';
 
-class TechUtilTrend extends StatefulWidget {
-  const TechUtilTrend({super.key});
+class AverageJobsMinutesTrend extends StatefulWidget {
+  const AverageJobsMinutesTrend({super.key});
 
   @override
-  State<TechUtilTrend> createState() => _TechUtilTrendState();
+  State<AverageJobsMinutesTrend> createState() => _AverageJobsMinutesTrendState();
 }
 
-class _TechUtilTrendState extends State<TechUtilTrend> {
-  List<double> week1 = [11, 34, 21, 10, 32, 54, 34, 56, 47, 76];
-  List<double> week2 = [12, 43, 53, 01, 43, 64, 12, 43, 23, 43];
-  List<double> week3 = [34, 75, 12, 32, 34, 47, 98, 10, 11, 12];
+class _AverageJobsMinutesTrendState extends State<AverageJobsMinutesTrend> {
+  List<double> week1 = [
+    11,
+    34,
+    21,
+    10,
+    32,
+    54,
+    34,
+    56,
+    47,
+    76,
+    34,
+    56,
+    47,
+    76,
+    12,
+    43
+  ];
+  List<double> week2 = [
+    12,
+    43,
+    53,
+    01,
+    43,
+    64,
+    12,
+    43,
+    23,
+    43,
+    12,
+    43,
+    23,
+    43,
+    12,
+    43
+  ];
+  List<double> week3 = [
+    34,
+    75,
+    12,
+    32,
+    34,
+    47,
+    98,
+    10,
+    11,
+    12,
+    34,
+    75,
+    12,
+    32,
+    34,
+    47
+  ];
   double week = 50;
 
   Color e0 = Colors.red,
@@ -23,17 +74,18 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
       e3 = Colors.orange,
       e4 = Colors.yellow,
       e5 = Colors.cyan,
-       e6 = Color.fromARGB(255, 175, 114, 76),
+      e6 = Color.fromARGB(255, 175, 114, 76),
       e7 = Color.fromARGB(255, 228, 29, 205),
       e8 = Color.fromARGB(255, 140, 225, 129),
       e9 = Color.fromARGB(255, 250, 112, 112),
-      e10 = Color.fromARGB(255, 220, 168, 11);
-  String en0 = 'Fiber Team\nConstrution',
-      en1 = 'Jeff Simmons\nSecurity',
-      en2 = 'Joseph Aycock\nMgr',
-      en3 = 'Tim McClaine\nOther Project',
-      en4 = 'Kamrin Lilley\nFiber Const',
-      en5 = 'Team 4\nOther';
+      e10 = Color.fromARGB(255, 220, 168, 11),
+      e11 = const Color.fromARGB(255, 240, 129, 121),
+      e12 = const Color.fromARGB(255, 157, 247, 160),
+      e13 = const Color.fromARGB(255, 83, 83, 83),
+      e14 = const Color.fromARGB(255, 238, 160, 43),
+      e15 = const Color.fromARGB(255, 31, 77, 247),
+      e16 = Color.fromARGB(255, 247, 31, 247);
+
   int touchedIndex = -1;
   BarChartGroupData grafica(int x, double y, Color colores) {
     return BarChartGroupData(
@@ -97,8 +149,8 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
           borderRadius: BorderRadius.circular(15),
         ),
         child: Container(
-          height: MediaQuery.of(context).size.height * 0.65,
-          width: MediaQuery.of(context).size.width * 0.55,
+          height: MediaQuery.of(context).size.height * 0.80,
+          width: MediaQuery.of(context).size.width * 0.90,
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -131,79 +183,127 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
                   SizedBox(
                     height: 40,
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Indicator(
-                          color: e0,
-                          text: 'Adam Biliot',
-                          isSquare: false,
-                          size: 6,
-                          textColor: Colors.black),
-                      Indicator(
-                          color: e1,
-                          text: 'Alex Ogle',
-                          isSquare: false,
-                          size: 6,
-                          textColor: Colors.black),
-                      Indicator(
-                          color: e2,
-                          text: 'Ben Cartidge',
-                          isSquare: false,
-                          size: 6,
-                          textColor: Colors.black),
-                      Indicator(
-                          color: e3,
-                          text: 'Brandon Murdock',
-                          isSquare: false,
-                          size: 6,
-                          textColor: Colors.black),
-                      Indicator(
-                          color: e4,
-                          text: 'Dylan Hamil',
-                          isSquare: false,
-                          size: 6,
-                          textColor: Colors.black),
-                      Indicator(
-                          color: e5,
-                          text: 'Joseph Thomson',
-                          isSquare: false,
-                          size: 6,
-                          textColor: Colors.black),
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
                           Indicator(
-                          color: e6,
-                          text: 'Larry Phillips',
-                          isSquare: false,
-                          size: 6,
-                          textColor: Colors.black),
+                              color: e0,
+                              text: 'Adam Biliot',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
                           Indicator(
-                          color: e7,
-                          text: 'Team 1',
-                          isSquare: false,
-                          size: 6,
-                          textColor: Colors.black),
+                              color: e1,
+                              text: 'Alex Ogle',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
                           Indicator(
-                          color: e8,
-                          text: 'Team2',
-                          isSquare: false,
-                          size: 6,
-                          textColor: Colors.black),
+                              color: e2,
+                              text: 'Ben Cartidge',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
                           Indicator(
-                          color: e9,
-                          text: 'Terry Isreal',
-                          isSquare: false,
-                          size: 6,
-                          textColor: Colors.black),
+                              color: e3,
+                              text: 'Brandon Murdock',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e4,
+                              text: 'Dylan Hamil',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e5,
+                              text: 'Joseph Thomson',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e6,
+                              text: 'Larry Phillips',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e7,
+                              text: 'Team 1',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                         
+                        ],
+                      ),
+                      SizedBox(height: 20,),
+                       Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
                         
+                          Indicator(
+                              color: e8,
+                              text: 'Team 2',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e9,
+                              text: 'Terry Isreal',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e10,
+                              text: 'Fiber Team - Construction',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e11,
+                              text: 'Jeff Simmons - Security',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e12,
+                              text: 'Joseph Aycock - Mgr',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e13,
+                              text: 'Tim McClaine - other project',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e14,
+                              text: 'Kamrin Lilley - fiber const',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                          Indicator(
+                              color: e15,
+                              text: 'Team 4 - other',
+                              isSquare: false,
+                             size: 8,
+                              textColor: Colors.black),
+                        ],
+                      ),
                     ],
                   ),
                   const SizedBox(
                     height: 55,
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.45,
-                    width: MediaQuery.of(context).size.width * 0.45,
+                    height: MediaQuery.of(context).size.height * 0.55,
+                    width: MediaQuery.of(context).size.width * 0.65,
                     child: BarChart(
                       BarChartData(
                         alignment: BarChartAlignment.spaceAround,
@@ -261,7 +361,30 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
 
                                     break;
 
-                              
+                                  case 10:
+                                    n1 = '${week1[10]}%';
+
+                                    break;
+                                  case 11:
+                                    n1 = '${week1[11]}%';
+
+                                    break;
+                                  case 12:
+                                    n1 = '${week1[12]}%';
+
+                                    break;
+                                  case 13:
+                                    n1 = '${week1[13]}%';
+
+                                    break;
+                                  case 14:
+                                    n1 = '${week1[14]}%';
+
+                                    break;
+                                  case 15:
+                                    n1 = '${week1[15]}%';
+
+                                    break;
 
                                   default:
                                     throw Error();
@@ -311,8 +434,30 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
                                     n1 = '${week2[9]}%';
 
                                     break;
+                                  case 10:
+                                    n1 = '${week2[10]}%';
 
-                                
+                                    break;
+                                  case 11:
+                                    n1 = '${week2[11]}%';
+
+                                    break;
+                                  case 12:
+                                    n1 = '${week2[12]}%';
+
+                                    break;
+                                  case 13:
+                                    n1 = '${week2[13]}%';
+
+                                    break;
+                                  case 14:
+                                    n1 = '${week2[14]}%';
+
+                                    break;
+                                  case 15:
+                                    n1 = '${week2[15]}%';
+
+                                    break;
                                   default:
                                     throw Error();
                                 }
@@ -361,8 +506,30 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
                                     n1 = '${week3[9]}%';
 
                                     break;
+                                  case 10:
+                                    n1 = '${week3[0]}%';
 
-                             
+                                    break;
+                                  case 11:
+                                    n1 = '${week3[1]}%';
+
+                                    break;
+                                  case 12:
+                                    n1 = '${week3[2]}%';
+
+                                    break;
+                                  case 13:
+                                    n1 = '${week3[3]}%';
+
+                                    break;
+                                  case 14:
+                                    n1 = '${week3[4]}%';
+
+                                    break;
+                                  case 15:
+                                    n1 = '${week3[5]}%';
+
+                                    break;
                                   default:
                                     throw Error();
                                 }
@@ -465,31 +632,66 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
                                   color: e5,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                      BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week1[6] >= 100 ? 100 : week1[6],
                                   color: e6,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                      BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week1[7] >= 100 ? 100 : week1[7],
                                   color: e7,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                      BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week1[8] >= 100 ? 100 : week1[8],
                                   color: e8,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                      BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week1[9] >= 100 ? 100 : week1[9],
                                   color: e9,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                
+                                    BarChartRodData(
+                                  fromY: 0,
+                                  toY: week1[10] >= 100 ? 100 : week1[10],
+                                  color: e10,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week1[11] >= 100 ? 100 : week1[11],
+                                  color: e11,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week1[12] >= 100 ? 100 : week1[12],
+                                  color: e12,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week1[13] >= 100 ? 100 : week1[13],
+                                  color: e13,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week1[14] >= 100 ? 100 : week1[14],
+                                  color: e14,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week1[15] >= 100 ? 100 : week1[15],
+                                  color: e15,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
                             ],
                           ),
                           BarChartGroupData(
@@ -532,31 +734,66 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
                                   color: e5,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                   BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week2[6] >= 100 ? 100 : week2[6],
                                   color: e6,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                   BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week2[7] >= 100 ? 100 : week2[7],
                                   color: e7,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                   BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week2[8] >= 100 ? 100 : week2[8],
                                   color: e8,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                   BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week2[9] >= 100 ? 100 : week2[9],
                                   color: e9,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                             
+                                      BarChartRodData(
+                                  fromY: 0,
+                                  toY: week2[10] >= 100 ? 100 : week2[10],
+                                  color: e10,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week2[11] >= 100 ? 100 : week2[11],
+                                  color: e11,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week2[12] >= 100 ? 100 : week2[12],
+                                  color: e12,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week2[13] >= 100 ? 100 : week2[13],
+                                  color: e13,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week2[14] >= 100 ? 100 : week2[14],
+                                  color: e14,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week2[15] >= 100 ? 100 : week2[15],
+                                  color: e15,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
                             ],
                           ),
                           BarChartGroupData(
@@ -599,31 +836,66 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
                                   color: e5,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                    BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week3[6] >= 100 ? 100 : week3[6],
                                   color: e6,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                    BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week3[7] >= 100 ? 100 : week3[7],
                                   color: e7,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                    BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week3[8] >= 100 ? 100 : week3[8],
                                   color: e8,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                                    BarChartRodData(
+                              BarChartRodData(
                                   fromY: 0,
                                   toY: week3[9] >= 100 ? 100 : week3[9],
                                   color: e9,
                                   width: 20,
                                   borderRadius: BorderRadius.zero),
-                               
+                                    BarChartRodData(
+                                  fromY: 0,
+                                  toY: week3[10] >= 100 ? 100 : week3[10],
+                                  color: e10,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week3[11] >= 100 ? 100 : week3[11],
+                                  color: e11,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week3[12] >= 100 ? 100 : week3[12],
+                                  color: e12,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week3[13] >= 100 ? 100 : week3[13],
+                                  color: e13,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week3[14] >= 100 ? 100 : week3[14],
+                                  color: e14,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
+                              BarChartRodData(
+                                  fromY: 0,
+                                  toY: week3[15] >= 100 ? 100 : week3[15],
+                                  color: e15,
+                                  width: 20,
+                                  borderRadius: BorderRadius.zero),
                             ],
                           ),
                         ],

@@ -1,3 +1,5 @@
+import 'package:graficas_demo/screens/average_jobs_time_minutes.dart';
+import 'package:graficas_demo/screens/overal_jobs_time_tracking_week.dart.dart';
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/models/models.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +17,8 @@ class AppRoutes {
         icon: Icons.home),*/
     MenuOptions(route: 'services', name: 'Services', screen: const Services(), icon: Icons.list),
     MenuOptions(route: 'services_pie', name: 'Services_Pie', screen: const ServicesPie(), icon: Icons.list),
+    MenuOptions(route: 'average_jobs_time_minutes', name: 'Average Jobs Time Minutes', screen: const AverageJobsTimeMinutes(), icon: Icons.list),
+    MenuOptions(route: 'overal_jobs_time_tracking_week', name: 'Overall Jobs Time Tracking', screen: const OverallJobsTimeTrackingWeek(), icon: Icons.list),
     MenuOptions(route: 'tech_utilization', name: 'Tech Utilization', screen: const TechUtilization(), icon: Icons.list),
     MenuOptions(route: 'other', name: 'Other', screen: const Other(), icon: Icons.list),
     MenuOptions(route: 'grand_total_opcp', name: 'Grand Total OpCo', screen: const GrandTotalOpCo(), icon: Icons.list),
