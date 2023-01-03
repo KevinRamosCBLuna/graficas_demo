@@ -63,8 +63,8 @@ class _TablaServiceState extends State<TablaService> {
           ),
           columns: [
             PlutoColumn(
-              title: 'Disconnects',
-              field: 'Disconnects',
+              title: 'Disconnets',
+              field: 'Disconnets',
               titleSpan: const TextSpan(
                 children: [
                   WidgetSpan(
