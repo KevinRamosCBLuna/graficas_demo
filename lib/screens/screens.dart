@@ -38,3 +38,4 @@ export 'package:graficas_demo/screens/service_pie.dart';
 export 'package:graficas_demo/screens/other.dart';
 export 'package:graficas_demo/screens/tablas pluto/tabla_other.dart';
 export 'package:graficas_demo/screens/customer_rep_sales_by_service.dart';
+export 'package:graficas_demo/screens/average_jobs_time_tracking_by_tech.dart';

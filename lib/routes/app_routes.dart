@@ -25,6 +25,7 @@ class AppRoutes {
     MenuOptions(route: 'last_week_jobs_type_tracking', name: 'Last Week Jobs Type Tracking (9)', screen: const LastWeekJobsTypeTracking(), icon: Icons.list),
     MenuOptions(route: 'overal_jobs_time_tracking_week', name: 'Overall Jobs Time Tracking (10)', screen: const OverallJobsTimeTrackingWeek(), icon: Icons.list),
     MenuOptions(route: 'average_jobs_time_tracking_by_opco', name: 'Average Jobs Time Tracking by OpCo(11)', screen: const AverageJobsTimeTracking(), icon: Icons.list),
+    MenuOptions(route: 'average_jobs_time_tracking_by_tech', name: 'Average Jobs Time Tracking by Tech​ (12)', screen: const AverageJobsTimeTrackingByTech(), icon: Icons.list),
     MenuOptions(route: 'average_jobs_time_minutes', name: 'Average Jobs Time Minutes (13)', screen: const AverageJobsTimeMinutes(), icon: Icons.list),
     MenuOptions(route: 'total_jobs_last_week', name: 'Total Jobs Last Week (14)', screen: const TotalJobsLastWeek(), icon: Icons.list),
     MenuOptions(route: 'sm_promo_by_opco', name: 'SM Promo by OpCo (29)', screen: const SmPromo(), icon: Icons.list),
