@@ -15,6 +15,7 @@ class AppRoutes {
         name: 'Home Screen',
         screen: const HomeScreen(),
         icon: Icons.home),*/
+    MenuOptions(route: 'customer_rep_sales', name: 'Customer Rep Sales', screen: const CustomerRepSales(), icon: Icons.list),
     MenuOptions(route: 'services', name: 'Services', screen: const Services(), icon: Icons.list),
     MenuOptions(route: 'services_pie', name: 'Services_Pie', screen: const ServicesPie(), icon: Icons.list),
     MenuOptions(route: 'average_jobs_time_minutes', name: 'Average Jobs Time Minutes', screen: const AverageJobsTimeMinutes(), icon: Icons.list),

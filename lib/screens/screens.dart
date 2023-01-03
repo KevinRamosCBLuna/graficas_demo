@@ -37,3 +37,4 @@ export 'package:graficas_demo/screens/service.dart';
 export 'package:graficas_demo/screens/service_pie.dart';
 export 'package:graficas_demo/screens/other.dart';
 export 'package:graficas_demo/screens/tablas pluto/tabla_other.dart';
+export 'package:graficas_demo/screens/customer_rep_sales_by_service.dart';
