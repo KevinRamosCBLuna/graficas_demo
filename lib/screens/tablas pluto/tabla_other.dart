@@ -13,7 +13,7 @@ class TablaOther extends StatefulWidget {
 class _TablaOtherState extends State<TablaOther> {
   @override
   Widget build(BuildContext context) {
-    SendWeek week_provider = Provider.of<SendWeek>(context, listen: true);
+    SendWeek weekProvider = Provider.of<SendWeek>(context, listen: true);
     late PlutoGridStateManager stateManager;
     double screenWidth = MediaQuery.of(context).size.width;
     double target = 2400;
@@ -66,7 +66,7 @@ class _TablaOtherState extends State<TablaOther> {
         sj16 = 912,
         sd16 = 285;
 
-    if (week_provider.weekOther == 50) {
+    if (weekProvider.weekOther == 50) {
       dj11 = 182;
       dd11 = 55;
       ij11 = 122;
@@ -117,7 +117,7 @@ class _TablaOtherState extends State<TablaOther> {
       sd16 = 285;
     }
 
-    if (week_provider.weekOther == 51) {
+    if (weekProvider.weekOther == 51) {
       dj11 = 12;
       dd11 = 55;
       ij11 = 120;
@@ -168,7 +168,7 @@ class _TablaOtherState extends State<TablaOther> {
       sd16 = 285;
     }
 
-    if (week_provider.weekOther == 52) {
+    if (weekProvider.weekOther == 52) {
       setState(() {
         dj11 = 41;
         dd11 = 55;

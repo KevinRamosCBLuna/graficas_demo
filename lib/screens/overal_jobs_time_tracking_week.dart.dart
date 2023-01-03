@@ -1,12 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/samples/indicator.dart';
-import 'package:graficas_demo/screens/graficas%20tendencia/other_trend.dart';
-import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
-import 'package:provider/provider.dart';
 
-import '../providers/week_provider.dart';
 
 class OverallJobsTimeTrackingWeek extends StatefulWidget {
   const OverallJobsTimeTrackingWeek({Key? key}) : super(key: key);
@@ -81,7 +77,6 @@ class _OverallJobsTimeTrackingWeekState extends State<OverallJobsTimeTrackingWee
 
   @override
   Widget build(BuildContext context) {
-    SendWeek weekProvider = Provider.of<SendWeek>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Overall Jobs Time Tracking Week'),
@@ -99,7 +94,7 @@ class _OverallJobsTimeTrackingWeekState extends State<OverallJobsTimeTrackingWee
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                       Row(

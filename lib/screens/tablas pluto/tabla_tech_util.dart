@@ -13,7 +13,7 @@ class TablaTechUtil extends StatefulWidget {
 class _TablaTechUtilState extends State<TablaTechUtil> {
   @override
   Widget build(BuildContext context) {
-        SendWeek week_provider = Provider.of<SendWeek>(context, listen: true);
+        SendWeek weekProvider = Provider.of<SendWeek>(context, listen: true);
     late PlutoGridStateManager stateManager;
 double screenWidth = MediaQuery.of(context).size.width;
     double target = 2400; 
@@ -29,7 +29,7 @@ double screenWidth = MediaQuery.of(context).size.width;
        double dj10 = 0, dd10 = 55, ij10 = 120, id10 = 55, oj10 = 0, od10 = 0, sj10 = 910, sd10 = 285;
 
 
-    if (week_provider.weekTechUtil == 50) {
+    if (weekProvider.weekTechUtil == 50) {
     dj1 = 180; dd1 = 55; ij1 = 120; id1 = 55; oj1 = 0; od1= 0; sj1 = 910; sd1 = 285;
      dj2 = 0; dd2 = 0; ij2 = 0; id2 = 0; oj2 = 0; od2 = 0; sj2 = 1210; sd2 = 300;
      dj3 = 0; dd3 = 0; ij3 = 120; id3 = 55; oj3 = 0; od3 = 0; sj3 = 910; sd3 = 285;
@@ -42,7 +42,7 @@ double screenWidth = MediaQuery.of(context).size.width;
      dj10 = 180; dd10 = 55; ij10 = 120; id10 = 55; oj10 = 0; od10 = 0; sj10 = 910; sd10 = 285;
     }
 
-      if (week_provider.weekTechUtil == 51) {
+      if (weekProvider.weekTechUtil == 51) {
       dj1 = 341; dd1 = 55; ij1 = 120; id1 = 55; oj1 = 0; od1= 0; sj1 = 910; sd1 = 285;
        dj2 = 123; dd2 = 0; ij2 = 0; id2 = 0; oj2 = 0; od2 = 0; sj2 = 1210; sd2 = 300;
        dj3 = 0; dd3 = 0; ij3 = 120; id3 = 55; oj3 = 0; od3 = 0; sj3 = 910; sd3 = 285;
@@ -55,7 +55,7 @@ double screenWidth = MediaQuery.of(context).size.width;
        dj10 = 123; dd10 = 55; ij10 = 120; id10 = 55; oj10 = 0; od10 = 0; sj10 = 910; sd10 = 285;
     }
     
-     if (week_provider.weekTechUtil == 52) {
+     if (weekProvider.weekTechUtil == 52) {
       setState(() {
          dj1 = 12; dd1 = 55; ij1 = 120; id1 = 55; oj1 = 0; od1= 0; sj1 = 910; sd1 = 285;
      dj2 = 43; dd2 = 0; ij2 = 0; id2 = 0; oj2 = 0; od2 = 0; sj2 = 1210; sd2 = 300;

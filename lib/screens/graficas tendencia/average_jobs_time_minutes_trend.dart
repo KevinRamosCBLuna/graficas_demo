@@ -74,17 +74,17 @@ class _AverageJobsMinutesTrendState extends State<AverageJobsMinutesTrend> {
       e3 = Colors.orange,
       e4 = Colors.yellow,
       e5 = Colors.cyan,
-      e6 = Color.fromARGB(255, 175, 114, 76),
-      e7 = Color.fromARGB(255, 228, 29, 205),
-      e8 = Color.fromARGB(255, 140, 225, 129),
-      e9 = Color.fromARGB(255, 250, 112, 112),
-      e10 = Color.fromARGB(255, 220, 168, 11),
+      e6 = const Color.fromARGB(255, 175, 114, 76),
+      e7 = const Color.fromARGB(255, 228, 29, 205),
+      e8 = const Color.fromARGB(255, 140, 225, 129),
+      e9 = const Color.fromARGB(255, 250, 112, 112),
+      e10 = const Color.fromARGB(255, 220, 168, 11),
       e11 = const Color.fromARGB(255, 240, 129, 121),
       e12 = const Color.fromARGB(255, 157, 247, 160),
       e13 = const Color.fromARGB(255, 83, 83, 83),
       e14 = const Color.fromARGB(255, 238, 160, 43),
       e15 = const Color.fromARGB(255, 31, 77, 247),
-      e16 = Color.fromARGB(255, 247, 31, 247);
+      e16 = const Color.fromARGB(255, 247, 31, 247);
 
   int touchedIndex = -1;
   BarChartGroupData grafica(int x, double y, Color colores) {
@@ -180,7 +180,7 @@ class _AverageJobsMinutesTrendState extends State<AverageJobsMinutesTrend> {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Column(
@@ -240,7 +240,7 @@ class _AverageJobsMinutesTrendState extends State<AverageJobsMinutesTrend> {
                          
                         ],
                       ),
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
                        Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

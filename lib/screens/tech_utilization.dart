@@ -1,13 +1,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/providers/week_provider.dart';
-import 'package:graficas_demo/samples/indicator.dart';
 import 'package:graficas_demo/screens/graficas%20tendencia/tech_util_trend.dart';
 import 'package:graficas_demo/screens/tablas%20pluto/tabla_tech_util.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
-import 'graficas tendencia/other_trend.dart';
 
 class TechUtilization extends StatefulWidget {
   const TechUtilization({Key? key}) : super(key: key);
@@ -110,7 +108,7 @@ class _TechUtilizationState extends State<TechUtilization> {
 
   @override
   Widget build(BuildContext context) {
-    SendWeek week_provider = Provider.of<SendWeek>(context);
+    SendWeek weekProvider = Provider.of<SendWeek>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -146,7 +144,7 @@ class _TechUtilizationState extends State<TechUtilization> {
                                 uti8 = 78;
                                 uti9 = 73;
 
-                                week_provider.setWeekTechUtil(50);
+                                weekProvider.setWeekTechUtil(50);
                               },
                             );
                           },
@@ -171,7 +169,7 @@ class _TechUtilizationState extends State<TechUtilization> {
                                 uti8 = 4;
                                 uti9 = 43;
 
-                                week_provider.setWeekTechUtil(51);
+                                weekProvider.setWeekTechUtil(51);
                               },
                             );
                           },
@@ -196,7 +194,7 @@ class _TechUtilizationState extends State<TechUtilization> {
                                 uti8 = 8;
                                 uti9 = 7;
 
-                                week_provider.setWeekTechUtil(52);
+                                weekProvider.setWeekTechUtil(52);
                               },
                             ),
                           },
@@ -227,7 +225,7 @@ class _TechUtilizationState extends State<TechUtilization> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      'Tech Utilization Week ${week_provider.weekTechUtil}',
+                      'Tech Utilization Week ${weekProvider.weekTechUtil}',
                       style: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),

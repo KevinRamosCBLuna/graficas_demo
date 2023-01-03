@@ -13,10 +13,10 @@ class TablaService extends StatefulWidget {
 class _TablaServiceState extends State<TablaService> {
   @override
   Widget build(BuildContext context) {
-    SendWeek week_provider = Provider.of<SendWeek>(context, listen: true);
+    SendWeek weekProvider = Provider.of<SendWeek>(context, listen: true);
     late PlutoGridStateManager stateManager;
     double dis = 3, inst = 33, othe = 4, ser = 60;
-    if (week_provider.weekOther == 50) {
+    if (weekProvider.weekOther == 50) {
       setState(() {
         dis = 3;
         inst = 33;
@@ -24,7 +24,7 @@ class _TablaServiceState extends State<TablaService> {
         ser = 60;
       });
     }
-    if (week_provider.weekOther == 51) {
+    if (weekProvider.weekOther == 51) {
       setState(() {
         dis = 3.17;
         inst = 30.51;
@@ -32,7 +32,7 @@ class _TablaServiceState extends State<TablaService> {
         ser = 65.21;
       });
     }
-    if (week_provider.weekOther == 52) {
+    if (weekProvider.weekOther == 52) {
       setState(() {
         dis = 4.72;
         inst = 43.03;

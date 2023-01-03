@@ -143,7 +143,6 @@ class _TrendServiceState extends State<TrendService> {
 
   Widget bottomTitles(double value, TitleMeta meta) {
     String text;
-    double check = 0;
     switch (value.toInt()) {
       case 0:
         text = '50';

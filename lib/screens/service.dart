@@ -68,7 +68,7 @@ class _ServicesState extends State<Services> {
 
   @override
   Widget build(BuildContext context) {
-    SendWeek week_provider = Provider.of<SendWeek>(context);
+    SendWeek weekProvider = Provider.of<SendWeek>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Services'),
@@ -119,7 +119,7 @@ class _ServicesState extends State<Services> {
                                 inst = 33;
                                 othe = 4;
                                 ser = 60;
-                                week_provider.setWeek(50);
+                                weekProvider.setWeek(50);
                               },
                             );
                           },
@@ -137,7 +137,7 @@ class _ServicesState extends State<Services> {
                                 inst = 30.51;
                                 othe = 1.11;
                                 ser = 65.21;
-                                week_provider.setWeek(51);
+                                weekProvider.setWeek(51);
                               },
                             );
                           },
@@ -155,7 +155,7 @@ class _ServicesState extends State<Services> {
                                 inst = 43.03;
                                 othe = 0;
                                 ser = 52.25;
-                                week_provider.setWeek(52);
+                                weekProvider.setWeek(52);
                               },
                             ),
                           },
@@ -171,7 +171,7 @@ class _ServicesState extends State<Services> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      'Services Week ${week_provider.weekOther}',
+                      'Services Week ${weekProvider.weekOther}',
                       style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),

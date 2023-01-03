@@ -67,7 +67,7 @@ class _ServicesState extends State<ServicesPie> {
 
   @override
   Widget build(BuildContext context) {
-    SendWeek week_provider = Provider.of<SendWeek>(context);
+    SendWeek weekProvider = Provider.of<SendWeek>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('ServicesPie'),
@@ -114,7 +114,7 @@ class _ServicesState extends State<ServicesPie> {
                           onPressed: () {
                             setState(
                               () {
-                                week_provider.setWeek(50);
+                                weekProvider.setWeek(50);
                                 dis = 3;
                                 inst = 33;
                                 othe = 4;
@@ -132,7 +132,7 @@ class _ServicesState extends State<ServicesPie> {
                           onPressed: () {
                             setState(
                               () {
-                                week_provider.setWeek(51);
+                                weekProvider.setWeek(51);
                                 dis = 3.17;
                                 inst = 30.51;
                                 othe = 1.11;
@@ -154,7 +154,7 @@ class _ServicesState extends State<ServicesPie> {
                                 inst = 43.03;
                                 othe = 0;
                                 ser = 52.25;
-                                week_provider.setWeek(52);
+                                weekProvider.setWeek(52);
                               },
                             ),
                           },
@@ -170,7 +170,7 @@ class _ServicesState extends State<ServicesPie> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      'Services Week ${week_provider.weekOther}',
+                      'Services Week ${weekProvider.weekOther}',
                       style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),

@@ -23,11 +23,11 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
       e3 = Colors.orange,
       e4 = Colors.yellow,
       e5 = Colors.cyan,
-       e6 = Color.fromARGB(255, 175, 114, 76),
-      e7 = Color.fromARGB(255, 228, 29, 205),
-      e8 = Color.fromARGB(255, 140, 225, 129),
-      e9 = Color.fromARGB(255, 250, 112, 112),
-      e10 = Color.fromARGB(255, 220, 168, 11);
+       e6 = const Color.fromARGB(255, 175, 114, 76),
+      e7 = const Color.fromARGB(255, 228, 29, 205),
+      e8 = const Color.fromARGB(255, 140, 225, 129),
+      e9 = const Color.fromARGB(255, 250, 112, 112),
+      e10 = const Color.fromARGB(255, 220, 168, 11);
   String en0 = 'Fiber Team\nConstrution',
       en1 = 'Jeff Simmons\nSecurity',
       en2 = 'Joseph Aycock\nMgr',
@@ -128,7 +128,7 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Row(

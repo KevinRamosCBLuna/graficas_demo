@@ -13,7 +13,7 @@ class TablaJobsTimeMinutes extends StatefulWidget {
 class _TablaJobsTimeMinutesState extends State<TablaJobsTimeMinutes> {
   @override
   Widget build(BuildContext context) {
-    SendWeek week_provider = Provider.of<SendWeek>(context, listen: true);
+    SendWeek weekProvider = Provider.of<SendWeek>(context, listen: true);
     late PlutoGridStateManager stateManager;
     double screenWidth = MediaQuery.of(context).size.width;
     double target = 2400;
@@ -146,7 +146,7 @@ class _TablaJobsTimeMinutesState extends State<TablaJobsTimeMinutes> {
         sj16 = 912,
         sd16 = 285;
 
-    if (week_provider.AverageJobsTimeMinutes == 50) {
+    if (weekProvider.AverageJobsTimeMinutes == 50) {
       dj1 = 180;
       dd1 = 55;
       ij1 = 120;
@@ -277,7 +277,7 @@ class _TablaJobsTimeMinutesState extends State<TablaJobsTimeMinutes> {
       sd16 = 285;
     }
 
-    if (week_provider.AverageJobsTimeMinutes == 51) {
+    if (weekProvider.AverageJobsTimeMinutes == 51) {
       dj1 = 341;
       dd1 = 55;
       ij1 = 120;
@@ -408,7 +408,7 @@ class _TablaJobsTimeMinutesState extends State<TablaJobsTimeMinutes> {
       sd16 = 285;
     }
 
-    if (week_provider.AverageJobsTimeMinutes == 52) {
+    if (weekProvider.AverageJobsTimeMinutes == 52) {
       setState(() {
         dj1 = 12;
         dd1 = 55;

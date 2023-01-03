@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/providers/week_provider.dart';
@@ -52,7 +54,7 @@ class _AverageJobsTimeMinutesState extends State<AverageJobsTimeMinutes> {
       col13 = const Color.fromARGB(255, 83, 83, 83),
       col14 = const Color.fromARGB(255, 238, 160, 43),
       col15 = const Color.fromARGB(255, 31, 77, 247),
-      col16 = Color.fromARGB(255, 247, 31, 247);
+      col16 = const Color.fromARGB(255, 247, 31, 247);
   int touchedIndex = -1;
   BarChartGroupData grafica(int x, double y, Color colores) {
     return BarChartGroupData(
@@ -143,7 +145,7 @@ class _AverageJobsTimeMinutesState extends State<AverageJobsTimeMinutes> {
 
   @override
   Widget build(BuildContext context) {
-    SendWeek week_provider = Provider.of<SendWeek>(context);
+    SendWeek weekProvider = Provider.of<SendWeek>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -184,7 +186,7 @@ class _AverageJobsTimeMinutesState extends State<AverageJobsTimeMinutes> {
                                 uti13 = 115;
                                 uti14 = 37;
 
-                                week_provider.setAverageJobsTimeMinutes(50);
+                                weekProvider.setAverageJobsTimeMinutes(50);
                               },
                             );
                           },
@@ -213,7 +215,7 @@ class _AverageJobsTimeMinutesState extends State<AverageJobsTimeMinutes> {
                                 uti12 = 89;
                                 uti13 = 115;
                                 uti14 = 37;
-                                week_provider.setAverageJobsTimeMinutes(51);
+                                weekProvider.setAverageJobsTimeMinutes(51);
                               },
                             );
                           },
@@ -242,7 +244,7 @@ class _AverageJobsTimeMinutesState extends State<AverageJobsTimeMinutes> {
                                 uti12 = 89;
                                 uti13 = 115;
                                 uti14 = 37;
-                                week_provider.setAverageJobsTimeMinutes(52);
+                                weekProvider.setAverageJobsTimeMinutes(52);
                               },
                             ),
                           },
@@ -273,7 +275,7 @@ class _AverageJobsTimeMinutesState extends State<AverageJobsTimeMinutes> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      'Average Jobs Time Minutes ${week_provider.AverageJobsTimeMinutes}',
+                      'Average Jobs Time Minutes ${weekProvider.AverageJobsTimeMinutes}',
                       style: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),
