@@ -1,11 +1,9 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/samples/indicator.dart';
 import 'package:graficas_demo/screens/tablas%20pluto/tabla_customer_rep_sales.dart';
 import 'package:graficas_demo/theme/App_theme.dart';
 import 'package:pluto_grid/pluto_grid.dart';
-import 'package:provider/provider.dart';
 
 class CustomerRepSales extends StatefulWidget {
   const CustomerRepSales({Key? key}) : super(key: key);
@@ -88,7 +86,6 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
 
   @override
   Widget build(BuildContext context) {
-    SendWeek week_provider = Provider.of<SendWeek>(context);
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
