@@ -97,8 +97,8 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
           borderRadius: BorderRadius.circular(15),
         ),
         child: Container(
-          height: MediaQuery.of(context).size.height * 0.65,
-          width: MediaQuery.of(context).size.width * 0.55,
+          height: MediaQuery.of(context).size.height * 0.75,
+          width: MediaQuery.of(context).size.width * 0.75,
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -202,8 +202,8 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
                     height: 55,
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.45,
-                    width: MediaQuery.of(context).size.width * 0.45,
+                    height: MediaQuery.of(context).size.height * 0.55,
+                    width: MediaQuery.of(context).size.width * 0.65,
                     child: BarChart(
                       BarChartData(
                         alignment: BarChartAlignment.spaceAround,
