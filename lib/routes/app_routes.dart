@@ -4,6 +4,7 @@ import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/models/models.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/screens/tech_utilization.dart';
+import 'package:graficas_demo/screens/total_jobs_last_week.dart';
 //import 'package:graficas_demo/screens/tabla_v2.dart';
 
 class AppRoutes {
@@ -25,6 +26,7 @@ class AppRoutes {
     MenuOptions(route: 'overal_jobs_time_tracking_week', name: 'Overall Jobs Time Tracking (10)', screen: const OverallJobsTimeTrackingWeek(), icon: Icons.list),
     MenuOptions(route: 'average_jobs_time_tracking_by_opco', name: 'Average Jobs Time Tracking by OpCo(11)', screen: const AverageJobsTimeTracking(), icon: Icons.list),
     MenuOptions(route: 'average_jobs_time_minutes', name: 'Average Jobs Time Minutes (13)', screen: const AverageJobsTimeMinutes(), icon: Icons.list),
+    MenuOptions(route: 'total_jobs_last_week', name: 'Total Jobs Last Week (14)', screen: const TotalJobsLastWeek(), icon: Icons.list),
     MenuOptions(route: 'sm_promo_by_opco', name: 'SM Promo by OpCo (29)', screen: const SmPromo(), icon: Icons.list),
     MenuOptions(route: 'sm_promo_by_opco_2', name: 'SM Promo by OpCo 2 (29)', screen: const SmPromo2(), icon: Icons.list),
     MenuOptions(route: 'configurator_tracking', name: 'Configurator Tracking (30)', screen: const ConfiguratorTracking(), icon: Icons.list),

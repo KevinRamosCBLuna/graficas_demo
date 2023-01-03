@@ -303,7 +303,7 @@ class _AverageJobsMinutesTrendState extends State<AverageJobsMinutesTrend> {
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.55,
-                    width: MediaQuery.of(context).size.width * 0.65,
+                    width: MediaQuery.of(context).size.width * 0.90,
                     child: BarChart(
                       BarChartData(
                         alignment: BarChartAlignment.spaceAround,

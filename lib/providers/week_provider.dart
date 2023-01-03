@@ -5,6 +5,7 @@ class SendWeek extends ChangeNotifier {
     double weekTechUtil = 50;
     // ignore: non_constant_identifier_names
     double AverageJobsTimeMinutes = 50;
+    double totalJobsWeek = 50;
 
   setWeek(double week) {
     weekOther = week; 
@@ -19,6 +20,11 @@ class SendWeek extends ChangeNotifier {
 
   setAverageJobsTimeMinutes(double week) {
     AverageJobsTimeMinutes = week; 
+    notifyListeners();
+  }
+
+   setTotalJobsWeek(double week) {
+    totalJobsWeek = week; 
     notifyListeners();
   }
 }
