@@ -148,7 +148,6 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
                                 rubyList = [1, 1, 0, 0, 0, 4, 1];
                                 shirleList = [0, 1, 0, 0, 4, 1, 0];
                                 steveList = [2, 0, 0, 0, 2, 0, 6];
-
                                 weekProvider.setWeekTechUtil(51);
                               },
                             );
@@ -169,6 +168,7 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
                                 rubyList = [3, 2, 0, 0, 4, 1, 0];
                                 shirleList = [2, 4, 0, 0, 0, 0, 1];
                                 steveList = [1, 0, 4, 0, 0, 6, 0];
+                                weekProvider.setWeekTechUtil(52);
                               },
                             ),
                           },
