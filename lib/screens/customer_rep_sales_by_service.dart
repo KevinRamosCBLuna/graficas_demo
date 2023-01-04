@@ -1,9 +1,12 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/samples/indicator.dart';
+import 'package:graficas_demo/screens/graficas%20tendencia/customer_rep_sales_by_services_trend.dart';
 import 'package:graficas_demo/screens/tablas%20pluto/tabla_customer_rep_sales.dart';
 import 'package:graficas_demo/theme/App_theme.dart';
 import 'package:pluto_grid/pluto_grid.dart';
+import 'package:provider/provider.dart';
 
 class CustomerRepSales extends StatefulWidget {
   const CustomerRepSales({Key? key}) : super(key: key);
@@ -87,6 +90,7 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
+    SendWeek weekProvider = Provider.of<SendWeek>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Customer Rep Sales By Service'),
@@ -100,10 +104,98 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
               child: Column(
                 children: [
                   const Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(top: 10),
                     child: Text(
                       'Customer Rep Sales By Service',
                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            setState(
+                              () {
+                                asaelList = [0, 3, 4, 0, 0, 0, 0];
+                                jillList = [2, 1, 0, 0, 0, 0, 0];
+                                rosaliaList = [1, 3, 0, 0, 0, 0, 0];
+                                rubyList = [3, 2, 0, 0, 0, 0, 0];
+                                shirleList = [8, 4, 0, 0, 0, 0, 0];
+                                steveList = [4, 0, 0, 0, 0, 0, 0];
+
+                                weekProvider.setWeekTechUtil(50);
+                              },
+                            );
+                          },
+                          icon: const Icon(Icons.bar_chart),
+                          label: const Text(
+                            'Week 50',
+                            style: AppTheme.secundaryStyle,
+                          ),
+                        ),
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            setState(
+                              () {
+                                asaelList = [0, 1, 2, 3, 0, 0, 0];
+                                jillList = [4, 2, 1, 0, 0, 0, 1];
+                                rosaliaList = [0, 0, 1, 2, 3, 0, 0];
+                                rubyList = [1, 1, 0, 0, 0, 4, 1];
+                                shirleList = [0, 1, 0, 0, 4, 1, 0];
+                                steveList = [2, 0, 0, 0, 2, 0, 6];
+
+                                weekProvider.setWeekTechUtil(51);
+                              },
+                            );
+                          },
+                          icon: const Icon(Icons.bar_chart),
+                          label: const Text(
+                            'Week 51',
+                            style: AppTheme.secundaryStyle,
+                          ),
+                        ),
+                        ElevatedButton.icon(
+                          onPressed: () => {
+                            setState(
+                              () {
+                                asaelList = [0, 0, 1, 2, 4, 0, 0];
+                                jillList = [2, 1, 0, 0, 0, 3, 1];
+                                rosaliaList = [1, 3, 0, 1, 0, 2, 0];
+                                rubyList = [3, 2, 0, 0, 4, 1, 0];
+                                shirleList = [2, 4, 0, 0, 0, 0, 1];
+                                steveList = [1, 0, 4, 0, 0, 6, 0];
+
+                                weekProvider.setWeekTechUtil(52);
+                              },
+                            ),
+                          },
+                          icon: const Icon(Icons.bar_chart),
+                          label: const Text(
+                            'Week 52',
+                            style: AppTheme.secundaryStyle,
+                          ),
+                        ),
+                        ElevatedButton.icon(
+                          onPressed: () async => {
+                            await showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const TrentCustomerRepSalesByServices();
+                              },
+                            ),
+                          },
+                          icon: const Icon(Icons.bar_chart),
+                          label: const Text(
+                            'Trend',
+                            style: AppTheme.secundaryStyle,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Padding(
@@ -130,7 +222,7 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
                     padding: const EdgeInsets.only(top: 10, bottom: 10),
                     child: SizedBox(
                       width: 1204,
-                      height: 330,
+                      height: 300,
                       child: BarChart(
                         BarChartData(
                           alignment: BarChartAlignment.spaceAround,
@@ -194,6 +286,9 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
                                       case 5:
                                         n1 = '${jillList[5]}';
                                         break;
+                                      case 6:
+                                        n1 = '${jillList[6]}';
+                                        break;
                                       default:
                                         throw Error();
                                     }
@@ -216,6 +311,9 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
                                         break;
                                       case 5:
                                         n1 = '${rosaliaList[5]}';
+                                        break;
+                                      case 6:
+                                        n1 = '${rosaliaList[6]}';
                                         break;
                                       default:
                                         throw Error();
@@ -240,6 +338,9 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
                                       case 5:
                                         n1 = '${rubyList[5]}';
                                         break;
+                                      case 6:
+                                        n1 = '${rubyList[6]}';
+                                        break;
                                       default:
                                         throw Error();
                                     }
@@ -263,6 +364,9 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
                                       case 5:
                                         n1 = '${shirleList[5]}';
                                         break;
+                                      case 6:
+                                        n1 = '${shirleList[6]}';
+                                        break;
                                       default:
                                         throw Error();
                                     }
@@ -285,6 +389,9 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
                                         break;
                                       case 5:
                                         n1 = '${steveList[5]}';
+                                        break;
+                                      case 6:
+                                        n1 = '${steveList[6]}';
                                         break;
                                       default:
                                         throw Error();
@@ -335,7 +442,7 @@ class _CustomerRepSalesState extends State<CustomerRepSales> {
                             generateGroupData(1, jillList[0], jillList[1], jillList[2], jillList[3], jillList[4], jillList[5], jillList[6]),
                             generateGroupData(2, rosaliaList[0], rosaliaList[1], rosaliaList[2], rosaliaList[3], rosaliaList[4], rosaliaList[5], rosaliaList[6]),
                             generateGroupData(3, rubyList[0], rubyList[1], rubyList[2], rubyList[3], rubyList[4], rubyList[5], rubyList[6]),
-                            generateGroupData(4, shirleList[0], shirleList[1], shirleList[2], shirleList[3], shirleList[4], shirleList[6], shirleList[6]),
+                            generateGroupData(4, shirleList[0], shirleList[1], shirleList[2], shirleList[3], shirleList[4], shirleList[5], shirleList[6]),
                             generateGroupData(5, steveList[0], steveList[1], steveList[2], steveList[3], steveList[4], steveList[5], steveList[6]),
                           ],
                           //barGroups: getData(),

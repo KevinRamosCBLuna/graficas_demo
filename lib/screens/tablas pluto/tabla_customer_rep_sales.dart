@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:pluto_grid/pluto_grid.dart';
+import 'package:provider/provider.dart';
 
 class TablaCustomerRepSales extends StatefulWidget {
   const TablaCustomerRepSales({Key? key}) : super(key: key);
@@ -18,6 +20,7 @@ class _TablaCustomerRepSalesState extends State<TablaCustomerRepSales> {
         shirleList = [8, 4, 0, 0, 0, 0, 0],
         steveList = [4, 0, 0, 0, 0, 0, 0];
     double screenWidth = MediaQuery.of(context).size.width;
+    SendWeek weekProvider = Provider.of<SendWeek>(context);
     late PlutoGridStateManager stateManager;
     return Material(
       color: Colors.white,
@@ -335,11 +338,11 @@ class _TablaCustomerRepSalesState extends State<TablaCustomerRepSales> {
               title: '50',
               backgroundColor: const Color(0xFF2E6FC5),
               fields: ['Mini Gig (SUM)', 'Super Gig (SUM)', 'Galactic Gig (SUM)', 'TVG1 (SUM)', 'TVG2 (SUM)', 'TVG3 (SUM)', 'Voice (SUM)'],
-              titleSpan: const TextSpan(
+              titleSpan: TextSpan(
                 children: [
                   WidgetSpan(
-                    child: Text('50',
-                        style: TextStyle(
+                    child: Text('${weekProvider.weekTechUtil}',
+                        style: const TextStyle(
                           fontSize: 15,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

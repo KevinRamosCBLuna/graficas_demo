@@ -22,38 +22,18 @@ class _TrendServiceState extends State<TrendService> {
         x: 0,
         barsSpace: 0,
         barRods: [
-          BarChartRodData(
-              width: 40,
-              toY: dis,
-              color: disco,
-              rodStackItems: [
-                BarChartRodStackItem(0, dis, disco),
-              ],
-              borderRadius: const BorderRadius.all(Radius.zero)),
-          BarChartRodData(
-              width: 40,
-              toY: inst,
-              color: ins,
-              rodStackItems: [
-                BarChartRodStackItem(0, inst, ins),
-              ],
-              borderRadius: const BorderRadius.all(Radius.zero)),
+          BarChartRodData(width: 40, toY: dis, color: disco, borderRadius: const BorderRadius.all(Radius.zero)),
+          BarChartRodData(width: 40, toY: inst, color: ins, borderRadius: const BorderRadius.all(Radius.zero)),
           BarChartRodData(
             width: 40,
             toY: othe,
             color: oth,
-            rodStackItems: [
-              BarChartRodStackItem(0, othe, oth),
-            ],
             borderRadius: const BorderRadius.all(Radius.zero),
           ),
           BarChartRodData(
             width: 40,
             toY: ser,
             color: serv,
-            rodStackItems: [
-              BarChartRodStackItem(0, ser, serv),
-            ],
             borderRadius: const BorderRadius.all(Radius.zero),
           )
         ],
@@ -62,38 +42,18 @@ class _TrendServiceState extends State<TrendService> {
         x: 1,
         barsSpace: 0,
         barRods: [
-          BarChartRodData(
-              width: 40,
-              toY: dis2,
-              color: disco,
-              rodStackItems: [
-                BarChartRodStackItem(0, dis2, disco),
-              ],
-              borderRadius: const BorderRadius.all(Radius.zero)),
-          BarChartRodData(
-              width: 40,
-              toY: inst2,
-              color: ins,
-              rodStackItems: [
-                BarChartRodStackItem(0, inst2, ins),
-              ],
-              borderRadius: const BorderRadius.all(Radius.zero)),
+          BarChartRodData(width: 40, toY: dis2, color: disco, borderRadius: const BorderRadius.all(Radius.zero)),
+          BarChartRodData(width: 40, toY: inst2, color: ins, borderRadius: const BorderRadius.all(Radius.zero)),
           BarChartRodData(
             width: 40,
             toY: othe2,
             color: oth,
-            rodStackItems: [
-              BarChartRodStackItem(0, othe2, oth),
-            ],
             borderRadius: const BorderRadius.all(Radius.zero),
           ),
           BarChartRodData(
             width: 40,
             toY: ser2,
             color: serv,
-            rodStackItems: [
-              BarChartRodStackItem(0, ser2, serv),
-            ],
             borderRadius: const BorderRadius.all(Radius.zero),
           )
         ],
@@ -102,38 +62,18 @@ class _TrendServiceState extends State<TrendService> {
         x: 2,
         barsSpace: 0,
         barRods: [
-          BarChartRodData(
-              width: 40,
-              toY: dis3,
-              color: disco,
-              rodStackItems: [
-                BarChartRodStackItem(0, dis3, disco),
-              ],
-              borderRadius: const BorderRadius.all(Radius.zero)),
-          BarChartRodData(
-              width: 40,
-              toY: inst3,
-              color: ins,
-              rodStackItems: [
-                BarChartRodStackItem(0, inst3, ins),
-              ],
-              borderRadius: const BorderRadius.all(Radius.zero)),
+          BarChartRodData(width: 40, toY: dis3, color: disco, borderRadius: const BorderRadius.all(Radius.zero)),
+          BarChartRodData(width: 40, toY: inst3, color: ins, borderRadius: const BorderRadius.all(Radius.zero)),
           BarChartRodData(
             width: 40,
             toY: othe3,
             color: oth,
-            rodStackItems: [
-              BarChartRodStackItem(0, othe3, oth),
-            ],
             borderRadius: const BorderRadius.all(Radius.zero),
           ),
           BarChartRodData(
             width: 40,
             toY: ser3,
             color: serv,
-            rodStackItems: [
-              BarChartRodStackItem(0, ser3, serv),
-            ],
             borderRadius: const BorderRadius.all(Radius.zero),
           )
         ],

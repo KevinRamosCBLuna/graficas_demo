@@ -83,29 +83,6 @@ class _ServicesState extends State<ServicesPie> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ElevatedButton.icon(
-                          onPressed: () async {
-                            await showDialog(
-                              context: context,
-                              builder: (context) {
-                                return const TrendService();
-                              },
-                            );
-                          },
-                          icon: const Icon(Icons.ssid_chart),
-                          label: const Text(
-                            'Trend',
-                            style: AppTheme.secundaryStyle,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       mainAxisSize: MainAxisSize.max,
@@ -161,6 +138,21 @@ class _ServicesState extends State<ServicesPie> {
                           icon: const Icon(Icons.bar_chart),
                           label: const Text(
                             'Week 52',
+                            style: AppTheme.secundaryStyle,
+                          ),
+                        ),
+                        ElevatedButton.icon(
+                          onPressed: () async {
+                            await showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const TrendService();
+                              },
+                            );
+                          },
+                          icon: const Icon(Icons.ssid_chart),
+                          label: const Text(
+                            'Trend',
                             style: AppTheme.secundaryStyle,
                           ),
                         ),
