@@ -24,13 +24,13 @@ class _AverageJobsTimeTrackingByTechState extends State<AverageJobsTimeTrackingB
       c9 = const Color.fromARGB(255, 140, 225, 129),
       c10 = const Color.fromARGB(255, 250, 112, 112),
       c11 = const Color.fromARGB(255, 220, 168, 11),
-      c12 = Colors.red,
-      c13 = Colors.green,
-      c14 = Colors.grey,
-      c15 = Colors.orange,
-      c16 = Colors.yellow,
-      c17 = Colors.cyan,
-      c18 = const Color.fromARGB(255, 175, 114, 76);
+      c12 = const Color.fromARGB(255, 23, 111, 211),
+      c13 = const Color.fromARGB(255, 186, 99, 65),
+      c14 = const Color.fromARGB(255, 244, 248, 2),
+      c15 = const Color.fromARGB(255, 188, 11, 243),
+      c16 = const Color.fromARGB(255, 224, 40, 218),
+      c17 = const Color.fromARGB(255, 236, 5, 67),
+      c18 = const Color.fromARGB(255, 32, 216, 220);
   List<double> l1 = [0.7, 1.1, 0.7, 0.5, 0.3, 2.2, 0.5],
       l2 = [0.4, 0.9, 1.1, 1.3, 0.6, 1.3, 0.5],
       l3 = [0.9, 0, 0.7, 1.3, 2.0, 1.8, 1.7],
@@ -497,19 +497,14 @@ class _AverageJobsTimeTrackingByTechState extends State<AverageJobsTimeTrackingB
                                   enabled: true,
                                   touchTooltipData: LineTouchTooltipData(
                                     tooltipBgColor: const Color.fromARGB(255, 204, 204, 204),
-                                    /*getTooltipItems:
-                                        (List<LineBarSpot> touchedBarSpots) {
-                                      return touchedBarSpots.map((barSpot) {
-                                        final flSpot = barSpot;
-                                        return LineTooltipItem(
-                                          '\$ ${flSpot.y.toString()} \n',
-                                          const TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        );
-                                      }).toList();
-                                    }*/
+                                    /* getTooltipItems: (List<LineBarSpot> touchedBarSpots) {
+                                      return touchedBarSpots.map(
+                                        (barSpot) {
+                                          final flSpot = barSpot;
+                                          return LineTooltipItem(flSpot.y.toString(), AppTheme.primarStyle);
+                                        },
+                                      ).toList();
+                                    },*/
                                   ),
                                   touchCallback: (FlTouchEvent event, lineTouch) {
                                     if (!event.isInterestedForInteractions || lineTouch == null || lineTouch.lineBarSpots == null) {

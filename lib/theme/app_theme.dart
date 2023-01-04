@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const Color primary = Colors.cyan, primarytext = Colors.black, secundarytext = Colors.white;
+  static const Color primary = Color(0xFF2E6FC5), primarytext = Colors.black, secundarytext = Colors.white;
   static const TextStyle primarStyle = TextStyle(
         fontSize: 16,
         color: primarytext,
