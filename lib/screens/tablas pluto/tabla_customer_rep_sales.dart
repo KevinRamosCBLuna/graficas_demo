@@ -21,6 +21,36 @@ class _TablaCustomerRepSalesState extends State<TablaCustomerRepSales> {
         steveList = [4, 0, 0, 0, 0, 0, 0];
     double screenWidth = MediaQuery.of(context).size.width;
     SendWeek weekProvider = Provider.of<SendWeek>(context);
+    if (weekProvider.weekTechUtil == 50) {
+      setState(() {
+        asaelList = [0, 3, 4, 0, 0, 0, 0];
+        jillList = [2, 1, 0, 0, 0, 0, 0];
+        rosaliaList = [1, 3, 0, 0, 0, 0, 0];
+        rubyList = [3, 2, 0, 0, 0, 0, 0];
+        shirleList = [8, 4, 0, 0, 0, 0, 0];
+        steveList = [4, 0, 0, 0, 0, 0, 0];
+      });
+    }
+    if (weekProvider.weekTechUtil == 51) {
+      setState(() {
+        asaelList = [0, 1, 2, 3, 0, 0, 0];
+        jillList = [4, 2, 1, 0, 0, 0, 1];
+        rosaliaList = [0, 0, 1, 2, 3, 0, 0];
+        rubyList = [1, 1, 0, 0, 0, 4, 1];
+        shirleList = [0, 1, 0, 0, 4, 1, 0];
+        steveList = [2, 0, 0, 0, 2, 0, 6];
+      });
+    }
+    if (weekProvider.weekTechUtil == 52) {
+      setState(() {
+        asaelList = [0, 0, 1, 2, 4, 0, 0];
+        jillList = [2, 1, 0, 0, 0, 3, 1];
+        rosaliaList = [1, 3, 0, 1, 0, 2, 0];
+        rubyList = [3, 2, 0, 0, 4, 1, 0];
+        shirleList = [2, 4, 0, 0, 0, 0, 1];
+        steveList = [1, 0, 4, 0, 0, 6, 0];
+      });
+    }
     late PlutoGridStateManager stateManager;
     return Material(
       color: Colors.white,
