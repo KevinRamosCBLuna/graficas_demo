@@ -52,6 +52,22 @@ class _AverageJobsTimeTrackingByTechState extends State<AverageJobsTimeTrackingB
     );
   }
 
+  List<LineChartBarData> getData(double x, y, Color color) {
+    return [
+      LineChartBarData(
+        spots: [
+          FlSpot(x, y),
+        ],
+        isCurved: false,
+        barWidth: 5,
+        color: color,
+        dotData: FlDotData(
+          show: true,
+        ),
+      )
+    ];
+  }
+
   Widget leftTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(
       fontSize: 15,
