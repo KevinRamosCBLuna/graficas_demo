@@ -9,8 +9,6 @@ import 'package:supabase/supabase.dart';
 //import 'package:graficas_demo/screens/perdidas_ahorro_beneficio.dart';
 import 'package:graficas_demo/screens/demo/ahorro_beneficio.dart';
 //import 'package:graficas_demo/screens/tabla.dart';
-import 'package:graficas_demo/screens/demo/perdidas_ahorro_beneficio_v2.dart';
-import 'package:graficas_demo/screens/tabla_v2.dart';
 
 class Dashboards extends StatefulWidget {
   const Dashboards({Key? key}) : super(key: key);
@@ -283,7 +281,7 @@ class _DashboardsState extends State<Dashboards> {
                       children: const [
                         AhorroBeneficio(),
                         //PerdidasAhorroBeneficio(),
-                        ChartsDemo()
+                        //ChartsDemo()
                       ],
                     ),
                     const TablaV2(),

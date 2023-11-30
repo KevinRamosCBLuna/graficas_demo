@@ -1,4 +1,5 @@
 
+import 'package:graficas_demo/screens/graficas_python/prueba_seaborn.dart';
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/models/models.dart';
 import 'package:flutter/material.dart';
