@@ -1,5 +1,6 @@
 
 import 'package:graficas_demo/screens/graficas_python/prueba_seaborn.dart';
+import 'package:graficas_demo/screens/pdf_demo/pdf.dart';
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/models/models.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class AppRoutes {
         screen: const HomeScreen(),
         icon: Icons.home),*/
     MenuOptions(route: 'Seaborn_Image', name: 'Seaborn_Image', screen: const PruebaSeaborn(), icon: Icons.list),
+    MenuOptions(route: 'PDF', name: 'PDF', screen: const PDF(), icon: Icons.picture_as_pdf),
     //RTA
     /*  MenuOptions(route: 'services', name: 'Services', screen: const Services(), icon: Icons.list),
     MenuOptions(route: 'services_pie', name: 'Services_Pie', screen: const ServicesPie(), icon: Icons.list),
