@@ -2,11 +2,11 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/samples/indicator.dart';
+import 'package:graficas_demo/screens/graficas%20tendencia/trend_service.dart';
 import 'package:graficas_demo/screens/tablas%20pluto/tabla_service.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
-import 'graficas tendencia/trend_service.dart';
 
 class ServicesPie extends StatefulWidget {
   const ServicesPie({Key? key}) : super(key: key);

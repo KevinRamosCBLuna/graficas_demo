@@ -1,10 +1,7 @@
-import 'package:graficas_demo/screens/average_jobs_time_minutes.dart';
-import 'package:graficas_demo/screens/overal_jobs_time_tracking_week.dart.dart';
+
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/models/models.dart';
 import 'package:flutter/material.dart';
-import 'package:graficas_demo/screens/tech_utilization.dart';
-import 'package:graficas_demo/screens/total_jobs_last_week.dart';
 //import 'package:graficas_demo/screens/tabla_v2.dart';
 
 class AppRoutes {
@@ -16,7 +13,9 @@ class AppRoutes {
         name: 'Home Screen',
         screen: const HomeScreen(),
         icon: Icons.home),*/
-    MenuOptions(route: 'services', name: 'Services', screen: const Services(), icon: Icons.list),
+    MenuOptions(route: 'Seaborn_Image', name: 'Seaborn_Image', screen: const PruebaSeaborn(), icon: Icons.list),
+    //RTA
+    /*  MenuOptions(route: 'services', name: 'Services', screen: const Services(), icon: Icons.list),
     MenuOptions(route: 'services_pie', name: 'Services_Pie', screen: const ServicesPie(), icon: Icons.list),
     MenuOptions(route: 'tech_utilization', name: 'Tech Utilization', screen: const TechUtilization(), icon: Icons.list),
     MenuOptions(route: 'other', name: 'Other', screen: const Other(), icon: Icons.list),
@@ -39,7 +38,8 @@ class AppRoutes {
     MenuOptions(route: 'referrals_overall', name: 'Referrals Overall (34)', screen: const ReferralsOverall(), icon: Icons.list),
     MenuOptions(route: 'last_week', name: 'Last Week (34)', screen: const LastWeek(), icon: Icons.list),
     MenuOptions(route: 'referrals_tracking_by_week', name: 'Referrals Tracking By Week (34)', screen: const ReferralsTrackingByWeek(), icon: Icons.list),
-
+ */
+    //Arux
     /* MenuOptions(
         route: 'perdidas_ahorro_beneficioV2',
         name: 'Perdidas de Ahorro/ BeneficioV2',

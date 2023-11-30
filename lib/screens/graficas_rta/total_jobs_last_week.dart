@@ -13,7 +13,6 @@ import 'package:graficas_demo/screens/tablas%20pluto/tabla_total_jobs_last_week.
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
-import 'graficas tendencia/other_trend.dart';
 
 class TotalJobsLastWeek extends StatefulWidget {
   const TotalJobsLastWeek({Key? key}) : super(key: key);

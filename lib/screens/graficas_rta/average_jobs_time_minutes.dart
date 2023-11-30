@@ -12,7 +12,6 @@ import 'package:graficas_demo/screens/tablas%20pluto/tabla_tech_util.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
-import 'graficas tendencia/other_trend.dart';
 
 class AverageJobsTimeMinutes extends StatefulWidget {
   const AverageJobsTimeMinutes({Key? key}) : super(key: key);

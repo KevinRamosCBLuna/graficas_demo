@@ -1,11 +1,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/screens/graficas%20tendencia/other_trend.dart';
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/week_provider.dart';
 
 class Other extends StatefulWidget {
   const Other({Key? key}) : super(key: key);

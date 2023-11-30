@@ -4,10 +4,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/models/qt/Get_tablero_ahorro_beneficio_qt.dart';
+import 'package:graficas_demo/screens/graficas_rta/tabla_v2.dart';
 import 'package:supabase/supabase.dart';
 //import 'package:graficas_demo/screens/perdidas_ahorro_beneficio.dart';
 import 'package:graficas_demo/screens/demo/ahorro_beneficio.dart';
 //import 'package:graficas_demo/screens/tabla.dart';
+import 'package:graficas_demo/screens/demo/perdidas_ahorro_beneficio_v2.dart';
 import 'package:graficas_demo/screens/tabla_v2.dart';
 
 class Dashboards extends StatefulWidget {
@@ -281,7 +283,7 @@ class _DashboardsState extends State<Dashboards> {
                       children: const [
                         AhorroBeneficio(),
                         //PerdidasAhorroBeneficio(),
-                       // ChartsDemo()
+                        ChartsDemo()
                       ],
                     ),
                     const TablaV2(),
