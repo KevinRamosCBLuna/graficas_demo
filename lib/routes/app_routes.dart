@@ -35,6 +35,7 @@ class AppRoutes {
     MenuOptions(route: 'weekly_leads_by_channel', name: 'Weekly Leads by Channel (31)', screen: const WeeklyLeadsChannel(), icon: Icons.list),
     MenuOptions(route: 'configurator_weekly_leads_by_opCop', name: 'Configurator Weekly Leads By OpCop (31)', screen: const ConfiguratorWeeklyLeadsOpCop(), icon: Icons.list),
     MenuOptions(route: 'configurator_weekly_leads_by_opCop_2', name: 'Configurator Weekly Leads By OpCop 2 (31)', screen: const ConfiguratorWeeklyLeadsOpCop2(), icon: Icons.list),
+    MenuOptions(route: 'configurator_statistics', name: 'Configurator Statistics (33)', screen: const ConfiguratorStatistics(), icon: Icons.list),
     MenuOptions(route: 'referrals_overall', name: 'Referrals Overall (34)', screen: const ReferralsOverall(), icon: Icons.list),
     MenuOptions(route: 'last_week', name: 'Last Week (34)', screen: const LastWeek(), icon: Icons.list),
     MenuOptions(route: 'referrals_tracking_by_week', name: 'Referrals Tracking By Week (34)', screen: const ReferralsTrackingByWeek(), icon: Icons.list),
