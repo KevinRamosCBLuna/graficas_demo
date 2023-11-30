@@ -2,7 +2,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:graficas_demo/functions/date_format.dart';
-import 'package:intl/intl.dart';
 import 'package:pdf/pdf.dart' as pdfcolor;
 import 'package:pluto_grid/pluto_grid.dart';
 import 'package:pdfx/pdfx.dart';
@@ -53,7 +52,7 @@ class PDFProvider extends ChangeNotifier {
   }
 
   //Descargar PDF
-  String pdfUrl = ''; 
+  String pdfUrl = '';
   void descargarArchivo(Uint8List datos, String nombreArchivo) {
     // Crear un Blob con los datos
     final blob = html.Blob([datos]);
@@ -87,8 +86,8 @@ class PDFProvider extends ChangeNotifier {
     return signature!;
   }
 
- Future<PdfController?> crearPDF() async {
-    final headers = ['Cuenta', 'Importe', 'Comisión', 'Pago Anticipado', 'Días para Pago'];
+  Future<PdfController?> crearPDF() async {
+    //final headers = ['Cuenta', 'Importe', 'Comisión', 'Pago Anticipado', 'Días para Pago'];
     //final data = registros.map((registro) => [registro.cuenta, registro.importe, registro.comision, registro.pagoAnticipado, registro.diasPago]).toList();
     final logo = (await rootBundle.load('assets/images/logo_rta.png')).buffer.asUint8List();
     final pdf = pw.Document();
@@ -97,196 +96,84 @@ class PDFProvider extends ChangeNotifier {
         build: (context) => pw.Column(
           children: [
             //Titulo
-            pw.Row(
-              children: [
-                pw.Expanded(
-                  child: pw.Container(
-                    alignment: pw.Alignment.topLeft,
-                    height: 80,
-                    child: pw.Image(pw.MemoryImage(logo), fit: pw.BoxFit.cover),
-                  ),
-                ),
-                pw.Expanded(
-                  child: pw.Column(
-                    children: [
-                      pw.Text(
-                        'Anexo',
-                        style: const pw.TextStyle(
-                          fontSize: 30,
-                          color: pdfcolor.PdfColor.fromInt(0XFF0A0859),
-                        ),
-                      ),
-                      pw.Container(
-                        decoration: const pw.BoxDecoration(
-                          borderRadius: pw.BorderRadius.all(pw.Radius.circular(2)),
-                          color: pdfcolor.PdfColor.fromInt(0XFF0A0859),
-                        ),
-                        padding: const pw.EdgeInsets.only(left: 40, top: 10, bottom: 10, right: 20),
-                        alignment: pw.Alignment.centerLeft,
-                        height: 50,
-                        child: pw.DefaultTextStyle(
-                          style: const pw.TextStyle(
-                            color: pdfcolor.PdfColor.fromInt(0xFFFFFFFF),
-                            fontSize: 12,
-                          ),
-                          child: pw.GridView(
-                            crossAxisCount: 2,
-                            children: [
-                              pw.Text('Anexo #'),
-                              pw.Text('Anexo'),
-                              pw.Text('Fecha Anexo:'),
-                              pw.Text(DateFormat.MMMEd('es').format(fecha)),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            //Total
-            pw.Row(
-              children: [
-                pw.Expanded(
-                  child: pw.Row(
-                    children: [
-                      pw.Container(
-                        margin: const pw.EdgeInsets.only(left: 10, right: 10),
-                        height: 70,
-                        child: pw.Text(
-                          'Invoice to:',
-                          style: const pw.TextStyle(
-                            color: pdfcolor.PdfColor.fromInt(0XFF0A0859),
-                            fontSize: 12,
-                          ),
-                        ),
-                      ),
-                      pw.Expanded(
-                        child: pw.Container(
-                          height: 70,
-                          child: pw.RichText(
-                              text: const pw.TextSpan(
-                                  text: '',
-                                  style: pw.TextStyle(
-                                    color: pdfcolor.PdfColor.fromInt(0XFF0A0859),
-                                    fontSize: 12,
-                                  ),
-                                  children: [
-                                pw.TextSpan(
-                                  text: '\n',
-                                  style: pw.TextStyle(
-                                    fontSize: 5,
-                                  ),
-                                ),
-                                pw.TextSpan(
-                                  text: '',
-                                  style: pw.TextStyle(
-                                    fontSize: 10,
-                                  ),
-                                ),
-                              ])),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            //Contenido
-            pw.Text(
-              'Que con fecha, el ${dateFormat(fecha)} se formalizó Contrato de Factoraje con anticipo de contraseñas celebrado entre Cliente con NIT  y código de cliente No. .',
-              style: const pw.TextStyle(
-                fontSize: 20,
-                color: pdfcolor.PdfColor.fromInt(0xFF060606),
-              ),
-            ),
-            pw.Text(
-              'Por lo tanto solicita a la entidad , se me efectúe el pago anticipado de las siguiente facturas:',
-              style: const pw.TextStyle(
-                fontSize: 20,
-                color: pdfcolor.PdfColor.fromInt(0xFF060606),
-              ),
-            ),
-            pw.Spacer(),
-            pw.TableHelper.fromTextArray(headers: headers, data: data),
-            pw.SizedBox(height: 20),
             pw.Row(children: [
               pw.Expanded(
-                flex: 2,
+                child: pw.Container(
+                  alignment: pw.Alignment.topLeft,
+                  height: 80,
+                  child: pw.Image(pw.MemoryImage(logo), fit: pw.BoxFit.cover),
+                ),
+              ),
+              pw.Expanded(
                 child: pw.Column(
-                  crossAxisAlignment: pw.CrossAxisAlignment.start,
                   children: [
                     pw.Text(
-                      'Thank you for your business',
-                      style: pw.TextStyle(
-                        color: const pdfcolor.PdfColor.fromInt(0xFF060606),
-                        fontWeight: pw.FontWeight.bold,
+                      textAlign: pw.TextAlign.center,
+                      'Fiber Optic Access Agreement',
+                      style: const pw.TextStyle(
+                        fontSize: 20,
+                        color: pdfcolor.PdfColor.fromInt(0XFF0A0859),
                       ),
                     ),
                     pw.Container(
-                      margin: const pw.EdgeInsets.only(top: 20, bottom: 8),
-                      child: pw.Text(
-                        'Payment Info:',
-                        style: pw.TextStyle(
-                          color: const pdfcolor.PdfColor.fromInt(0xFF060606),
-                          fontWeight: pw.FontWeight.bold,
-                        ),
+                      decoration: const pw.BoxDecoration(
+                        borderRadius: pw.BorderRadius.all(pw.Radius.circular(2)),
+                        color: pdfcolor.PdfColor.fromInt(0XFF0A0859),
                       ),
-                    ),
-                    pw.Text(
-                      'paymentInfo',
-                      style: const pw.TextStyle(
-                        fontSize: 8,
-                        lineSpacing: 5,
-                        color: pdfcolor.PdfColor.fromInt(0xFF060606),
+                      padding: const pw.EdgeInsets.only(left: 40, top: 10, bottom: 10, right: 20),
+                      alignment: pw.Alignment.centerLeft,
+                      height: 50,
+                      child: pw.DefaultTextStyle(
+                        style: const pw.TextStyle(
+                          color: pdfcolor.PdfColor.fromInt(0xFFFFFFFF),
+                          fontSize: 18,
+                        ),
+                        child: pw.GridView(
+                          crossAxisCount: 2,
+                          children: [
+                            pw.Text('Address: '),
+                            pw.Text('street, city, state  zip code'),
+                            pw.Text('Date:'),
+                            pw.Text(dateFormat(fecha)),
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-              pw.Expanded(
-                flex: 1,
-                child: pw.DefaultTextStyle(
-                  style: const pw.TextStyle(
-                    fontSize: 10,
-                    color: pdfcolor.PdfColor.fromInt(0XFF0A0859),
-                  ),
-                  child: pw.Column(
-                    crossAxisAlignment: pw.CrossAxisAlignment.start,
-                    children: [
-                      pw.Row(
-                        mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                        children: [
-                          pw.Text('Comisión:'),
-                          pw.Text(''),
-                        ],
-                      ),
-                      pw.Divider(
-                        color: const pdfcolor.PdfColor.fromInt(0XFF0A0859),
-                      ),
-                      pw.DefaultTextStyle(
-                        style: pw.TextStyle(
-                          color: const pdfcolor.PdfColor.fromInt(0XFF0A0859),
-                          fontSize: 14,
-                          fontWeight: pw.FontWeight.bold,
-                        ),
-                        child: pw.Row(
-                          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
-                          children: [
-                            pw.Text('Total:'),
-                            pw.Text(''),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
             ]),
-            pw.Spacer(),
+            pw.SizedBox(height: 20),
+            pw.Row(children: [
+              pw.Text('To Whom It May Concern:', textAlign: pw.TextAlign.start),
+            ]),
+            //Contenido
+            pw.Text(
+              'I, _________________ ("Owner"), confirm that I am the owner of the property described above (the "Property"), and consent to the installation, operation, and maintenance by Rural Telecommunications of America, Inc. its affiliates, lessees, successors, and assigns (together "RTA") of RTA\'s fiber-based facilities ("Facilities") at the Property. The Facilities includes fiber optic cable, conduit, ducts, subpanels, equipment huts, and other equipment ("Facilities") to be placed within the Property and along the Property line. The Facilities will be used by RTA to provide broadband and communications services ("Service") to tenants and other occupants of the Property.',
+              style: const pw.TextStyle(
+                fontSize: 15,
+                color: pdfcolor.PdfColor.fromInt(0xFF060606),
+              ),
+            ),
+            pw.SizedBox(height: 20),
+            pw.Text(
+              'RTA may enter the Property to areas containing the Facilities ("the Drop") to construct, repair and maintain the Drop. RTA shall design and configure the Facilities in the manner most expedient for the provision of the Service to the Property\'s tenants. RTA may disturb the ground in the Drop to the extent reasonably necessary to construct, repair, and maintain the Drop. RTA shall repair any damage to the Property caused by the installation, operation, or maintenance of RTA\'s equipment on the Property. RTA shall have no other obligation, however, to return the surface of the Drop to its original condition. RTA will terminate the Drop in the telecommunications room or other such location inside the Property.',
+              style: const pw.TextStyle(
+                fontSize: 15,
+                color: pdfcolor.PdfColor.fromInt(0xFF060606),
+              ),
+            ),
+            pw.SizedBox(height: 20),
+            pw.Text(
+              'Owner is responsible for maintenance of the surface of the Drop, including but not limited to mowing, cleaning and removing sediment, trees, shrubs and debris so that access by RTA for construction, maintenance and repair is preserved. RTA\'s obligations to install, repair or maintain the Facilities shall end if Owner impairs RTA\'s access to the Drop. At its option, RTA may remove or abandon the Facilities in place via written notice by RTA of its intent to abandon',
+              style: const pw.TextStyle(
+                fontSize: 15,
+                color: pdfcolor.PdfColor.fromInt(0xFF060606),
+              ),
+            ),
+            pw.SizedBox(height: 20),
             //Foother
-            controller.isNotEmpty
+            /* controller.isNotEmpty
                 ? pw.Image(
                     pw.MemoryImage(signature!),
                     height: 250,
@@ -300,21 +187,41 @@ class PDFProvider extends ChangeNotifier {
                       fontSize: 20,
                       color: pdfcolor.PdfColor.fromInt(0xFF060606),
                     ),
+                  ), */
+            pw.Row(mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly, children: [
+              pw.Column(children: [
+                pw.Text(
+                  'Owner, Title',
+                  style: const pw.TextStyle(
+                    fontSize: 15,
+                    color: pdfcolor.PdfColor.fromInt(0xFF060606),
                   ),
-            pw.Text(
-              'AUTORIZADO POR: ',
-              style: const pw.TextStyle(
-                fontSize: 20,
-                color: pdfcolor.PdfColor.fromInt(0xFF060606),
-              ),
-            ),
-            pw.Text(
-              'En virtud del artículo...',
-              style: const pw.TextStyle(
-                fontSize: 20,
-                color: pdfcolor.PdfColor.fromInt(0xFF060606),
-              ),
-            ),
+                ),
+                pw.Text(
+                  'F. _______________________.',
+                  style: const pw.TextStyle(
+                    fontSize: 15,
+                    color: pdfcolor.PdfColor.fromInt(0xFF060606),
+                  ),
+                ),
+              ]),
+              pw.Column(children: [
+                pw.Text(
+                  'Accepted and Agreed to by RTA:',
+                  style: const pw.TextStyle(
+                    fontSize: 15,
+                    color: pdfcolor.PdfColor.fromInt(0xFF060606),
+                  ),
+                ),
+                pw.Text(
+                  'F. _______________________.',
+                  style: const pw.TextStyle(
+                    fontSize: 15,
+                    color: pdfcolor.PdfColor.fromInt(0xFF060606),
+                  ),
+                ),
+              ]),
+            ]),
           ],
         ),
       ),
@@ -327,6 +234,7 @@ class PDFProvider extends ChangeNotifier {
     notifyListeners();
     return pdfController;
   }
+
   late Uint8List documento;
 }
 
