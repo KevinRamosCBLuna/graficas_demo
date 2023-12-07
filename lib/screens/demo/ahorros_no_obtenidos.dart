@@ -107,10 +107,10 @@ class _Ahorros_No_OptenidosState extends State<Ahorros_No_Optenidos> {
           const SizedBox(
             height: 28,
           ),
-          Row(
+          const Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const <Widget>[
+            children:  <Widget>[
               Indicator(
                   color: Color.fromARGB(255, 29, 9, 106),
                   text: 'Ahorro Optenido',

@@ -87,10 +87,10 @@ class _SmPromo2State extends State<SmPromo2> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
-              Row(
+              const Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const <Widget>[
+                children:  <Widget>[
                   Indicator(color: Colors.blue, text: 'SM380722 CustomerID(Count (All))', isSquare: false, size: 16, textColor: Colors.black),
                   Indicator(color: Colors.green, text: 'SM680722 CustomerID(Count (All))', isSquare: false, size: 16, textColor: Colors.black),
                   Indicator(color: Colors.orange, text: 'SM980722 CustomerID(Count (All))', isSquare: false, size: 16, textColor: Colors.black),

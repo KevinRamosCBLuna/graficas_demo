@@ -165,9 +165,9 @@ class _AverageJobsTimeTrackingState extends State<AverageJobsTimeTracking> {
                     style: estilo(),
                   )),
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
+                  children:  [
                     Indicator(color: Colors.blue, text: 'CRY Job Time Hrs (Average)', isSquare: false, size: 18, textColor: Colors.black),
                     Indicator(color: Colors.green, text: 'ODE Job Time Hrs (Average)', isSquare: false, size: 18, textColor: Colors.black),
                     Indicator(color: Colors.orange, text: 'SMI Job Time Hrs (Average)', isSquare: false, size: 18, textColor: Colors.black),

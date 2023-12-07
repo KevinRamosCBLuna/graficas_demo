@@ -148,10 +148,10 @@ class _Ahorro_MensualState extends State<Ahorro_Mensual> {
           const SizedBox(
             height: 28,
           ),
-          Row(
+          const Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const <Widget>[
+            children:  <Widget>[
               Indicator(
                 color: Ahorro_Mensual.pagosColor,
                 text: '% de Pago con Arux',

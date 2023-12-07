@@ -106,28 +106,28 @@ class _ConfiguratorWeeklyLeadsOpCop2State extends State<ConfiguratorWeeklyLeadsO
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
-            Row(
+            const Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
+              children:  <Widget>[
                 Indicator(color: Colors.lime, text: 'asael.brancamontes@rtatel.com', isSquare: false, size: 16, textColor: Colors.black),
                 Indicator(color: Colors.grey, text: 'Brooke.Johson@rtatel.com', isSquare: false, size: 16, textColor: Colors.black),
                 Indicator(color: Colors.green, text: 'destinee.conkel@rtatel.com', isSquare: false, size: 16, textColor: Colors.black),
               ],
             ),
-            Row(
+            const Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
+              children:  [
                 Indicator(color: Colors.yellow, text: 'jill.tarango@rtatel.com', isSquare: false, size: 16, textColor: Colors.black),
                 Indicator(color: Colors.purple, text: 'rosaline.silvey@rtatel.com', isSquare: false, size: 16, textColor: Colors.black),
                 Indicator(color: Colors.pinkAccent, text: 'ruby.cagle@rtatel.com', isSquare: false, size: 16, textColor: Colors.black),
               ],
             ),
-            Row(
+            const Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
+              children:  [
                 Indicator(color: Colors.blue, text: 'shirley.seaholm@rtatel.com', isSquare: false, size: 16, textColor: Colors.black),
                 Indicator(color: Colors.cyan, text: 'steve.stanley@rtatel.com', isSquare: false, size: 16, textColor: Colors.black),
               ],

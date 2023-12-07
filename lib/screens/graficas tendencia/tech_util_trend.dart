@@ -631,9 +631,9 @@ class _TechUtilTrendState extends State<TechUtilTrend> {
                       ),
                     ),
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [],
+                    children:  [],
                   ),
                 ],
               ),

@@ -98,10 +98,10 @@ class _RTANewCustomerLeadState extends State<RTANewCustomerLead> {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
-            Row(
+           const Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
+              children:  <Widget>[
                 Indicator(
                   color: Colors.blue,
                   text: 'New Leads',

@@ -116,10 +116,10 @@ class Propuestas_PushState extends State<Propuestas_Push> {
           const SizedBox(
             height: 28,
           ),
-          Row(
+          const Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const <Widget>[
+            children:  <Widget>[
               Indicator(
                 color: Color.fromARGB(255, 56, 54, 54),
                 text: 'Aprobadas',

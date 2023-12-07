@@ -97,10 +97,10 @@ class _LastWeekJobsTypeTrackingState extends State<LastWeekJobsTypeTracking> {
                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Row(
+                 const Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const <Widget>[
+                    children:  <Widget>[
                       Indicator(color: Colors.red, text: 'Disconect opco (Count(All))', isSquare: false, size: 16, textColor: Colors.black),
                       Indicator(color: Colors.green, text: 'Install opco (Count(All))', isSquare: false, size: 16, textColor: Colors.black),
                       Indicator(color: Colors.grey, text: 'n3 opco (Count(All))', isSquare: false, size: 16, textColor: Colors.black),

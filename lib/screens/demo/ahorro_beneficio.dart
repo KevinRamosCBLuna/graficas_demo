@@ -268,9 +268,9 @@ class _AhorroBeneficioState extends State<AhorroBeneficio> {
             style: estilo(),
           )),
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children: [
             Indicator(
               color: Color.fromRGBO(28, 185, 99, 1),
               text: 'Facturación Normal',

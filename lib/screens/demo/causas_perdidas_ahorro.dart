@@ -57,10 +57,10 @@ class Causas_Perdidas_Ahorro extends StatelessWidget {
           const SizedBox(
             height: 28,
           ),
-          Row(
+          const Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const <Widget>[
+            children:  <Widget>[
               Indicator(
                 color: Colors.pink,
                 text: 'Push: Pago-NC\n Sin Respuesta ',

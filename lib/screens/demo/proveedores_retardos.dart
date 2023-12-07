@@ -38,10 +38,10 @@ class Proveedores_Con_Retardos extends StatelessWidget {
           const SizedBox(
             height: 28,
           ),
-          Row(
+          const Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const <Widget>[
+            children:  <Widget>[
               Indicator(
                 color: Color.fromARGB(255, 41, 132, 206),
                 text: 'Prov. 31',

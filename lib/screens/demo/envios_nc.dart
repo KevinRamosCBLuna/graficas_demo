@@ -103,10 +103,10 @@ class _Envios_NCState extends State<Envios_NC> {
           const SizedBox(
             height: 28,
           ),
-          Row(
+         const Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const <Widget>[
+            children:  <Widget>[
               Indicator(
                 color: Colors.blueAccent,
                 text: 'Suma de % Respuesta',

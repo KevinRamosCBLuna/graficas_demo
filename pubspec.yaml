@@ -71,27 +71,27 @@ flutter:
     - assets/fonts/
     - assets/docs/
       
-  #   - images/a_dot_ham.jpeg
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+
+  fonts:
+  - family: Gotham
+    fonts:
+      - asset: assets/fonts/Gotham-Black.otf
+      - asset: assets/fonts/Gotham-Bold.otf
+        weight: 700
+      - asset: assets/fonts/Gotham-Italic.ttf
+      - asset: assets/fonts/Gotham-Light.otf
+      - asset: assets/fonts/Gotham-Regular.ttf
+      - asset: assets/fonts/Gotham-Thin.otf
+  - family: Bicyclette
+    fonts:
+      - asset: assets/fonts/Bicyclette-Black.ttf
+      - asset: assets/fonts/Bicyclette-Bold.ttf
+        weight: 700
+      - asset: assets/fonts/Bicyclette-Italic.ttf
+      - asset: assets/fonts/Bicyclette-Light.ttf
+      - asset: assets/fonts/Bicyclette-Regular.ttf
+      - asset: assets/fonts/Bicyclette-Thin.ttf
+ 
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

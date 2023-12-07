@@ -48,10 +48,10 @@ class _Retrasos_CBCState extends State<Retrasos_CBC> {
             const SizedBox(
               height: 28,
             ),
-            Row(
+           const Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
+              children:  <Widget>[
                 Indicator(
                   color: Colors.pinkAccent,
                   text: 'Tiempo Limite de carga NC',

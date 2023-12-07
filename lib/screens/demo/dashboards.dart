@@ -67,9 +67,9 @@ class _DashboardsState extends State<Dashboards> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Row(
+        title:const Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children:  [
             Icon(
               Icons.insert_chart,
               color: Colors.black,
@@ -273,18 +273,18 @@ class _DashboardsState extends State<Dashboards> {
                   ],
                 ),
               ),
-              Expanded(
+             const Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
-                      children: const [
+                      children:  [
                         AhorroBeneficio(),
                         //PerdidasAhorroBeneficio(),
                         //ChartsDemo()
                       ],
                     ),
-                    const TablaV2(),
+                     TablaV2(),
                   ],
                 ),
               ),

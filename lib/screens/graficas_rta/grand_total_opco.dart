@@ -119,9 +119,9 @@ class _GrandTotalOpCoState extends State<GrandTotalOpCo> {
             style: estilo(),
           )),
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children:  [
             Indicator(color: Colors.blue, text: 'Grand Total OpCo (Count (All))', isSquare: false, size: 18, textColor: Colors.black),
           ],
         ),

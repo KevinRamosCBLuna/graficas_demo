@@ -139,10 +139,10 @@ class _ConfiguratorTrackingState extends State<ConfiguratorTracking> {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
-                Row(
+                const Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
+                  children:  [
                     Indicator(
                       color: Colors.blue,
                       text: 'Coverage Lead (SMI)',

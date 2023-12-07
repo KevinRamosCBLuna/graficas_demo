@@ -466,9 +466,9 @@ class _OtherTrendState extends State<OtherTrend> {
                       ),
                     ),
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [],
+                    children:  [],
                   ),
                 ],
               ),

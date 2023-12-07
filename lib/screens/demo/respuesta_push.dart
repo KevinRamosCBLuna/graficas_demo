@@ -113,10 +113,10 @@ class _Respuestas_PushState extends State<Respuestas_Push> {
           const SizedBox(
             height: 28,
           ),
-          Row(
+          const Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const <Widget>[
+            children:  <Widget>[
               Indicator(
                 color: Colors.blue,
                 text: 'Suma de % Respuesta',

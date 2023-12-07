@@ -903,9 +903,9 @@ class _AverageJobsMinutesTrendState extends State<AverageJobsMinutesTrend> {
                       ),
                     ),
                   ),
-                  Row(
+                 const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [],
+                    children:  [],
                   ),
                 ],
               ),
