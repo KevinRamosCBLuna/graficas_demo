@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const Color primary = Color(0xFF2E6FC5), primarytext = Colors.black, secundarytext = Colors.white;
+  static const Color primary = Color(0XFF345694),
+      secondaryColor = Color(0XFFB2333A),
+      tertiaryColor = Color(0xFF102047),
+      alternate = Color(0XFF173938),
+      primarytext = Colors.black,
+      secundarytext = Colors.white,
+      primaryBackground = Color(0xFFFFFFFF),
+      secondaryBackground = Color(0XFFF7F6F6);
   static const TextStyle primarStyle = TextStyle(
         fontSize: 16,
         color: primarytext,
@@ -15,6 +22,11 @@ class AppTheme {
         fontSize: 16,
         color: secundarytext,
         fontWeight: FontWeight.bold,
+      ),
+      hintText= TextStyle(
+        fontSize: 13,
+        fontFamily: 'Gotham-Light',
+        color: Colors.grey,
       );
 
   static final ThemeData darkTheme = ThemeData.light().copyWith(

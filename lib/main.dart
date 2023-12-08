@@ -5,6 +5,7 @@ import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/providers/pdf_provider.dart';
 import 'package:graficas_demo/theme/App_theme.dart';
 import 'package:graficas_demo/routes/app_routes.dart';
+import 'package:graficas_demo/widgets/horizontalscroll.dart';
 import 'package:provider/provider.dart';
 import 'package:async/async.dart';
 
@@ -57,6 +58,7 @@ class _MyAppState extends State<MyApp> {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: const [Locale('en', 'US')],
+        scrollBehavior: MyCustomScrollBehavior(),
         theme: AppTheme.darkTheme);
   }
 }

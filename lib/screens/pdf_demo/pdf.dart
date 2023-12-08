@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/functions/date_format.dart';
 import 'package:graficas_demo/providers/pdf_provider.dart';
-import 'package:graficas_demo/theme/App_theme.dart';
+import 'package:graficas_demo/screens/pdf_demo/widgets/card.dart';
+import 'package:graficas_demo/screens/pdf_demo/widgets/custom_scrollbar.dart';
+import 'package:graficas_demo/screens/pdf_demo/widgets/custom_text_field.dart';
+import 'package:graficas_demo/screens/pdf_demo/widgets/custom_text_icon_button.dart';
+import 'package:graficas_demo/screens/pdf_demo/widgets/firma_pdf.dart';
+import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:pdfx/pdfx.dart';
 import 'package:provider/provider.dart';
-
-import 'widgets/firma_pdf.dart';
 
 class PDF extends StatefulWidget {
   const PDF({Key? key}) : super(key: key);
@@ -39,173 +42,192 @@ class _PDFState extends State<PDF> {
       appBar: AppBar(
         title: const Text('PDF File'),
       ),
-      body: Column(
+      body: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Spacer(),
-              
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: IconButton(
-                    icon: const Icon(Icons.upload_file, color: AppTheme.primary),
-                    tooltip: 'Cargar Anexo Firmado',
-                    color: AppTheme.primary,
-                    onPressed: () async {
-                      await provider.pickProveedorDoc();
-                      /* setState(() {}); */
-                    },
-                  ),
-                ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: IconButton(
-                    icon: const Icon(Icons.history_edu, color: AppTheme.primary),
-                    tooltip: 'Generar Anexo',
-                    color: AppTheme.primary,
-                    onPressed: () async {
-                      provider.crearPDF();
-                    }),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: IconButton(
-                    icon: const Icon(Icons.history_edu, color: AppTheme.primary),
-                    tooltip: 'Firmar Anexo',
-                    color: AppTheme.primary,
-                    onPressed: () async {
-                      await showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return const FirmaPDF();
-                        },
-                      );
-                    }),
-              ),
-              //Pantalla Completa
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: IconButton(
-                    icon: const Icon(Icons.fullscreen, color: AppTheme.primary),
-                    tooltip: 'Pantalla Completa',
-                    color: AppTheme.primary,
-                    onPressed: () async {
-                      await showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                              backgroundColor: Colors.transparent,
-                              shadowColor: Colors.transparent,
-                              content: SizedBox(
-                                width: width * 1000,
-                                height: height * 1000,
-                                child: PdfView(
-                                  backgroundDecoration: const BoxDecoration(
-                                    color: Colors.transparent,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(21),
-                                    ),
-                                  ),
-                                  controller: provider.pdfController!,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CustomScrollBar(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: CustomCard(
+                      width: width * 410,
+                      height: height * 580,
+                      title: 'Document Info',
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: CustomTextField(
+                              width: width * 380,
+                              enabled: true,
+                              controller: provider.acountController,
+                              icon: Icons.settings,
+                              label: 'Acount Number',
+                              keyboardType: TextInputType.name,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: CustomTextField(
+                              width: width * 380,
+                              enabled: true,
+                              controller: provider.emailController,
+                              icon: Icons.email,
+                              label: 'Email',
+                              keyboardType: TextInputType.emailAddress,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: CustomTextField(
+                              width: width * 380,
+                              enabled: true,
+                              controller: provider.representativeNameController,
+                              icon: Icons.person,
+                              label: 'Representative Name',
+                              keyboardType: TextInputType.name,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: CustomTextField(
+                              width: width * 380,
+                              enabled: true,
+                              controller: provider.addressController,
+                              icon: Icons.location_on,
+                              label: 'Address',
+                              keyboardType: TextInputType.name,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: CustomTextField(
+                              width: width * 380,
+                              enabled: true,
+                              controller: provider.dateController,
+                              icon: Icons.calendar_month,
+                              label: 'Creation Date',
+                              keyboardType: TextInputType.datetime,
+                            ),
+                          ),
+                          /* Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: CustomTextIconButton(
+                                isLoading: false,
+                                icon: const Icon(
+                                  Icons.calendar_month,
+                                  color: AppTheme.primary,
                                 ),
-                              ));
-                        },
-                      );
-                    }),
-              ),
-              //Descargar Anexo
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: IconButton(
-                  icon: const Icon(Icons.file_download_outlined, color: AppTheme.primary),
-                  tooltip: 'Descargar Anexo',
-                  color: AppTheme.primary,
-                  onPressed: () {
-                    provider.descargarArchivo(provider.documento, '${dateFormat(provider.fecha)}_Anexo_.pdf');
-                    provider.anexo = true;
-                    setState(() {});
-                  },
-                ),
-              ),
-              //Imprimir
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: IconButton(
-                  icon: const Icon(Icons.print, color: AppTheme.primary),
-                  tooltip: 'Imprimir',
-                  color: AppTheme.primary,
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
-              const Spacer(),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: IconButton(
-                  icon: const Icon(Icons.close, color: AppTheme.primary),
-                  tooltip: 'Salir',
-                  color: AppTheme.primary,
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
-            ],
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Container(
-                  width: MediaQuery.of(context).size.width * 0.3,
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff262626),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(
-                      color: AppTheme.primary,
-                      width: 1.5,
+                                text: 'Date: ${DateFormat('MMMM, MM-dd-yyyy').format(provider.create)}',
+                                style: const TextStyle(color: AppTheme.primary),
+                                onTap: () {
+                                  provider.selectdate(context);
+                                },
+                                color: AppTheme.primaryBackground,
+                              ),
+                            ), */
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: CustomTextField(
+                              width: width * 380,
+                              enabled: true,
+                              controller: provider.acountNameController,
+                              icon: Icons.person_pin,
+                              label: 'Acount Name',
+                              keyboardType: TextInputType.name,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: CustomTextField(
+                              width: width * 380,
+                              enabled: true,
+                              controller: provider.phoneController,
+                              icon: Icons.phone,
+                              label: 'Phone Number',
+                              keyboardType: TextInputType.name,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  child: provider.pdfController == null
-                      ? const CircularProgressIndicator()
-                      : PdfView(
-                          pageSnapping: false,
-                          scrollDirection: Axis.vertical,
-                          physics: const BouncingScrollPhysics(),
-                          renderer: (PdfPage page) {
-                            if (page.width >= page.height) {
-                              return page.render(
-                                width: page.width * 7,
-                                height: page.height * 4,
-                                format: PdfPageImageFormat.jpeg,
-                                backgroundColor: '#15FF0D',
-                              );
-                            } else if (page.width == page.height) {
-                              return page.render(
-                                width: page.width * 4,
-                                height: page.height * 4,
-                                format: PdfPageImageFormat.jpeg,
-                                backgroundColor: '#15FF0D',
-                              );
-                            } else {
-                              return page.render(
-                                width: page.width * 4,
-                                height: page.height * 7,
-                                format: PdfPageImageFormat.jpeg,
-                                backgroundColor: '#15FF0D',
-                              );
-                            }
-                          },
-                          controller: provider.pdfController!,
-                          onDocumentLoaded: (document) {},
-                          onPageChanged: (page) {},
-                          onDocumentError: (error) {},
-                        )),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: CustomCard(
+                      title: 'Signature',
+                      width: width * 410,
+                      height: height * 275,
+                      child: const FirmaPDF(),
+                    ),
+                  ),
+                  CustomTextIconButton(
+                    isLoading: false,
+                    icon: const Icon(Icons.email,color: AppTheme.primaryBackground),
+                    text: 'Send Document',
+                    onTap: () {},
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CustomCard(
+              width: width * 810,
+              title: 'Document Preview',
+              child: Container(
+                width: width * 810,
+                height: height*820,
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: AppTheme.primary,
+                    width: 1.5,
+                  ),
+                ),
+                child: provider.pdfController == null
+                    ? const CircularProgressIndicator()
+                    : PdfView(
+                        pageSnapping: false,
+                        scrollDirection: Axis.vertical,
+                        physics: const BouncingScrollPhysics(),
+                        renderer: (PdfPage page) {
+                          if (page.width >= page.height) {
+                            return page.render(
+                              width: page.width * 7,
+                              height: page.height * 4,
+                              format: PdfPageImageFormat.jpeg,
+                              backgroundColor: '#15FF0D',
+                            );
+                          } else if (page.width == page.height) {
+                            return page.render(
+                              width: page.width * 4,
+                              height: page.height * 4,
+                              format: PdfPageImageFormat.jpeg,
+                              backgroundColor: '#15FF0D',
+                            );
+                          } else {
+                            return page.render(
+                              width: page.width * 4,
+                              height: page.height * 7,
+                              format: PdfPageImageFormat.jpeg,
+                              backgroundColor: '#15FF0D',
+                            );
+                          }
+                        },
+                        controller: provider.pdfController!,
+                        onDocumentLoaded: (document) {},
+                        onPageChanged: (page) {},
+                        onDocumentError: (error) {},
+                      ),
+              ),
             ),
           ),
         ],
