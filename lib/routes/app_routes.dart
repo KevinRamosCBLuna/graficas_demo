@@ -1,5 +1,6 @@
 //import 'package:graficas_demo/screens/graficas_python/prueba_seaborn.dart';
 import 'package:graficas_demo/screens/pdf_demo/pdf.dart';
+import 'package:graficas_demo/screens/pdf_demo/pdf_client.dart';
 import 'package:graficas_demo/screens/pdf_list/pdf_list.dart';
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/models/models.dart';
@@ -148,7 +149,7 @@ class AppRoutes {
       'home': (BuildContext context) => const HomeScreen(),
       'pdf': (BuildContext context) => const PDF(),
       'pdf_list': (BuildContext context) => const PDFList(),
-      'pdf_client': (BuildContext context) => const PDF(),
+      'pdf_client': (BuildContext context) => const PDFClient(),
     });
 
     for (final option in menuOptions) {

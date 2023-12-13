@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graficas_demo/internationalization/internationalization.dart';
+import 'package:graficas_demo/providers/pdf_client_provider.dart';
 import 'package:graficas_demo/providers/pdf_list_provider.dart';
 import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/providers/pdf_provider.dart';
@@ -22,6 +23,9 @@ void main() {
         ),
         ChangeNotifierProvider(
           create: (context) => PDFListProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PDFClientProvider(),
         ),
       ],
       child: const MyApp(),
