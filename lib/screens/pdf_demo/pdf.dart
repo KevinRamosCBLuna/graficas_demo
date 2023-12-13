@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graficas_demo/functions/date_format.dart';
 import 'package:graficas_demo/providers/pdf_provider.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/card.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/custom_scrollbar.dart';
@@ -170,7 +169,10 @@ class _PDFState extends State<PDF> {
                     isLoading: false,
                     icon: const Icon(Icons.email,color: AppTheme.primaryBackground),
                     text: 'Send Document',
-                    onTap: () {},
+                    onTap: () {
+                      //Metodo para subir el documento creado
+                      Navigator.pushNamed(context, 'pdf_list');
+                    },
                   ),
                 ],
               ),

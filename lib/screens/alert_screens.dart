@@ -1,6 +1,7 @@
-import 'dart:io';
+//import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:graficas_demo/theme/app_theme.dart';
 
 class AlertScreen extends StatelessWidget {
   const AlertScreen({Key? key}) : super(key: key);
@@ -29,9 +30,7 @@ class AlertScreen extends StatelessWidget {
                     'Cancelar',
                     style: TextStyle(color: Colors.red),
                   )),
-              TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('Ok'))
+              TextButton(onPressed: () => Navigator.pop(context), child: const Text('Ok'))
             ],
           );
         });
@@ -45,8 +44,7 @@ class AlertScreen extends StatelessWidget {
           return AlertDialog(
             elevation: 5,
             title: const Text('data'),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             content: const Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -64,9 +62,7 @@ class AlertScreen extends StatelessWidget {
                     'Cancelar',
                     style: TextStyle(color: Colors.red),
                   )),
-              TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('Ok'))
+              TextButton(onPressed: () => Navigator.pop(context), child: const Text('Ok'))
             ],
           );
         });
@@ -75,25 +71,39 @@ class AlertScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: ElevatedButton(
-        /* style: ElevatedButton.styleFrom(
-            primary: Colors.cyan, shape: const StadiumBorder(), elevation: 0),*/
-        child: const Padding(
-          padding: EdgeInsets.all(20),
-          child: Text(
-            'Mostar alerta',
-            style: TextStyle(fontSize: 18),
+      backgroundColor: AppTheme.primaryBackground,
+      body: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'El URL Solicitado No Existe',
+              style: TextStyle(
+                color: AppTheme.primary,
+                fontSize: 50,
+              ),
+            ),
           ),
-        ),
-        //onPressed: () => displayDialogAndroid(context),
-        onPressed: () => Platform.isAndroid
-            ? displayDialogAndroid(context)
-            : displayDialogIos(context),
-      )),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.close),
-        onPressed: () => Navigator.pop(context),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: ElevatedButton(
+                /* style: ElevatedButton.styleFrom(
+                  primary: Colors.cyan, shape: const StadiumBorder(), elevation: 0),*/
+                child: const Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Text(
+                    'Regresar a Home',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                //onPressed: () => displayDialogAndroid(context),
+                //onPressed: () => Platform.isAndroid ? displayDialogAndroid(context) : displayDialogIos(context),
+                onPressed: () => Navigator.pushNamed(context, 'home'),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

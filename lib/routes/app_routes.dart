@@ -1,6 +1,6 @@
-
-import 'package:graficas_demo/screens/graficas_python/prueba_seaborn.dart';
+//import 'package:graficas_demo/screens/graficas_python/prueba_seaborn.dart';
 import 'package:graficas_demo/screens/pdf_demo/pdf.dart';
+import 'package:graficas_demo/screens/pdf_list/pdf_list.dart';
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/models/models.dart';
 import 'package:flutter/material.dart';
@@ -10,14 +10,16 @@ class AppRoutes {
   static const initialRoute = 'home';
 
   static final menuOptions = <MenuOptions>[
+    MenuOptions(route: 'pdf', name: 'PDF', screen: const PDF(), icon: Icons.picture_as_pdf),
+    MenuOptions(route: 'pdf_list', name: 'Lista', screen: const PDFList(), icon: Icons.list),
     /*MenuOptions(
         route: 'home',
         name: 'Home Screen',
         screen: const HomeScreen(),
         icon: Icons.home),*/
-    MenuOptions(route: 'Seaborn_Image', name: 'Seaborn_Image', screen: const PruebaSeaborn(), icon: Icons.list),
-    MenuOptions(route: 'PDF', name: 'PDF', screen: const PDF(), icon: Icons.picture_as_pdf),
-    //RTA
+    //Seaboarn Imagen
+    /* MenuOptions(route: 'Seaborn_Image', name: 'Seaborn_Image', screen: const PruebaSeaborn(), icon: Icons.list), */
+    //RTA Graficas
     /*  MenuOptions(route: 'services', name: 'Services', screen: const Services(), icon: Icons.list),
     MenuOptions(route: 'services_pie', name: 'Services_Pie', screen: const ServicesPie(), icon: Icons.list),
     MenuOptions(route: 'tech_utilization', name: 'Tech Utilization', screen: const TechUtilization(), icon: Icons.list),
@@ -142,7 +144,12 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
-    appRoutes.addAll({'home': (BuildContext context) => const HomeScreen()});
+    appRoutes.addAll({
+      'home': (BuildContext context) => const HomeScreen(),
+      'pdf': (BuildContext context) => const PDF(),
+      'pdf_list': (BuildContext context) => const PDFList(),
+      'pdf_client': (BuildContext context) => const PDF(),
+    });
 
     for (final option in menuOptions) {
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});

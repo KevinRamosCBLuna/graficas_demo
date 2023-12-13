@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graficas_demo/internationalization/internationalization.dart';
+import 'package:graficas_demo/providers/pdf_list_provider.dart';
 import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/providers/pdf_provider.dart';
-import 'package:graficas_demo/theme/App_theme.dart';
 import 'package:graficas_demo/routes/app_routes.dart';
+import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:graficas_demo/widgets/horizontalscroll.dart';
 import 'package:provider/provider.dart';
 import 'package:async/async.dart';
@@ -18,6 +19,9 @@ void main() {
         ),
         ChangeNotifierProvider(
           create: (context) => PDFProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PDFListProvider(),
         ),
       ],
       child: const MyApp(),
@@ -45,7 +49,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Graficas Demo',
+        title: 'Demo',
         initialRoute: AppRoutes.initialRoute,
         routes: AppRoutes.getAppRoutes(),
         debugShowMaterialGrid: false,
@@ -59,6 +63,7 @@ class _MyAppState extends State<MyApp> {
         ],
         supportedLocales: const [Locale('en', 'US')],
         scrollBehavior: MyCustomScrollBehavior(),
-        theme: AppTheme.darkTheme);
+        theme: AppTheme.lightTheme,
+        );
   }
 }

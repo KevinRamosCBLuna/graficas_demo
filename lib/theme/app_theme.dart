@@ -23,32 +23,68 @@ class AppTheme {
         color: secundarytext,
         fontWeight: FontWeight.bold,
       ),
-      hintText= TextStyle(
+      hintText = TextStyle(
         fontSize: 13,
         fontFamily: 'Gotham-Light',
         color: Colors.grey,
+      ),
+      contenidoTablas = TextStyle(
+        fontSize: 18,
+        fontFamily: 'Gotham-Light',
+        fontWeight: FontWeight.w400,
+        color: AppTheme.primarytext,
+      ),
+      encabezadoTablas = TextStyle(
+        fontSize: 22,
+        fontFamily: 'Gotham-Regular',
+        fontWeight: FontWeight.w600,
+        color: AppTheme.primaryBackground,
       );
 
-  static final ThemeData darkTheme = ThemeData.light().copyWith(
-      //color primario
-      primaryColor: Colors.cyan,
-      //App bar
-      appBarTheme: const AppBarTheme(color: primary, elevation: 0, centerTitle: true),
-      //Color botones
-      textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(backgroundColor: primary)),
+  static final ThemeData lightTheme = ThemeData.light().copyWith(
+    //color primario
+    primaryColor: primary,
+    //App bar
+    appBarTheme: const AppBarTheme(color: primary, elevation: 0, centerTitle: true),
+    //Color botones
+    textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(backgroundColor: primary)),
 
-      //floating action button
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(backgroundColor: primary, elevation: 5),
+    //floating action button
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(backgroundColor: primary, elevation: 5),
 
-      //elevatebutton
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(backgroundColor: primary, shape: const StadiumBorder(), elevation: 0),
-      ),
-      //Imput decoration
-      inputDecorationTheme: const InputDecorationTheme(
-        floatingLabelStyle: TextStyle(color: primary),
-        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: primary), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
-        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: primary), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
-        border: OutlineInputBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
-      ));
+    //elevatebutton
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(backgroundColor: primary, shape: const StadiumBorder(), elevation: 0),
+    ),
+    //Imput decoration
+    inputDecorationTheme: const InputDecorationTheme(
+      floatingLabelStyle: TextStyle(color: primary),
+      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: primary), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
+      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: primary), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
+      border: OutlineInputBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
+    ),
+  );
+  static final ThemeData darkTheme = ThemeData.dark().copyWith(
+    //color primario
+    primaryColor: primary,
+    //App bar
+    appBarTheme: const AppBarTheme(color: primary, elevation: 0, centerTitle: true),
+    //Color botones
+    textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(backgroundColor: primary)),
+
+    //floating action button
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(backgroundColor: primary, elevation: 5),
+
+    //elevatebutton
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(backgroundColor: primary, shape: const StadiumBorder(), elevation: 0),
+    ),
+    //Imput decoration
+    inputDecorationTheme: const InputDecorationTheme(
+      floatingLabelStyle: TextStyle(color: primary),
+      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: primary), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
+      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: primary), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
+      border: OutlineInputBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), topRight: Radius.circular(10))),
+    ),
+  );
 }
