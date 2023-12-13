@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:graficas_demo/providers/pdf_list_provider.dart';
+import 'package:graficas_demo/providers/pdf_demo/pdf_list_provider.dart';
 import 'package:graficas_demo/public/colors.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/card.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/custom_text_field.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/custom_text_icon_button.dart';
-import 'package:graficas_demo/screens/pdf_list/widgets/pdf_popup.dart';
+import 'package:graficas_demo/screens/pdf_demo/pdf_list/widgets/pdf_popup.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:graficas_demo/utils/constants.dart';
 import 'package:pluto_grid/pluto_grid.dart';

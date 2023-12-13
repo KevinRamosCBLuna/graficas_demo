@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:graficas_demo/providers/pdf_list_provider.dart';
+import 'package:graficas_demo/providers/pdf_demo/pdf_list_provider.dart';
 import 'package:pdfx/pdfx.dart';
 import 'package:provider/provider.dart';
 
-import '../../../theme/app_theme.dart';
+import '../../../../theme/app_theme.dart';
 
 class PdfPopup extends StatefulWidget {
   const PdfPopup({super.key});

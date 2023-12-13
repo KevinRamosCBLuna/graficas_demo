@@ -1,7 +1,7 @@
 //import 'package:graficas_demo/screens/graficas_python/prueba_seaborn.dart';
-import 'package:graficas_demo/screens/pdf_demo/pdf.dart';
-import 'package:graficas_demo/screens/pdf_demo/pdf_client.dart';
-import 'package:graficas_demo/screens/pdf_list/pdf_list.dart';
+import 'package:graficas_demo/screens/pdf_demo/pdf_admin/pdf.dart';
+import 'package:graficas_demo/screens/pdf_demo/pdf_client/pdf_client.dart';
+import 'package:graficas_demo/screens/pdf_demo/pdf_list/pdf_list.dart';
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/models/models.dart';
 import 'package:flutter/material.dart';

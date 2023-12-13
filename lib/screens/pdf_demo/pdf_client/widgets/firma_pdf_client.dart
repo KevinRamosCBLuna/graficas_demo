@@ -1,22 +1,22 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:graficas_demo/providers/pdf_provider.dart';
+import 'package:graficas_demo/providers/pdf_demo/pdf_client_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:signature/signature.dart';
 
-import '../../../theme/app_theme.dart';
+import '../../../../theme/app_theme.dart';
 
-class FirmaPDF extends StatefulWidget {
-  const FirmaPDF({
+class FirmaPDFClient extends StatefulWidget {
+  const FirmaPDFClient({
     super.key,
   });
   //final Propuesta propuesta;
   @override
-  State<FirmaPDF> createState() => FirmaPDFState();
+  State<FirmaPDFClient> createState() => FirmaPDFState();
 }
 
-class FirmaPDFState extends State<FirmaPDF> {
+class FirmaPDFState extends State<FirmaPDFClient> {
   @override
   void initState() {
     super.initState();
@@ -31,7 +31,7 @@ class FirmaPDFState extends State<FirmaPDF> {
 
   @override
   Widget build(BuildContext context) {
-    final PDFProvider provider = Provider.of<PDFProvider>(context);
+    final PDFClientProvider provider = Provider.of<PDFClientProvider>(context);
     double width = MediaQuery.of(context).size.width / 1440;
     double height = MediaQuery.of(context).size.height / 1024;
     return Column(
@@ -47,11 +47,11 @@ class FirmaPDFState extends State<FirmaPDF> {
               child: IconButton(
                 iconSize: 30,
                 onPressed: () async {
-                  if (provider.signaturecontroller.isNotEmpty) {
-                    await provider.exportSignature();
+                  if (provider.clientSignatureController.isNotEmpty) {
+                    await provider.clientExportSignature();
                     await provider.crearPDF();
                   } else {
-                    provider.signaturecontroller.clear();
+                    provider.clientSignatureController.clear();
                     provider.firmaAnexo = false;
                     await provider.crearPDF();
                   }
@@ -67,7 +67,7 @@ class FirmaPDFState extends State<FirmaPDF> {
               child: IconButton(
                   iconSize: 30,
                   onPressed: () {
-                    provider.signaturecontroller.clear();
+                    provider.clientSignatureController.clear();
                     provider.firmaAnexo = false;
                   },
                   icon: const Icon(
@@ -80,7 +80,7 @@ class FirmaPDFState extends State<FirmaPDF> {
         provider.pdfController == null
             ? const CircularProgressIndicator()
             : Signature(
-                controller: provider.signaturecontroller,
+                controller: provider.clientSignatureController,
                 backgroundColor: AppTheme.primaryBackground,
                 width: width * 410,
                 height: height * 100,

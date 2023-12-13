@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:graficas_demo/providers/pdf_client_provider.dart';
+import 'package:graficas_demo/providers/pdf_demo/pdf_client_provider.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/card.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/custom_scrollbar.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/custom_text_field.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/custom_text_icon_button.dart';
-import 'package:graficas_demo/screens/pdf_demo/widgets/firma_pdf_client.dart';
+import 'package:graficas_demo/screens/pdf_demo/pdf_client/widgets/firma_pdf_client.dart';
 import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:pdfx/pdfx.dart';
 import 'package:provider/provider.dart';
