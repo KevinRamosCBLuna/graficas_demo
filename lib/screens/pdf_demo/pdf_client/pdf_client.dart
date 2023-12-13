@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graficas_demo/providers/pdf_demo/pdf_client_provider.dart';
+import 'package:graficas_demo/screens/pdf_demo/pdf_client/widgets/popup_firma_client.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/card.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/custom_scrollbar.dart';
 import 'package:graficas_demo/screens/pdf_demo/widgets/custom_text_field.dart';
@@ -167,11 +168,16 @@ class _PDFState extends State<PDFClient> {
                   ),
                   CustomTextIconButton(
                     isLoading: false,
-                    icon: const Icon(Icons.email,color: AppTheme.primaryBackground),
+                    icon: const Icon(Icons.email,
+                        color: AppTheme.primaryBackground),
                     text: 'Send Document',
-                    onTap: () {
-                      //Metodo para subir el documento creado
-                      Navigator.pushNamed(context, 'pdf_list');
+                    onTap: () async {
+                      await showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return const PopupFirmaCliente();
+                        },
+                      );
                     },
                   ),
                 ],
@@ -185,7 +191,7 @@ class _PDFState extends State<PDFClient> {
               title: 'Document Preview',
               child: Container(
                 width: width * 810,
-                height: height*820,
+                height: height * 820,
                 decoration: BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(8),
