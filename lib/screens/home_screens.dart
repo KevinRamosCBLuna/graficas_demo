@@ -58,6 +58,20 @@ class HomeScreen extends StatelessWidget {
                   Navigator.pushNamed(context, 'pdf_client');
                 },
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomTextIconButton(
+                isLoading: false,
+                icon: const Icon(
+                  Icons.person,
+                  color: AppTheme.primaryBackground,
+                ),
+                text: 'Uwifi test',
+                onTap: () {
+                  Navigator.pushNamed(context, 'Uwifi_test');
+                },
+              ),
             )
           ],
         ) /* ListView.separated(

@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graficas_demo/internationalization/internationalization.dart';
 import 'package:graficas_demo/providers/pdf_demo/pdf_client_provider.dart';
 import 'package:graficas_demo/providers/pdf_demo/pdf_list_provider.dart';
+import 'package:graficas_demo/providers/uwifi_provider.dart';
 import 'package:graficas_demo/providers/week_provider.dart';
 import 'package:graficas_demo/providers/pdf_demo/pdf_provider.dart';
 import 'package:graficas_demo/routes/app_routes.dart';
@@ -26,6 +27,9 @@ void main() {
         ),
         ChangeNotifierProvider(
           create: (context) => PDFClientProvider(),
+        ),
+       ChangeNotifierProvider(
+          create: (context) => UwifiProvider(),
         ),
       ],
       child: const MyApp(),
@@ -53,7 +57,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Demo',
+        title: 'dasdas',
         initialRoute: AppRoutes.initialRoute,
         routes: AppRoutes.getAppRoutes(),
         debugShowMaterialGrid: false,
