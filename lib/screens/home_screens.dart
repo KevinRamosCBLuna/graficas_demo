@@ -17,6 +17,20 @@ class HomeScreen extends StatelessWidget {
         ),
         body: Column(
           children: [
+             Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomTextIconButton(
+                isLoading: false,
+                icon: const Icon(
+                  Icons.qr_code,
+                  color: AppTheme.primaryBackground,
+                ),
+                text: 'QR Test',
+                onTap: () {
+                  Navigator.pushNamed(context, 'qrTest');
+                },
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CustomTextIconButton(

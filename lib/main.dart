@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'dasdas',
+        title: 'Test',
         initialRoute: AppRoutes.initialRoute,
         routes: AppRoutes.getAppRoutes(),
         debugShowMaterialGrid: false,

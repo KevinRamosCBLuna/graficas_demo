@@ -1,4 +1,5 @@
 //import 'package:graficas_demo/screens/graficas_python/prueba_seaborn.dart';
+import 'package:graficas_demo/screens/QR/qr_test.dart';
 import 'package:graficas_demo/screens/pdf_demo/pdf_admin/pdf.dart';
 import 'package:graficas_demo/screens/pdf_demo/pdf_list/pdf_list.dart';
 import 'package:graficas_demo/screens/screens.dart';
@@ -22,9 +23,9 @@ class AppRoutes {
     //Seaboarn Imagen
     /* MenuOptions(route: 'Seaborn_Image', name: 'Seaborn_Image', screen: const PruebaSeaborn(), icon: Icons.list), */
     //RTA Graficas
-    MenuOptions(route: 'services', name: 'Services', screen: const Services(), icon: Icons.list),
+    /* MenuOptions(route: 'services', name: 'Services', screen: const Services(), icon: Icons.list),
     MenuOptions(route: 'services_pie', name: 'Services_Pie', screen: const ServicesPie(), icon: Icons.list),
-    /*  MenuOptions(route: 'tech_utilization', name: 'Tech Utilization', screen: const TechUtilization(), icon: Icons.list),
+     MenuOptions(route: 'tech_utilization', name: 'Tech Utilization', screen: const TechUtilization(), icon: Icons.list),
     MenuOptions(route: 'other', name: 'Other', screen: const Other(), icon: Icons.list),
     MenuOptions(route: 'customer_rep_sales', name: 'Customer Rep Sales (7)', screen: const CustomerRepSales(), icon: Icons.list),
     MenuOptions(route: 'grand_total_opcp', name: 'Grand Total OpCo (9)', screen: const GrandTotalOpCo(), icon: Icons.list),
@@ -153,6 +154,7 @@ class AppRoutes {
       'pdf_client': (BuildContext context) => const Services(),
       'Lista': (BuildContext context) => const Services(),
       'Uwifi_test': (BuildContext context) => const SupportPage(),
+      'qrTest':(BuildContext context)=> const QRTest()
     });
 
     for (final option in menuOptions) {
