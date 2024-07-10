@@ -6,8 +6,8 @@ import 'package:graficas_demo/theme/App_theme.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 import 'package:provider/provider.dart';
 
-import 'graficas tendencia/configurator_statistics.dart';
-import 'tablas pluto/tabla_configurator_statistics.dart';
+import '../graficas tendencia/configurator_statistics.dart';
+import '../tablas pluto/tabla_configurator_statistics.dart';
 
 class ConfiguratorStatistics extends StatefulWidget {
   const ConfiguratorStatistics({Key? key}) : super(key: key);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:graficas_demo/internationalization/internationalization.dart';
+import 'package:graficas_demo/providers/QR/qr_provider.dart';
 import 'package:graficas_demo/providers/pdf_demo/pdf_client_provider.dart';
 import 'package:graficas_demo/providers/pdf_demo/pdf_list_provider.dart';
 import 'package:graficas_demo/providers/uwifi_provider.dart';
@@ -11,8 +12,13 @@ import 'package:graficas_demo/theme/app_theme.dart';
 import 'package:graficas_demo/widgets/horizontalscroll.dart';
 import 'package:provider/provider.dart';
 import 'package:async/async.dart';
+import 'package:appwrite/appwrite.dart' as db;
 
 void main() {
+  // Configura el cliente de Appwrite
+  db.Client appwriteClient =db.Client()
+      .setEndpoint('https://appwrite.cbluna-dev.com') // Endpoint de tu servidor Appwrite en la nube
+      .setProject('66833bc30013ba6896ca'); // ID de tu proyecto en Appwrite
   runApp(
     MultiProvider(
       providers: [
@@ -28,8 +34,11 @@ void main() {
         ChangeNotifierProvider(
           create: (context) => PDFClientProvider(),
         ),
-       ChangeNotifierProvider(
+        ChangeNotifierProvider(
           create: (context) => UwifiProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => QRProvider(appwriteClient),
         ),
       ],
       child: const MyApp(),
@@ -56,22 +65,22 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Test',
-        initialRoute: AppRoutes.initialRoute,
-        routes: AppRoutes.getAppRoutes(),
-        debugShowMaterialGrid: false,
-        locale: _locale,
-        onGenerateRoute: AppRoutes.onGenerateRoute,
-        localizationsDelegates: const [
-          AppLocalizationsDelegate(),
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: const [Locale('en', 'US')],
-        scrollBehavior: MyCustomScrollBehavior(),
-        theme: AppTheme.lightTheme,
-        );
+      debugShowCheckedModeBanner: false,
+      title: 'Test',
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(),
+      debugShowMaterialGrid: false,
+      locale: _locale,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
+      localizationsDelegates: const [
+        AppLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [Locale('en', 'US')],
+      scrollBehavior: MyCustomScrollBehavior(),
+      theme: AppTheme.lightTheme,
+    );
   }
 }

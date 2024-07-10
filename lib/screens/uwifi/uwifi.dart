@@ -16,7 +16,7 @@ class _SupportPageState extends State<SupportPage> {
   Widget build(BuildContext context) {
     final provider = Provider.of<UwifiProvider>(context);
     return Scaffold(
-        appBar: AppBar(title: Text('dfdsfs')),
+        appBar: AppBar(title: const Text('dfdsfs')),
         body: Form(
           key: UniqueKey(),
           child: Column(

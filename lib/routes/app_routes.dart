@@ -1,20 +1,21 @@
-//import 'package:graficas_demo/screens/graficas_python/prueba_seaborn.dart';
-import 'package:graficas_demo/screens/QR/qr_test.dart';
-import 'package:graficas_demo/screens/pdf_demo/pdf_admin/pdf.dart';
-import 'package:graficas_demo/screens/pdf_demo/pdf_list/pdf_list.dart';
 import 'package:graficas_demo/screens/screens.dart';
 import 'package:graficas_demo/models/models.dart';
 import 'package:flutter/material.dart';
-import 'package:graficas_demo/screens/uwifi/uwifi.dart';
-//import 'package:graficas_demo/screens/tabla_v2.dart';
 
 class AppRoutes {
   static const initialRoute = 'home';
 
   static final menuOptions = <MenuOptions>[
-    MenuOptions(route: 'pdf', name: 'PDF', screen: const PDF(), icon: Icons.picture_as_pdf),
+    //Mapa
+    MenuOptions(route: 'svg', icon: Icons.image, name: 'SVG', screen:  MapaSVG()),
+    //QR
+    MenuOptions(route: 'qrTest', name: 'QR Test', screen: const QRTest(), icon: Icons.qr_code),
+    MenuOptions(route: 'citasList', name: 'Citas', screen: const CitasList(), icon: Icons.list),
+    //PDF
+    /* MenuOptions(route: 'pdf', name: 'PDF', screen: const PDF(), icon: Icons.picture_as_pdf),
     MenuOptions(route: 'pdf_list', name: 'Lista', screen: const PDFList(), icon: Icons.list),
-    MenuOptions(route: 'Uwifi_test', icon: Icons.wifi, name: 'Uwifi Test', screen: SupportPage()),
+    MenuOptions(route: 'Uwifi_test', icon: Icons.wifi, name: 'Uwifi Test', screen:const SupportPage()),
+ */
     /*MenuOptions(
         route: 'home',
         name: 'Home Screen',
@@ -154,7 +155,10 @@ class AppRoutes {
       'pdf_client': (BuildContext context) => const Services(),
       'Lista': (BuildContext context) => const Services(),
       'Uwifi_test': (BuildContext context) => const SupportPage(),
-      'qrTest':(BuildContext context)=> const QRTest()
+      'qrTest': (BuildContext context) => const QRTest(),
+      'citasList': (BuildContext context) => const CitasList(),
+      'svg':(BuildContext context) =>  MapaSVG(),
+
     });
 
     for (final option in menuOptions) {
