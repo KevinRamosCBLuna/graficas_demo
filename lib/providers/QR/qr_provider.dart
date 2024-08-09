@@ -38,7 +38,7 @@ class QRProvider extends ChangeNotifier {
 
       // Imprimir los documentos en la consola
       for (var doc in documents) {
-        print(doc); // Imprime cada documento en la consola
+        log(doc); // Imprime cada documento en la consola
       }
 
       if (stateManager != null) stateManager!.notifyListeners();

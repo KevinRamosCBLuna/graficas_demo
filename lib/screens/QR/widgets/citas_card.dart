@@ -15,7 +15,7 @@ class CitasCard extends StatefulWidget {
 }
 
 class _CitasCardState extends State<CitasCard> {
-  @override
+  /* @override
   void initState() {
     super.initState();
 
@@ -26,7 +26,7 @@ class _CitasCardState extends State<CitasCard> {
       );
      // await provider.updateState();
     });
-  }
+  } */
 
   @override
   Widget build(BuildContext context) {

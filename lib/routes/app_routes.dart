@@ -7,7 +7,7 @@ class AppRoutes {
 
   static final menuOptions = <MenuOptions>[
     //Mapa
-    MenuOptions(route: 'svg', icon: Icons.image, name: 'SVG', screen:  MapaSVG()),
+    MenuOptions(route: 'svg', icon: Icons.image, name: 'SVG', screen: const MapaSVG()),
     //QR
     MenuOptions(route: 'qrTest', name: 'QR Test', screen: const QRTest(), icon: Icons.qr_code),
     MenuOptions(route: 'citasList', name: 'Citas', screen: const CitasList(), icon: Icons.list),
@@ -157,7 +157,7 @@ class AppRoutes {
       'Uwifi_test': (BuildContext context) => const SupportPage(),
       'qrTest': (BuildContext context) => const QRTest(),
       'citasList': (BuildContext context) => const CitasList(),
-      'svg':(BuildContext context) =>  MapaSVG(),
+      'svg':(BuildContext context) => const MapaSVG(),
 
     });
 
