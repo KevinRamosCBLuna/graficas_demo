@@ -12,10 +12,10 @@ class AppRoutes {
     MenuOptions(route: 'qrTest', name: 'QR Test', screen: const QRTest(), icon: Icons.qr_code),
     MenuOptions(route: 'citasList', name: 'Citas', screen: const CitasList(), icon: Icons.list),
     //PDF
-    /* MenuOptions(route: 'pdf', name: 'PDF', screen: const PDF(), icon: Icons.picture_as_pdf),
+    MenuOptions(route: 'pdf', name: 'PDF', screen: const PDF(), icon: Icons.picture_as_pdf),
     MenuOptions(route: 'pdf_list', name: 'Lista', screen: const PDFList(), icon: Icons.list),
     MenuOptions(route: 'Uwifi_test', icon: Icons.wifi, name: 'Uwifi Test', screen:const SupportPage()),
- */
+
     /*MenuOptions(
         route: 'home',
         name: 'Home Screen',
