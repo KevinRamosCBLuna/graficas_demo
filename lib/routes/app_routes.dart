@@ -16,11 +16,11 @@ class AppRoutes {
     MenuOptions(route: 'pdf_list', name: 'Lista', screen: const PDFList(), icon: Icons.list),
     MenuOptions(route: 'Uwifi_test', icon: Icons.wifi, name: 'Uwifi Test', screen:const SupportPage()),
 
-    /*MenuOptions(
+    MenuOptions(
         route: 'home',
         name: 'Home Screen',
         screen: const HomeScreen(),
-        icon: Icons.home),*/
+        icon: Icons.home),
     //Seaboarn Imagen
     /* MenuOptions(route: 'Seaborn_Image', name: 'Seaborn_Image', screen: const PruebaSeaborn(), icon: Icons.list), */
     //RTA Graficas
